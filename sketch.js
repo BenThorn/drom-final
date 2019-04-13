@@ -1,3 +1,8 @@
+//require johny-five, lable the board, and create a variable defaulting to the board is not firing
+var five = require("johny-five");
+var board = new five.board();
+var hit1 = false;
+
 let keyObject = keyboard(" ");
 
 const audioContext = new AudioContext();
@@ -86,9 +91,21 @@ function update(){
   requestAnimationFrame(update);
 };
 
+board.on("ready", function() {
+	var sensor = new five.Sensor("A0");
+	
+	sensor.on("change", function() {
+		console.log("Drum Fires");
+		hit1 = true;
+	});
+});
+
+/*
+Replaced by the above to make an attempt at triggering the boolean
 keyObject.press = () => {
   playLine.play();
 };
+*/
 
 class PlayLine {
   constructor(imgStr, noteMgr) {
@@ -274,6 +291,9 @@ class Note {
       this.missed = true;
     }
   }
+	
+	//reset the bool so that the next note can be detected for hit
+	hit1 = false;
 }
 
 let masterGain = null;
