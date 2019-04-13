@@ -1,29 +1,48 @@
 let keyObject = keyboard(" ");
 
+const audioContext = new AudioContext();
+const sched = new WebAudioScheduler({ context: audioContext });
+
+
 //Create a Pixi Application
 let app = new PIXI.Application({ 
     width: 256, 
     height: 256,                       
     antialias: true, 
-    transparent: false, 
+    transparent: true, 
     resolution: 1
   }
 );
 
-app.renderer.view.style.position = "absolute";
-app.renderer.view.style.display = "block";
-app.renderer.autoResize = true;
-app.renderer.resize(window.innerWidth, window.innerHeight);
+var width =  window.screen.width;
+var height =  window.screen.height;
 
-document.body.appendChild(app.view);
+let renderer = PIXI.autoDetectRenderer(width, height - 0, { 
+    antialias: true, 
+  });
+
+document.body.appendChild(renderer.view);
+
+// var smoothie = new Smoothie({
+//   engine: PIXI, 
+//   renderer: renderer,
+//   root: app.stage,
+//   fps: 30,
+//   update: update.bind(this)
+// });
+
+// var texture = PIXI.Texture.fromVideo("Assets/Video/Comp_1.mp4");
+// var videoSprite = new PIXI.Sprite(texture);
+// app.stage.addChild(videoSprite);
 
 PIXI.loader
   .add("Assets/Images/Outer_Orange.png")
   .add("Assets/Images/field_static.png")
+  .add("Assets/Video/Comp_1.mp4")
   .load(setup);
 
 PIXI.sound.Sound.from({
-  url: 'Assets/Sound/Variation_3.mp3',
+  url: 'Assets/Sound/drom_loop.mp3',
   autoPlay: false,
   complete: function() {
       console.log('Sound finished');
@@ -32,35 +51,39 @@ PIXI.sound.Sound.from({
 
 PIXI.sound.add('drum', 'Assets/Sound/drum_1.wav');
 PIXI.sound.add('fail', 'Assets/Sound/fail.wav');
-PIXI.sound.add('miss', 'Assets/Sound/miss.wav');
+PIXI.sound.add('test', 'Assets/Sound/drom_loop.mp3');
 
 //------------------------------------------------------------
 //----------------------------End Setup-----------------------
 //------------------------------------------------------------
 let playLine;
-let noteMgr;
+let noteMgrOrange;
 let started = false;
 
 function setup() {
-  let background = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/field_static.png"].texture);
-  app.stage.addChild(background);
-  background.width = window.innerWidth;
-  background.height = window.innerHeight;
+  // let background = new PIXI.Sprite(PIXI.loader.resources["Assets/Video/Comp_1.mp4"].texture);
+  // app.stage.addChild(background);
+  // background.width = window.innerWidth;
+  // background.height = window.innerHeight;
 
   // Create game elements
-  playLine = new PlayLine();
-  noteMgr = new NoteManager();
+  noteMgrOrange = new NoteManager();
+  playLine = new PlayLine("Assets/Images/Outer_Orange.png", noteMgrOrange);
 
-  app.ticker.add(delta => gameLoop(delta));
+  update();
 };
 
-function gameLoop(delta){
+function update(){
+  renderer.render(app.stage);
+
   if(!started) {
-    noteMgr.playNote();
+    noteMgrOrange.playNote();
     started = true;
   }
-  noteMgr.draw();
+  noteMgrOrange.draw();
   playLine.draw();
+
+  requestAnimationFrame(update);
 };
 
 keyObject.press = () => {
@@ -68,11 +91,11 @@ keyObject.press = () => {
 };
 
 class PlayLine {
-  constructor() {
+  constructor(imgStr, noteMgr) {
     this.glowing = false;
     this.opacity = 0.5;
 
-    this.playLineImg = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/Outer_Orange.png"].texture);
+    this.playLineImg = new PIXI.Sprite(PIXI.loader.resources[imgStr].texture);
   
     app.stage.addChild(this.playLineImg);
 
@@ -81,11 +104,13 @@ class PlayLine {
     this.playLineImg.x = window.innerWidth/2 - 200;
     this.playLineImg.y = 100;
     this.playLineImg.alpha = this.opacity;
+
+    this.noteMgr = noteMgr;
   }
 
   draw() {
     if(this.glowing || this.opacity > 0.5) {
-      this.opacity -= 0.02;
+      this.opacity -= 0.02  ;
     }
 
     this.playLineImg.alpha = this.opacity;
@@ -95,10 +120,11 @@ class PlayLine {
     this.glowing = true;
     this.opacity = 1.2;
     let success;
+    PIXI.sound.play('fail');
 
-    for(let i=0; i<noteMgr.notes.length; i++){
-      if(noteMgr.notes[i].chance){
-        noteMgr.notes[i].hit();
+    for(let i=0; i<this.noteMgr.notes.length; i++){
+      if(this.noteMgr.notes[i].chance){
+        this.noteMgr.notes[i].hit();
         PIXI.sound.play('drum');
         success = true;
         break;
@@ -118,7 +144,6 @@ class PlayLine {
     // });
 
     if(!success) {
-      PIXI.sound.play('fail');
     }
 
     setTimeout(() => {
@@ -131,37 +156,50 @@ class NoteManager {
   constructor() {
     this.bpm = 120;
     this.qtrNote = 60 / this.bpm;
-    this.staff = [1, .25, .25, .25, .25, 1, 1];
+    this.staff = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
     this.notes = [];
+
+    this.graphics = new PIXI.Graphics();
+
+    app.stage.addChild(this.graphics);
+
+    sched.start(this.keepTime);
+    sched.start(metronome);
   }
 
   draw(){
+    this.graphics.clear();
     this.notes.forEach((note) => {
       note.draw();
     });
+  }
+
+  keepTime = (e) => {
+    const t0 = e.playbackTime;
+
+    let measure = 0.000;
+ 
+    sched.insert(t0 + 0.000, this.playNote);
+    sched.insert(t0 + 0.500, this.keepTime);
   }
 
   nextNote() {
     this.playNote();
   }
 
-  playNote() {
-    console.log(this.staff);
+  playNote = () => {
+  //  console.log(this.staff);
 
     if(this.staff.length > 0) {
       const timeSig = this.staff.shift();
-      const note = new Note();
+      const note = new Note(timeSig, this.graphics);
       this.notes.push(note);
-  
-      setTimeout(() => {
-        this.nextNote();
-      }, this.qtrNote * 1000 * timeSig);
     }
   }
 }
 
 class Note {
-  constructor() {
+  constructor(timeSig, gfx) {
     this.radius = 1;
     this.stroke = 5;
     this.x = window.innerWidth/2;
@@ -171,9 +209,10 @@ class Note {
     this.destroyNextFrame = false;
     this.active = true;
     this.chance = false;
+    this.timeSig = timeSig;
 
     //Make circle
-    this.circle = new PIXI.Graphics();
+    this.circle = gfx;
     this.circle.beginFill();
     this.circle.fillAlpha = 0;
     this.circle.lineStyle(this.stroke, 0xffffff, this.opacity);
@@ -181,13 +220,11 @@ class Note {
     this.circle.position.x = this.x;
     this.circle.position.y = this.y;
     this.circle.endFill();
-    app.stage.addChild(this.circle);
   }
 
   draw(){
     if(this.active) {
       // Clear and redraw circle
-      this.circle.clear();
       this.circle.beginFill();
       this.circle.fillAlpha = 0;
       this.circle.lineStyle(this.stroke, 0xffffff, this.opacity);
@@ -201,8 +238,12 @@ class Note {
 
       this.radius += this.rate;
       if(this.radius > 180) {
-        this.miss();
+        this.fade();
         this.opacity -= 0.05;
+      }
+
+      if(this.radius > 250) {
+        this.active = false;
       }
 
       if(this.radius > 160 && this.radius < 180) {
@@ -217,9 +258,9 @@ class Note {
   }
 
   fade() {
-    this.circle.destroy();
-    this.active = false;
-    this.destroyNextFrame = true;
+    if(!this.fading){
+      this.fading = true;
+    }
   }
 
   hit() {
@@ -231,8 +272,62 @@ class Note {
   miss() {
     if(!this.missed){
       this.missed = true;
-      PIXI.sound.play('miss');
     }
   }
 }
 
+let masterGain = null;
+ 
+function metronome(e) {
+  const t0 = e.playbackTime;
+ 
+  sched.insert(t0 + 0.000, ticktack, { frequency: 880, duration: 0.1 });
+  sched.insert(t0 + 0.500, ticktack, { frequency: 440, duration: 0.1 });
+  sched.insert(t0 + 1.000, ticktack, { frequency: 440, duration: 0.1 });
+  sched.insert(t0 + 1.500, ticktack, { frequency: 440, duration: 0.1 });
+  sched.insert(t0 + 2.000, metronome);
+}
+ 
+function ticktack(e) {
+  const t0 = e.playbackTime;
+  const t1 = t0 + e.args.duration;
+  const osc = audioContext.createOscillator();
+  const amp = audioContext.createGain();
+ 
+  osc.frequency.value = e.args.frequency;
+  osc.start(t0);
+  osc.stop(t1);
+  osc.connect(amp);
+ 
+  amp.gain.setValueAtTime(0.5, t0);
+  amp.gain.exponentialRampToValueAtTime(1e-6, t1);
+  amp.connect(masterGain);
+ 
+  sched.nextTick(t1, () => {
+    osc.disconnect();
+    amp.disconnect();
+  });
+}
+ 
+sched.on("start", () => {
+  masterGain = audioContext.createGain();
+  masterGain.connect(audioContext.destination);
+});
+ 
+sched.on("stop", () => {
+  masterGain.disconnect();
+  masterGain = null;
+});
+ 
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    sched.aheadTime = 0.1;
+  } else {
+    sched.aheadTime = 1.0;
+    sched.process();
+  }
+});
+ 
+document.getElementById("start-button").addEventListener("click", () => {
+  sched.start(metronome);  
+});
