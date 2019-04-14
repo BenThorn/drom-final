@@ -1,9 +1,9 @@
-//require johny-five, lable the board, and create a variable defaulting to the board is not firing
-var five = require("johny-five");
-var board = new five.board();
-var hit1 = false;
+let spaceButton = keyboard(" ");
+let v = keyboard("v");
+let b = keyboard("b");
+let s = keyboard("s");
 
-let keyObject = keyboard(" ");
+const video = document.querySelector("#v");
 
 const audioContext = new AudioContext();
 const sched = new WebAudioScheduler({ context: audioContext });
@@ -21,27 +21,20 @@ let app = new PIXI.Application({
 
 var width =  window.screen.width;
 var height =  window.screen.height;
+video.width = window.screen.width;
+video.height = window.screen.height;
 
 let renderer = PIXI.autoDetectRenderer(width, height - 0, { 
     antialias: true, 
+    transparent: true
   });
 
 document.body.appendChild(renderer.view);
 
-// var smoothie = new Smoothie({
-//   engine: PIXI, 
-//   renderer: renderer,
-//   root: app.stage,
-//   fps: 30,
-//   update: update.bind(this)
-// });
-
-// var texture = PIXI.Texture.fromVideo("Assets/Video/Comp_1.mp4");
-// var videoSprite = new PIXI.Sprite(texture);
-// app.stage.addChild(videoSprite);
-
 PIXI.loader
   .add("Assets/Images/Outer_Orange.png")
+  .add("Assets/Images/Outer_Green.png")
+  .add("Assets/Images/Outer_Pink.png")
   .add("Assets/Images/field_static.png")
   .add("Assets/Video/Comp_1.mp4")
   .load(setup);
@@ -62,8 +55,15 @@ PIXI.sound.add('test', 'Assets/Sound/drom_loop.mp3');
 //----------------------------End Setup-----------------------
 //------------------------------------------------------------
 let playLine;
+let playLine2;
+let playLine3;
 let noteMgrOrange;
+let noteMgrGreen;
+let noteMgrPink;
 let started = false;
+
+let conductor;
+let videoOpacity = 0;
 
 function setup() {
   // let background = new PIXI.Sprite(PIXI.loader.resources["Assets/Video/Comp_1.mp4"].texture);
@@ -72,8 +72,10 @@ function setup() {
   // background.height = window.innerHeight;
 
   // Create game elements
-  noteMgrOrange = new NoteManager();
-  playLine = new PlayLine("Assets/Images/Outer_Orange.png", noteMgrOrange);
+
+  conductor = new Conductor();
+
+  video.style.opacity = 0;
 
   update();
 };
@@ -81,34 +83,118 @@ function setup() {
 function update(){
   renderer.render(app.stage);
 
-  if(!started) {
-    noteMgrOrange.playNote();
-    started = true;
+  if(started) {
+    if(video.style.opacity <= 1) {
+      console.log(video.style.opacity);
+      video.style.opacity = videoOpacity;
+      videoOpacity += 0.01;
+    }
+    conductor.draw();
   }
-  noteMgrOrange.draw();
-  playLine.draw();
 
   requestAnimationFrame(update);
 };
 
-board.on("ready", function() {
-	var sensor = new five.Sensor("A0");
-	
-	sensor.on("change", function() {
-		console.log("Drum Fires");
-		hit1 = true;
-	});
-});
+class Conductor {
+  constructor() {
+    this.graphics = new PIXI.Graphics();
+    app.stage.addChild(this.graphics);
 
-/*
-Replaced by the above to make an attempt at triggering the boolean
-keyObject.press = () => {
-  playLine.play();
+    this.noteMgrOrange = new NoteManager(300, "Assets/Images/Outer_Orange.png", this.graphics);
+    this.noteMgrGreen = new NoteManager(700, "Assets/Images/Outer_Green.png", this.graphics);
+    this.noteMgrPink = new NoteManager(1100, "Assets/Images/Outer_Pink.png", this.graphics);
+
+    this.started = false;
+  }
+
+  start() {
+    if(!this.started) {
+      this.started = true;
+      this.noteMgrOrange.start();
+      this.noteMgrGreen.start();
+      this.noteMgrPink.start();
+    }
+  }
+
+  draw() {
+    if(this.started) {
+      this.graphics.clear();
+      this.noteMgrOrange.draw();
+      this.noteMgrGreen.draw();
+      this.noteMgrPink.draw();
+    }
+  }
+}
+
+spaceButton.press = () => {
+  video.play();
+  conductor.noteMgrOrange.playLine.play();
 };
-*/
+
+v.press = () => {
+  conductor.noteMgrPink.playLine.play();
+};
+
+b.press = () => {
+  conductor.noteMgrGreen.playLine.play();
+};
+
+s.press = () => {
+  console.log('s');
+  started = true;
+  conductor.start();
+  video.play();
+  PIXI.sound.play('test');
+};
+
+class NoteManager {
+  constructor(x, imgStr, gfx) {
+    this.staff = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    this.notes = [];
+    this.x = x;
+
+    this.playLine = new PlayLine(imgStr, this.x, this.notes);
+
+    this.graphics = gfx;
+
+    this.offset = 0.250;
+
+  }
+
+  start() {
+    sched.start(this.keepTime);
+  }
+
+  draw(){
+    this.playLine.draw();
+    this.notes.forEach((note) => {
+      note.draw();
+    });
+  }
+
+  keepTime = (e) => {
+    const t0 = e.playbackTime + this.offset;
+
+    let measure = 0.000;
+ 
+    sched.insert(t0 + 0.000, this.createNote);
+    sched.insert(t0 + 0.500, this.keepTime);
+
+    this.offset = 0;
+  }
+
+  createNote = () => {
+
+    if(this.staff.length > 0) {
+      const timeSig = this.staff.shift();
+      const note = new Note(timeSig, this.graphics, this.x);
+      this.notes.push(note);
+    }
+  }
+}
 
 class PlayLine {
-  constructor(imgStr, noteMgr) {
+  constructor(imgStr, x, notes) {
     this.glowing = false;
     this.opacity = 0.5;
 
@@ -118,11 +204,13 @@ class PlayLine {
 
     this.playLineImg.width = 400;
     this.playLineImg.height = 400;
-    this.playLineImg.x = window.innerWidth/2 - 200;
+    this.playLineImg.x = x - 200;
     this.playLineImg.y = 100;
     this.playLineImg.alpha = this.opacity;
 
-    this.noteMgr = noteMgr;
+    this.x = x;
+
+    this.notes = notes;
   }
 
   draw() {
@@ -139,9 +227,9 @@ class PlayLine {
     let success;
     PIXI.sound.play('fail');
 
-    for(let i=0; i<this.noteMgr.notes.length; i++){
-      if(this.noteMgr.notes[i].chance){
-        this.noteMgr.notes[i].hit();
+    for(let i=0; i<this.notes.length; i++){
+      if(this.notes[i].chance){
+        this.notes[i].hit();
         PIXI.sound.play('drum');
         success = true;
         break;
@@ -169,57 +257,11 @@ class PlayLine {
   }
 };
 
-class NoteManager {
-  constructor() {
-    this.bpm = 120;
-    this.qtrNote = 60 / this.bpm;
-    this.staff = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-    this.notes = [];
-
-    this.graphics = new PIXI.Graphics();
-
-    app.stage.addChild(this.graphics);
-
-    sched.start(this.keepTime);
-    sched.start(metronome);
-  }
-
-  draw(){
-    this.graphics.clear();
-    this.notes.forEach((note) => {
-      note.draw();
-    });
-  }
-
-  keepTime = (e) => {
-    const t0 = e.playbackTime;
-
-    let measure = 0.000;
- 
-    sched.insert(t0 + 0.000, this.playNote);
-    sched.insert(t0 + 0.500, this.keepTime);
-  }
-
-  nextNote() {
-    this.playNote();
-  }
-
-  playNote = () => {
-  //  console.log(this.staff);
-
-    if(this.staff.length > 0) {
-      const timeSig = this.staff.shift();
-      const note = new Note(timeSig, this.graphics);
-      this.notes.push(note);
-    }
-  }
-}
-
 class Note {
-  constructor(timeSig, gfx) {
+  constructor(timeSig, gfx, x) {
     this.radius = 1;
     this.stroke = 5;
-    this.x = window.innerWidth/2;
+    this.x = x;
     this.y = 300;
     this.rate = 2;
     this.opacity = 0.9;
@@ -227,15 +269,14 @@ class Note {
     this.active = true;
     this.chance = false;
     this.timeSig = timeSig;
+    this.played = false;
 
     //Make circle
     this.circle = gfx;
     this.circle.beginFill();
     this.circle.fillAlpha = 0;
     this.circle.lineStyle(this.stroke, 0xffffff, this.opacity);
-    this.circle.drawCircle(0, 0, this.radius);
-    this.circle.position.x = this.x;
-    this.circle.position.y = this.y;
+    this.circle.drawCircle(this.x, this.y, this.radius);
     this.circle.endFill();
   }
 
@@ -248,9 +289,7 @@ class Note {
       if(this.chance) {
         this.circle.lineStyle(this.stroke, 0xff0000, this.opacity);
       }
-      this.circle.drawCircle(0, 0, this.radius);
-      this.circle.position.x = this.x;
-      this.circle.position.y = this.y;
+      this.circle.drawCircle(this.x, this.y, this.radius);
       this.circle.endFill();
 
       this.radius += this.rate;
@@ -259,11 +298,15 @@ class Note {
         this.opacity -= 0.05;
       }
 
-      if(this.radius > 250) {
+      if(this.radius > 205) {
         this.active = false;
       }
 
-      if(this.radius > 160 && this.radius < 180) {
+      if(this.radius > 160 && this.radius < 187) {
+        if(!this.played) {
+          this.play();
+          this.played = true;
+        }
         this.chance = true;
       } else {
         this.chance = false;
@@ -272,6 +315,9 @@ class Note {
         this.fade();
       }
     }
+  }
+
+  play () {
   }
 
   fade() {
@@ -291,21 +337,24 @@ class Note {
       this.missed = true;
     }
   }
-	
-	//reset the bool so that the next note can be detected for hit
-	hit1 = false;
 }
 
 let masterGain = null;
+let offset = 1.417;
+
+function log() {
+  console.log('works');
+}
  
 function metronome(e) {
-  const t0 = e.playbackTime;
+  const t0 = e.playbackTime + offset;
  
   sched.insert(t0 + 0.000, ticktack, { frequency: 880, duration: 0.1 });
   sched.insert(t0 + 0.500, ticktack, { frequency: 440, duration: 0.1 });
   sched.insert(t0 + 1.000, ticktack, { frequency: 440, duration: 0.1 });
   sched.insert(t0 + 1.500, ticktack, { frequency: 440, duration: 0.1 });
   sched.insert(t0 + 2.000, metronome);
+  offset = 0;
 }
  
 function ticktack(e) {
