@@ -15,3 +15,9 @@ canvas {
   position: absolute;
 
 }
+
+#text{
+	position: absolute;
+	color: black;
+	font-size: large;
+}

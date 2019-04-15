@@ -4,6 +4,7 @@ let b = keyboard("b");
 let s = keyboard("s");
 
 const video = document.querySelector("#v");
+let body = document.querySelector("text");
 
 const audioContext = new AudioContext();
 const sched = new WebAudioScheduler({ context: audioContext });
@@ -75,13 +76,14 @@ function setup() {
 
   conductor = new Conductor();
 
-  video.style.opacity = 0;
+  //video.style.opacity = 0;
 
   update();
 };
 
 function update(){
   renderer.render(app.stage);
+	video.play();
 
   if(started) {
     if(video.style.opacity <= 1) {
@@ -141,8 +143,10 @@ b.press = () => {
 
 s.press = () => {
   console.log('s');
+	//body.innerHTML = "";
   started = true;
   conductor.start();
+	video.src = "Assets/Video/Comp_1.mp4";
   video.play();
   PIXI.sound.play('test');
 };
