@@ -76,8 +76,6 @@ function setup() {
 
   conductor = new Conductor();
 
-  //video.style.opacity = 0;
-
   update();
 };
 
@@ -130,7 +128,6 @@ class Conductor {
 }
 
 spaceButton.press = () => {
-  video.play();
   conductor.noteMgrOrange.playLine.play();
 };
 
