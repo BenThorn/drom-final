@@ -101,15 +101,16 @@ class Conductor {
     this.graphics = new PIXI.Graphics();
     app.stage.addChild(this.graphics);
 
-    this.noteMgrOrange = new NoteManager(300, "Assets/Images/Outer_Orange.png", this.graphics);
-    this.noteMgrGreen = new NoteManager(700, "Assets/Images/Outer_Green.png", this.graphics);
-    this.noteMgrPink = new NoteManager(1100, "Assets/Images/Outer_Pink.png", this.graphics);
+
 
     this.started = false;
   }
 
   start() {
     if(!this.started) {
+		this.noteMgrOrange = new NoteManager(300, "Assets/Images/Outer_Orange.png", this.graphics);
+    this.noteMgrGreen = new NoteManager(700, "Assets/Images/Outer_Green.png", this.graphics);
+    this.noteMgrPink = new NoteManager(1100, "Assets/Images/Outer_Pink.png", this.graphics);
       this.started = true;
       this.noteMgrOrange.start();
       this.noteMgrGreen.start();
