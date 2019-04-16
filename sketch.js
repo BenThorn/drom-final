@@ -82,7 +82,7 @@ function setup() {
 
 function update(){
   renderer.render(app.stage);
-	video.play();
+  video.play();
 
   if(started) {
     if(video.style.opacity <= 1) {
@@ -142,6 +142,8 @@ b.press = () => {
 };
 
 s.press = () => {
+  /*Starting video fade out
+  if(video.style.opacity>=0)*/
   console.log('s');
   started = true;
   conductor.start();
