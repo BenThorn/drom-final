@@ -4,7 +4,8 @@ let b = keyboard("b");
 let s = keyboard("s");
 
 const video = document.querySelector("#v");
-let body = document.querySelector("menu");
+let menu = document.querySelector("#menu");
+
 
 const audioContext = new AudioContext();
 const sched = new WebAudioScheduler({ context: audioContext });
@@ -89,7 +90,7 @@ function update(){
       video.style.opacity = videoOpacity;
       videoOpacity += 0.01;
     }
-		//body.innerHTML = "";
+    menu.style.display = "none";
     conductor.draw();
   }
 

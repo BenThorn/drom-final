@@ -18,11 +18,11 @@ canvas {
 
 #menu{
 	position: absolute;
-	color: black;
+	color: white;
 	font-size: large;
 	text-align: center;
-	margin-top: 50%;
-	margin-left: 50%;
+	margin-top: 40%;
+	margin-left: 45%;
 	width: auto;
 	border: 3px solid green;
 }
