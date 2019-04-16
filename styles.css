@@ -22,7 +22,8 @@ canvas {
 	font-size: large;
 	text-align: center;
 	margin-top: 40%;
-	margin-left: 45%;
+	margin-left: 10%;
 	width: auto;
-	border: 3px solid green;
+	border: 3px solid blue;
+    padding: 3px;
 }
