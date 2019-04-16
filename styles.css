@@ -13,17 +13,14 @@ canvas {
 
 #v {
   position: absolute;
-
 }
 
 #menu{
 	position: absolute;
-	color: white;
-	font-size: large;
-	text-align: center;
-	margin-top: 40%;
-	margin-left: 10%;
-	width: auto;
-	border: 3px solid blue;
-    padding: 3px;
+	margin-top: 25%;
+    margin-left: 80px; 
+}
+
+img{
+  width: 50%;
 }

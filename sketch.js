@@ -145,7 +145,7 @@ s.press = () => {
   console.log('s');
   started = true;
   conductor.start();
-	video.src = "Assets/Video/Comp_1.mp4";
+  video.src = "Assets/Video/Comp_1.mp4";
   video.play();
   PIXI.sound.play('test');
 };
