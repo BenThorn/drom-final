@@ -18,8 +18,7 @@ canvas {
 #menu{
 	position: absolute;
 	margin-top: 25%;
-    margin-left: 80px;
-    width: 
+  margin-left: 10%;
 }
 
 #logo{
@@ -29,7 +28,7 @@ canvas {
 #submenu{
   position: absolute;
   width: auto;
-  margin-top: 50px;
+  margin-top: 2%;
   margin-left: 5%
 }
 

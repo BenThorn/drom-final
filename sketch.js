@@ -2,9 +2,12 @@ let spaceButton = keyboard(" ");
 let v = keyboard("v");
 let b = keyboard("b");
 let s = keyboard("s");
+let f = keyboard("f");
 
 const video = document.querySelector("#v");
-let menu = document.querySelector("#menu");
+const menu = document.querySelector("#menu");
+let btn = document.querySelector("#btn");
+
 
 
 const audioContext = new AudioContext();
@@ -67,6 +70,21 @@ let started = false;
 let conductor;
 let videoOpacity = 0;
 
+
+//animation for the button to move after press
+function btnJump() {
+	console.log("Jump called");
+	var fadeEffect = setInterval(function(){
+		if(btn.style.opacity < 0.1){
+			clearInterval(fadeEffect);
+			console.log("If hit");
+		} else {
+			btn.style.opacity -= 0.1;
+			console.log("Fading down");
+		}
+	}, 200);
+};
+
 function setup() {
   // let background = new PIXI.Sprite(PIXI.loader.resources["Assets/Video/Comp_1.mp4"].texture);
   // app.stage.addChild(background);
@@ -82,7 +100,7 @@ function setup() {
 
 function update(){
   renderer.render(app.stage);
-  video.play();
+  //video.play();
 
   if(started) {
     if(video.style.opacity <= 1) {
@@ -142,14 +160,24 @@ b.press = () => {
 };
 
 s.press = () => {
-  /*Starting video fade out
-  if(video.style.opacity>=0)*/
+  //Starting video fade out
+  while(video.style.opacity>=0){
+		video.style.opacity -= 0.01;
+	}
+	//Could accomplish something with setTimeout(function, milliseconds)
+	
+	//btn anim
+	btnJump();
   console.log('s');
   started = true;
   conductor.start();
   video.src = "Assets/Video/Comp_1.mp4";
   video.play();
   PIXI.sound.play('test');
+};
+
+f.press = () => {
+	btnJump();
 };
 
 class NoteManager {
