@@ -430,6 +430,3 @@ document.addEventListener("visibilitychange", () => {
   }
 });
  
-document.getElementById("start-button").addEventListener("click", () => {
-  sched.start(metronome);  
-});
