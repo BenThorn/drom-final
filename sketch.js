@@ -90,6 +90,7 @@ let noteFrames = []; //for note ring animation
 //animation for the button to move after press
 function btnJump() {
 	var fadeEffect = setInterval(function(){
+		console.log("Btn go");
 		if(!btn.style.opacity){
 			btn.style.opacity = 1;
 		}
@@ -145,11 +146,12 @@ function update(delta){
   renderer.render(app.stage);
 
   if(started) {
+		videoO = window.getComputedStyle(video);
+		console.log("Video Opacity: "+videoO.getPropertyValue('opacity'));
     if(video.style.opacity <= 1) {
       video.style.opacity = videoOpacity;
       videoOpacity += 0.01;
     }
-    menu.style.display = "none";
     conductor.draw();
   }
 };
@@ -196,20 +198,47 @@ b.press = () => {
   conductor.noteMgrGreen.playLine.play();
 };
 
-s.press = () => {
-  //Starting video fade out
-  while(video.style.opacity>=0){
-		video.style.opacity -= 0.01;
-	}
-	//Could accomplish something with setTimeout(function, milliseconds)
+s.press = () => {	
+	//time in ms
+	var delayForFade = 2000;
 	
-	//btn anim
-	//btnJump();
-  console.log('s');
-  started = true;
-  conductor.start();
-  video.src = "Assets/Video/Comp_1.mp4";
-  video.play();
+  //Starting menu screen fade out
+	var fadeOutEffect = setInterval(function(){
+		//delete this once fade is working
+		//turn off menu
+		menu.style.display = "none";
+		
+		//make sure there are numbers for video and menu
+		if(!video.style.opacity||!menu.style.opacity){
+			video.style.opacity = 1;
+			menu.style.opacity = 1;
+		}
+		if(videoOpacity < 0.1||started){
+			console.log("if hit");
+			clearInterval(fadeOutEffect);
+		} else {
+			video.style.opacity += 0.1;
+			console.log("Opacity going down");
+		}
+	}, 2);
+	
+	setTimeout(function() {	
+	//sticking this in here for a second
+	//video fade back in
+	var fadeUpEffect = setInterval(function(){
+		if(video.style.opacity < 1&&started){
+			video.style.opacity += 0.1;
+		} else {
+			clearInterval(fadeUpEffect);
+		}
+	}, delayForFade);
+		
+  	console.log('s');
+  	started = true;
+  	conductor.start();
+  	video.src = "Assets/Video/Comp_1.mp4";
+  	video.play();
+	}, delayForFade);
 };
 
 f.press = () => {
