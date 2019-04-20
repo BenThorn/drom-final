@@ -3,12 +3,13 @@ let v = keyboard("v");
 let b = keyboard("b");
 let s = keyboard("s");
 let f = keyboard("f");
+let a = keyboard("a");
 
 let gameState;
 
 const GAME_STATE = Object.freeze({ 
   MENU: 1,
-  TUTOIAL: 2,
+  TUTORIAL: 2,
   GAME: 3,
   END: 4
 });
@@ -148,10 +149,10 @@ function update(delta){
   if(started) {
 		videoO = window.getComputedStyle(video);
 		console.log("Video Opacity: "+videoO.getPropertyValue('opacity'));
-    if(video.style.opacity <= 1) {
-      video.style.opacity = videoOpacity;
-      videoOpacity += 0.01;
-    }
+    // if(video.style.opacity <= 1) {
+    //   video.style.opacity = videoOpacity;
+    //   videoOpacity += 0.01;
+    // }
     conductor.draw();
   }
 };
@@ -185,6 +186,24 @@ class Conductor {
     }
   }
 }
+
+// fades video and updates game state
+a.press = () => {
+  if(gameState = GAME_STATE.MENU) {
+    let setOpacity = 1;
+    let timer = setInterval(() => {
+      if(setOpacity <= 0) {
+        clearInterval(timer);
+        video.style.display = 'none';
+      }
+      video.style.opacity = setOpacity;
+      menu.style.opacity = setOpacity;
+      setOpacity -= 0.01;
+    }, 15);
+    gameState = GAME_STATE.TUTORIAL;
+  }
+
+};
 
 spaceButton.press = () => {
   conductor.noteMgrOrange.playLine.play();
@@ -227,7 +246,7 @@ s.press = () => {
 	//video fade back in
 	var fadeUpEffect = setInterval(function(){
 		if(video.style.opacity < 1&&started){
-			video.style.opacity += 0.1;
+			 video.style.opacity += 0.1;
 		} else {
 			clearInterval(fadeUpEffect);
 		}
