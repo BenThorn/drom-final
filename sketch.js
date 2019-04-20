@@ -74,6 +74,8 @@ let videoOpacity = 0;
 //animation for the button to move after press
 function btnJump() {
 	console.log("Jump called");
+	console.log("Opacity is a "+ typeof btn.style.opacity);
+	console.log("Btn Opacity: "+parseInt(btn.style.opacity));
 	var fadeEffect = setInterval(function(){
 		if(btn.style.opacity < 0.1){
 			clearInterval(fadeEffect);
@@ -167,7 +169,7 @@ s.press = () => {
 	//Could accomplish something with setTimeout(function, milliseconds)
 	
 	//btn anim
-	btnJump();
+	//btnJump();
   console.log('s');
   started = true;
   conductor.start();
