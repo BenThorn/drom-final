@@ -16,6 +16,7 @@ const GAME_STATE = Object.freeze({
 const video = document.querySelector("#v");
 const menu = document.querySelector("#menu");
 let btn = document.querySelector("#btn");
+let btnStyle = window.getComputedStyle(btn);
 
 const audioContext = new AudioContext();
 const sched = new WebAudioScheduler({ context: audioContext });
@@ -88,18 +89,16 @@ let noteFrames = []; //for note ring animation
 
 //animation for the button to move after press
 function btnJump() {
-	console.log("Jump called");
-	console.log("Opacity is a "+ typeof btn.style.opacity);
-	console.log("Btn Opacity: "+parseInt(btn.style.opacity));
 	var fadeEffect = setInterval(function(){
-		if(btn.style.opacity < 0.1){
-			clearInterval(fadeEffect);
-			console.log("If hit");
-		} else {
-			btn.style.opacity -= 0.1;
-			console.log("Fading down");
+		if(!btn.style.opacity){
+			btn.style.opacity = 1;
 		}
-	}, 200);
+		if(btnStyle.getPropertyValue('opacity') < 0.1){
+			clearInterval(fadeEffect);
+		} else {
+			btn.style.opacity -= 0.06;
+		}
+	}, 100);
 };
 
 function setup() {
