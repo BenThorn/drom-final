@@ -1,0 +1,88 @@
+{"frames": {
+
+"Gameplay ring (miss) Comp 1_00077.png":
+{
+	"frame": {"x":0,"y":0,"w":537,"h":537},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":689,"y":230,"w":537,"h":537},
+	"sourceSize": {"w":537,"h":537}
+},
+"Gameplay ring (miss) Comp 1_00078.png":
+{
+	"frame": {"x":544,"y":542,"w":543,"h":543},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":686,"y":227,"w":543,"h":543},
+	"sourceSize": {"w":543,"h":543}
+},
+"Gameplay ring (miss) Comp 1_00079.png":
+{
+	"frame": {"x":548,"y":1090,"w":549,"h":549},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":683,"y":224,"w":549,"h":549},
+	"sourceSize": {"w":549,"h":549}
+},
+"Gameplay ring (miss) Comp 1_00081.png":
+{
+	"frame": {"x":1077,"y":0,"w":543,"h":542},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":686,"y":227,"w":543,"h":542},
+	"sourceSize": {"w":543,"h":542}
+},
+"Gameplay ring (miss) Comp 1_00082.png":
+{
+	"frame": {"x":1087,"y":542,"w":549,"h":548},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":683,"y":224,"w":549,"h":548},
+	"sourceSize": {"w":549,"h":548}
+},
+"Gameplay ring (miss) Comp 1_00083.png":
+{
+	"frame": {"x":1097,"y":1090,"w":554,"h":554},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":680,"y":221,"w":554,"h":554},
+	"sourceSize": {"w":554,"h":554}
+},
+"Gameplay ring (miss) Comp 1_00098.png":
+{
+	"frame": {"x":0,"y":1090,"w":548,"h":549},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":683,"y":222,"w":548,"h":549},
+	"sourceSize": {"w":548,"h":549}
+},
+"Gameplay ring (miss) Comp 1_00099.png":
+{
+	"frame": {"x":537,"y":0,"w":540,"h":541},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":687,"y":226,"w":540,"h":541},
+	"sourceSize": {"w":540,"h":541}
+},
+"Gameplay ring (miss) Comp 1_00100.png":
+{
+	"frame": {"x":0,"y":542,"w":544,"h":543},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":685,"y":225,"w":544,"h":543},
+	"sourceSize": {"w":544,"h":543}
+}},
+"animations": {
+	"Gameplay ring (miss) Comp 1": ["Gameplay ring (miss) Comp 1_00077.png","Gameplay ring (miss) Comp 1_00078.png","Gameplay ring (miss) Comp 1_00079.png","Gameplay ring (miss) Comp 1_00081.png","Gameplay ring (miss) Comp 1_00082.png","Gameplay ring (miss) Comp 1_00083.png","Gameplay ring (miss) Comp 1_00098.png","Gameplay ring (miss) Comp 1_00099.png","Gameplay ring (miss) Comp 1_00100.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "notering-3.png",
+	"format": "RGBA8888",
+	"size": {"w":1651,"h":1644},
+	"scale": "1",
+	"related_multi_packs": [ "notering-0.json", "notering-1.json", "notering-2.json", "notering-4.json", "notering-5.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:87c6f43e27776723334cb8ae812abc72:c38999e7731e304443f4793392af4603:4b47d6ae7f5b85d9ca57d90ac16b6c79$"
+}
+}

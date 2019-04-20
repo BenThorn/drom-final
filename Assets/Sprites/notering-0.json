@@ -1,0 +1,696 @@
+{"frames": {
+
+"Gameplay ring (miss) Comp 1_00000.png":
+{
+	"frame": {"x":33,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00001.png":
+{
+	"frame": {"x":114,"y":0,"w":8,"h":8},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":956,"y":501,"w":8,"h":8},
+	"sourceSize": {"w":8,"h":8}
+},
+"Gameplay ring (miss) Comp 1_00002.png":
+{
+	"frame": {"x":122,"y":0,"w":14,"h":14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":953,"y":498,"w":14,"h":14},
+	"sourceSize": {"w":14,"h":14}
+},
+"Gameplay ring (miss) Comp 1_00003.png":
+{
+	"frame": {"x":136,"y":0,"w":19,"h":19},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":950,"y":495,"w":19,"h":19},
+	"sourceSize": {"w":19,"h":19}
+},
+"Gameplay ring (miss) Comp 1_00004.png":
+{
+	"frame": {"x":155,"y":0,"w":62,"h":61},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":929,"y":474,"w":62,"h":61},
+	"sourceSize": {"w":62,"h":61}
+},
+"Gameplay ring (miss) Comp 1_00005.png":
+{
+	"frame": {"x":217,"y":0,"w":85,"h":85},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":917,"y":462,"w":85,"h":85},
+	"sourceSize": {"w":85,"h":85}
+},
+"Gameplay ring (miss) Comp 1_00006.png":
+{
+	"frame": {"x":302,"y":0,"w":102,"h":101},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":909,"y":454,"w":102,"h":101},
+	"sourceSize": {"w":102,"h":101}
+},
+"Gameplay ring (miss) Comp 1_00007.png":
+{
+	"frame": {"x":404,"y":0,"w":115,"h":115},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":902,"y":447,"w":115,"h":115},
+	"sourceSize": {"w":115,"h":115}
+},
+"Gameplay ring (miss) Comp 1_00008.png":
+{
+	"frame": {"x":519,"y":0,"w":126,"h":126},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":897,"y":441,"w":126,"h":126},
+	"sourceSize": {"w":126,"h":126}
+},
+"Gameplay ring (miss) Comp 1_00009.png":
+{
+	"frame": {"x":645,"y":0,"w":136,"h":136},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":892,"y":436,"w":136,"h":136},
+	"sourceSize": {"w":136,"h":136}
+},
+"Gameplay ring (miss) Comp 1_00010.png":
+{
+	"frame": {"x":781,"y":0,"w":145,"h":145},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":887,"y":432,"w":145,"h":145},
+	"sourceSize": {"w":145,"h":145}
+},
+"Gameplay ring (miss) Comp 1_00011.png":
+{
+	"frame": {"x":926,"y":0,"w":154,"h":154},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":883,"y":427,"w":154,"h":154},
+	"sourceSize": {"w":154,"h":154}
+},
+"Gameplay ring (miss) Comp 1_00012.png":
+{
+	"frame": {"x":1080,"y":0,"w":163,"h":162},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":878,"y":423,"w":163,"h":162},
+	"sourceSize": {"w":163,"h":162}
+},
+"Gameplay ring (miss) Comp 1_00013.png":
+{
+	"frame": {"x":1243,"y":0,"w":171,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":874,"y":419,"w":171,"h":170},
+	"sourceSize": {"w":171,"h":170}
+},
+"Gameplay ring (miss) Comp 1_00014.png":
+{
+	"frame": {"x":1414,"y":0,"w":179,"h":179},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":870,"y":414,"w":179,"h":179},
+	"sourceSize": {"w":179,"h":179}
+},
+"Gameplay ring (miss) Comp 1_00015.png":
+{
+	"frame": {"x":1593,"y":0,"w":187,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":866,"y":411,"w":187,"h":186},
+	"sourceSize": {"w":187,"h":186}
+},
+"Gameplay ring (miss) Comp 1_00016.png":
+{
+	"frame": {"x":1780,"y":0,"w":193,"h":194},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":863,"y":407,"w":193,"h":194},
+	"sourceSize": {"w":193,"h":194}
+},
+"Gameplay ring (miss) Comp 1_00017.png":
+{
+	"frame": {"x":0,"y":194,"w":201,"h":201},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":859,"y":403,"w":201,"h":201},
+	"sourceSize": {"w":201,"h":201}
+},
+"Gameplay ring (miss) Comp 1_00018.png":
+{
+	"frame": {"x":201,"y":194,"w":209,"h":209},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":855,"y":399,"w":209,"h":209},
+	"sourceSize": {"w":209,"h":209}
+},
+"Gameplay ring (miss) Comp 1_00019.png":
+{
+	"frame": {"x":410,"y":194,"w":217,"h":217},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":851,"y":395,"w":217,"h":217},
+	"sourceSize": {"w":217,"h":217}
+},
+"Gameplay ring (miss) Comp 1_00020.png":
+{
+	"frame": {"x":627,"y":194,"w":224,"h":225},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":847,"y":391,"w":224,"h":225},
+	"sourceSize": {"w":224,"h":225}
+},
+"Gameplay ring (miss) Comp 1_00021.png":
+{
+	"frame": {"x":851,"y":194,"w":231,"h":232},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":844,"y":387,"w":231,"h":232},
+	"sourceSize": {"w":231,"h":232}
+},
+"Gameplay ring (miss) Comp 1_00022.png":
+{
+	"frame": {"x":1082,"y":194,"w":239,"h":239},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":840,"y":384,"w":239,"h":239},
+	"sourceSize": {"w":239,"h":239}
+},
+"Gameplay ring (miss) Comp 1_00023.png":
+{
+	"frame": {"x":1321,"y":194,"w":246,"h":246},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":836,"y":380,"w":246,"h":246},
+	"sourceSize": {"w":246,"h":246}
+},
+"Gameplay ring (miss) Comp 1_00024.png":
+{
+	"frame": {"x":1567,"y":194,"w":253,"h":254},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":833,"y":376,"w":253,"h":254},
+	"sourceSize": {"w":253,"h":254}
+},
+"Gameplay ring (miss) Comp 1_00025.png":
+{
+	"frame": {"x":0,"y":448,"w":260,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":829,"y":373,"w":260,"h":260},
+	"sourceSize": {"w":260,"h":260}
+},
+"Gameplay ring (miss) Comp 1_00026.png":
+{
+	"frame": {"x":260,"y":448,"w":266,"h":267},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":826,"y":369,"w":266,"h":267},
+	"sourceSize": {"w":266,"h":267}
+},
+"Gameplay ring (miss) Comp 1_00027.png":
+{
+	"frame": {"x":526,"y":448,"w":273,"h":273},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":823,"y":366,"w":273,"h":273},
+	"sourceSize": {"w":273,"h":273}
+},
+"Gameplay ring (miss) Comp 1_00028.png":
+{
+	"frame": {"x":799,"y":448,"w":280,"h":280},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":819,"y":363,"w":280,"h":280},
+	"sourceSize": {"w":280,"h":280}
+},
+"Gameplay ring (miss) Comp 1_00029.png":
+{
+	"frame": {"x":1079,"y":448,"w":286,"h":287},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":816,"y":359,"w":286,"h":287},
+	"sourceSize": {"w":286,"h":287}
+},
+"Gameplay ring (miss) Comp 1_00030.png":
+{
+	"frame": {"x":1365,"y":448,"w":292,"h":293},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":813,"y":356,"w":292,"h":293},
+	"sourceSize": {"w":292,"h":293}
+},
+"Gameplay ring (miss) Comp 1_00031.png":
+{
+	"frame": {"x":1657,"y":448,"w":300,"h":299},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":809,"y":353,"w":300,"h":299},
+	"sourceSize": {"w":300,"h":299}
+},
+"Gameplay ring (miss) Comp 1_00032.png":
+{
+	"frame": {"x":0,"y":747,"w":306,"h":306},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":806,"y":349,"w":306,"h":306},
+	"sourceSize": {"w":306,"h":306}
+},
+"Gameplay ring (miss) Comp 1_00033.png":
+{
+	"frame": {"x":306,"y":747,"w":312,"h":312},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":803,"y":346,"w":312,"h":312},
+	"sourceSize": {"w":312,"h":312}
+},
+"Gameplay ring (miss) Comp 1_00034.png":
+{
+	"frame": {"x":618,"y":747,"w":318,"h":318},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":800,"y":343,"w":318,"h":318},
+	"sourceSize": {"w":318,"h":318}
+},
+"Gameplay ring (miss) Comp 1_00035.png":
+{
+	"frame": {"x":936,"y":747,"w":324,"h":324},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":797,"y":340,"w":324,"h":324},
+	"sourceSize": {"w":324,"h":324}
+},
+"Gameplay ring (miss) Comp 1_00036.png":
+{
+	"frame": {"x":1260,"y":747,"w":330,"h":330},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":794,"y":337,"w":330,"h":330},
+	"sourceSize": {"w":330,"h":330}
+},
+"Gameplay ring (miss) Comp 1_00037.png":
+{
+	"frame": {"x":1590,"y":747,"w":337,"h":337},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":790,"y":333,"w":337,"h":337},
+	"sourceSize": {"w":337,"h":337}
+},
+"Gameplay ring (miss) Comp 1_00038.png":
+{
+	"frame": {"x":0,"y":1084,"w":343,"h":343},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":787,"y":330,"w":343,"h":343},
+	"sourceSize": {"w":343,"h":343}
+},
+"Gameplay ring (miss) Comp 1_00039.png":
+{
+	"frame": {"x":343,"y":1084,"w":349,"h":349},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":784,"y":327,"w":349,"h":349},
+	"sourceSize": {"w":349,"h":349}
+},
+"Gameplay ring (miss) Comp 1_00040.png":
+{
+	"frame": {"x":692,"y":1084,"w":355,"h":355},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":781,"y":324,"w":355,"h":355},
+	"sourceSize": {"w":355,"h":355}
+},
+"Gameplay ring (miss) Comp 1_00041.png":
+{
+	"frame": {"x":1047,"y":1084,"w":361,"h":361},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":778,"y":321,"w":361,"h":361},
+	"sourceSize": {"w":361,"h":361}
+},
+"Gameplay ring (miss) Comp 1_00042.png":
+{
+	"frame": {"x":1408,"y":1084,"w":367,"h":367},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":775,"y":318,"w":367,"h":367},
+	"sourceSize": {"w":367,"h":367}
+},
+"Gameplay ring (miss) Comp 1_00043.png":
+{
+	"frame": {"x":0,"y":1451,"w":373,"h":373},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":772,"y":315,"w":373,"h":373},
+	"sourceSize": {"w":373,"h":373}
+},
+"Gameplay ring (miss) Comp 1_00044.png":
+{
+	"frame": {"x":373,"y":1451,"w":379,"h":379},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":769,"y":312,"w":379,"h":379},
+	"sourceSize": {"w":379,"h":379}
+},
+"Gameplay ring (miss) Comp 1_00045.png":
+{
+	"frame": {"x":752,"y":1451,"w":385,"h":385},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":766,"y":309,"w":385,"h":385},
+	"sourceSize": {"w":385,"h":385}
+},
+"Gameplay ring (miss) Comp 1_00046.png":
+{
+	"frame": {"x":1137,"y":1451,"w":391,"h":390},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":763,"y":306,"w":391,"h":390},
+	"sourceSize": {"w":391,"h":390}
+},
+"Gameplay ring (miss) Comp 1_00047.png":
+{
+	"frame": {"x":1528,"y":1451,"w":397,"h":396},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":760,"y":303,"w":397,"h":396},
+	"sourceSize": {"w":397,"h":396}
+},
+"Gameplay ring (miss) Comp 1_00101.png":
+{
+	"frame": {"x":78,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00102.png":
+{
+	"frame": {"x":99,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00103.png":
+{
+	"frame": {"x":102,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00104.png":
+{
+	"frame": {"x":111,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00105.png":
+{
+	"frame": {"x":108,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00106.png":
+{
+	"frame": {"x":90,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00107.png":
+{
+	"frame": {"x":96,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00108.png":
+{
+	"frame": {"x":87,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00109.png":
+{
+	"frame": {"x":105,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00110.png":
+{
+	"frame": {"x":57,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00111.png":
+{
+	"frame": {"x":75,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00112.png":
+{
+	"frame": {"x":81,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00113.png":
+{
+	"frame": {"x":72,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00114.png":
+{
+	"frame": {"x":69,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00115.png":
+{
+	"frame": {"x":66,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00116.png":
+{
+	"frame": {"x":84,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00117.png":
+{
+	"frame": {"x":60,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00118.png":
+{
+	"frame": {"x":93,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00119.png":
+{
+	"frame": {"x":15,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00120.png":
+{
+	"frame": {"x":27,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00121.png":
+{
+	"frame": {"x":45,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00122.png":
+{
+	"frame": {"x":24,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00123.png":
+{
+	"frame": {"x":51,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00124.png":
+{
+	"frame": {"x":48,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00125.png":
+{
+	"frame": {"x":39,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00126.png":
+{
+	"frame": {"x":30,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00127.png":
+{
+	"frame": {"x":42,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00128.png":
+{
+	"frame": {"x":0,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00129.png":
+{
+	"frame": {"x":3,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00130.png":
+{
+	"frame": {"x":63,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00131.png":
+{
+	"frame": {"x":6,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00132.png":
+{
+	"frame": {"x":54,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00133.png":
+{
+	"frame": {"x":21,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00134.png":
+{
+	"frame": {"x":12,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00135.png":
+{
+	"frame": {"x":9,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00136.png":
+{
+	"frame": {"x":18,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+},
+"Gameplay ring (miss) Comp 1_00137.png":
+{
+	"frame": {"x":36,"y":0,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":3,"h":3}
+}},
+"animations": {
+	"Gameplay ring (miss) Comp 1": ["Gameplay ring (miss) Comp 1_00000.png","Gameplay ring (miss) Comp 1_00001.png","Gameplay ring (miss) Comp 1_00002.png","Gameplay ring (miss) Comp 1_00003.png","Gameplay ring (miss) Comp 1_00004.png","Gameplay ring (miss) Comp 1_00005.png","Gameplay ring (miss) Comp 1_00006.png","Gameplay ring (miss) Comp 1_00007.png","Gameplay ring (miss) Comp 1_00008.png","Gameplay ring (miss) Comp 1_00009.png","Gameplay ring (miss) Comp 1_00010.png","Gameplay ring (miss) Comp 1_00011.png","Gameplay ring (miss) Comp 1_00012.png","Gameplay ring (miss) Comp 1_00013.png","Gameplay ring (miss) Comp 1_00014.png","Gameplay ring (miss) Comp 1_00015.png","Gameplay ring (miss) Comp 1_00016.png","Gameplay ring (miss) Comp 1_00017.png","Gameplay ring (miss) Comp 1_00018.png","Gameplay ring (miss) Comp 1_00019.png","Gameplay ring (miss) Comp 1_00020.png","Gameplay ring (miss) Comp 1_00021.png","Gameplay ring (miss) Comp 1_00022.png","Gameplay ring (miss) Comp 1_00023.png","Gameplay ring (miss) Comp 1_00024.png","Gameplay ring (miss) Comp 1_00025.png","Gameplay ring (miss) Comp 1_00026.png","Gameplay ring (miss) Comp 1_00027.png","Gameplay ring (miss) Comp 1_00028.png","Gameplay ring (miss) Comp 1_00029.png","Gameplay ring (miss) Comp 1_00030.png","Gameplay ring (miss) Comp 1_00031.png","Gameplay ring (miss) Comp 1_00032.png","Gameplay ring (miss) Comp 1_00033.png","Gameplay ring (miss) Comp 1_00034.png","Gameplay ring (miss) Comp 1_00035.png","Gameplay ring (miss) Comp 1_00036.png","Gameplay ring (miss) Comp 1_00037.png","Gameplay ring (miss) Comp 1_00038.png","Gameplay ring (miss) Comp 1_00039.png","Gameplay ring (miss) Comp 1_00040.png","Gameplay ring (miss) Comp 1_00041.png","Gameplay ring (miss) Comp 1_00042.png","Gameplay ring (miss) Comp 1_00043.png","Gameplay ring (miss) Comp 1_00044.png","Gameplay ring (miss) Comp 1_00045.png","Gameplay ring (miss) Comp 1_00046.png","Gameplay ring (miss) Comp 1_00047.png","Gameplay ring (miss) Comp 1_00101.png","Gameplay ring (miss) Comp 1_00102.png","Gameplay ring (miss) Comp 1_00103.png","Gameplay ring (miss) Comp 1_00104.png","Gameplay ring (miss) Comp 1_00105.png","Gameplay ring (miss) Comp 1_00106.png","Gameplay ring (miss) Comp 1_00107.png","Gameplay ring (miss) Comp 1_00108.png","Gameplay ring (miss) Comp 1_00109.png","Gameplay ring (miss) Comp 1_00110.png","Gameplay ring (miss) Comp 1_00111.png","Gameplay ring (miss) Comp 1_00112.png","Gameplay ring (miss) Comp 1_00113.png","Gameplay ring (miss) Comp 1_00114.png","Gameplay ring (miss) Comp 1_00115.png","Gameplay ring (miss) Comp 1_00116.png","Gameplay ring (miss) Comp 1_00117.png","Gameplay ring (miss) Comp 1_00118.png","Gameplay ring (miss) Comp 1_00119.png","Gameplay ring (miss) Comp 1_00120.png","Gameplay ring (miss) Comp 1_00121.png","Gameplay ring (miss) Comp 1_00122.png","Gameplay ring (miss) Comp 1_00123.png","Gameplay ring (miss) Comp 1_00124.png","Gameplay ring (miss) Comp 1_00125.png","Gameplay ring (miss) Comp 1_00126.png","Gameplay ring (miss) Comp 1_00127.png","Gameplay ring (miss) Comp 1_00128.png","Gameplay ring (miss) Comp 1_00129.png","Gameplay ring (miss) Comp 1_00130.png","Gameplay ring (miss) Comp 1_00131.png","Gameplay ring (miss) Comp 1_00132.png","Gameplay ring (miss) Comp 1_00133.png","Gameplay ring (miss) Comp 1_00134.png","Gameplay ring (miss) Comp 1_00135.png","Gameplay ring (miss) Comp 1_00136.png","Gameplay ring (miss) Comp 1_00137.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "notering-0.png",
+	"format": "RGBA8888",
+	"size": {"w":1973,"h":1847},
+	"scale": "1",
+	"related_multi_packs": [ "notering-1.json", "notering-2.json", "notering-3.json", "notering-4.json", "notering-5.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:87c6f43e27776723334cb8ae812abc72:c38999e7731e304443f4793392af4603:4b47d6ae7f5b85d9ca57d90ac16b6c79$"
+}
+}
