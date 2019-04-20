@@ -146,13 +146,8 @@ function setup() {
 function update(delta){
   renderer.render(app.stage);
 
-  if(started) {
-		videoO = window.getComputedStyle(video);
-		console.log("Video Opacity: "+videoO.getPropertyValue('opacity'));
-    // if(video.style.opacity <= 1) {
-    //   video.style.opacity = videoOpacity;
-    //   videoOpacity += 0.01;
-    // }
+  if(gameState === GAME_STATE.TUTORIAL || gameState === GAME_STATE.GAME) {
+
     conductor.draw();
   }
 };
@@ -189,7 +184,7 @@ class Conductor {
 
 // fades video and updates game state
 a.press = () => {
-  if(gameState = GAME_STATE.MENU) {
+  if(gameState === GAME_STATE.MENU) {
     let setOpacity = 1;
     let timer = setInterval(() => {
       if(setOpacity <= 0) {
