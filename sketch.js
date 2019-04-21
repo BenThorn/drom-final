@@ -156,47 +156,88 @@ class Conductor {
   constructor() {
     this.graphics = new PIXI.Graphics();
     app.stage.addChild(this.graphics);
+    this.noteMgrOrange = new NoteManager(300, "Assets/Images/Outer_Orange.png", this.graphics);
+    this.noteMgrGreen = new NoteManager(700, "Assets/Images/Outer_Green.png", this.graphics);
+    this.noteMgrPink = new NoteManager(1100, "Assets/Images/Outer_Pink.png", this.graphics);
 
-    this.started = false;
+    this.managers = [this.noteMgrOrange, this.noteMgrGreen, this.noteMgrPink];
+  }
+
+  tutorialStart() {
+
   }
 
   start() {
-    if(!this.started) {
-		this.noteMgrOrange = new NoteManager(300, "Assets/Images/Outer_Orange.png", this.graphics);
-    this.noteMgrGreen = new NoteManager(700, "Assets/Images/Outer_Green.png", this.graphics);
-    this.noteMgrPink = new NoteManager(1100, "Assets/Images/Outer_Pink.png", this.graphics);
-      this.started = true;
-      this.noteMgrOrange.start();
-      this.noteMgrGreen.start();
-      this.noteMgrPink.start();
-    }
+    this.started = true;
+    this.noteMgrOrange.start();
+    this.noteMgrGreen.start();
+    this.noteMgrPink.start();
   }
 
   draw() {
-    if(this.started) {
-      this.graphics.clear();
-      this.noteMgrOrange.draw();
-      this.noteMgrGreen.draw();
-      this.noteMgrPink.draw();
-    }
+    this.graphics.clear();
+    this.noteMgrOrange.draw();
+    this.noteMgrGreen.draw();
+    this.noteMgrPink.draw();
   }
 }
 
-// fades video and updates game state
+// for changing and transitioning between states
 a.press = () => {
+  console.log(GAME_STATE[gameState]);
   if(gameState === GAME_STATE.MENU) {
     let setOpacity = 1;
     let timer = setInterval(() => {
       if(setOpacity <= 0) {
         clearInterval(timer);
+        video.volume = 0;
         video.style.display = 'none';
+        menu.style.display = 'none';
+        beginTutorial();
+      } else {
+        video.style.opacity = setOpacity;
+        video.volume = setOpacity;
+        menu.style.opacity = setOpacity;
+        setOpacity -= 0.008;
       }
-      video.style.opacity = setOpacity;
-      menu.style.opacity = setOpacity;
-      setOpacity -= 0.01;
     }, 15);
-    gameState = GAME_STATE.TUTORIAL;
+  } else if(gameState === GAME_STATE.TUTORIAL) {
+    video.style.display = 'initial';
+    let setOpacity = 0;
+    let timer = setInterval(() => {
+      if(setOpacity >= 1) {
+        clearInterval(timer);
+        video.volume = 1;
+        video.style.opacity = 1;
+        beginGame();
+      } else if(setOpacity < 1) {
+        video.style.opacity = setOpacity;
+        video.volume = setOpacity;
+        setOpacity += 0.008;
+      }
+    }, 15);
   }
+};
+
+const beginTutorial = () => {
+  gameState = GAME_STATE.TUTORIAL;
+
+  let timer = setInterval(() => {
+    clearInterval(timer);
+    conductor.managers.forEach((m) => {
+      if(m.playLine.opacity > 0.75) {
+        m.playLine.opacity = 0.75;
+      } else {
+        m.playLine.opacity += 0.008;
+      }
+
+    });
+  }, 15);
+};
+
+const beginGame = () => {
+  gameState = GAME_STATE.GAME;
+
 
 };
 
@@ -261,7 +302,7 @@ f.press = () => {
 
 class NoteManager {
   constructor(x, imgStr, gfx) {
-    this.staff = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+    this.staff = [1, 1];
     this.notes = [];
     this.x = x;
 
@@ -310,7 +351,7 @@ class NoteManager {
 class PlayLine {
   constructor(imgStr, x, notes) {
     this.glowing = false;
-    this.opacity = 0.9;
+    this.opacity = 0;
 
     this.playLineImg = new PIXI.Sprite(PIXI.loader.resources[imgStr].texture);
   
@@ -328,7 +369,7 @@ class PlayLine {
   }
 
   draw() {
-    if(this.glowing || this.opacity > 0.9) {
+    if(this.glowing || this.opacity > 0.75) {
       this.opacity -= 0.02  ;
     }
 
