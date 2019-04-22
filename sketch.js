@@ -70,6 +70,7 @@ PIXI.sound.Sound.from({
 PIXI.sound.add('drum', 'Assets/Sound/drum_1.wav');
 PIXI.sound.add('fail', 'Assets/Sound/fail.wav');
 PIXI.sound.add('test', 'Assets/Sound/drom_loop.mp3');
+PIXI.sound.add('song', 'Assets/Sound/Main_Theme_Var_1.mp3');
 
 //------------------------------------------------------------
 //----------------------------End Setup-----------------------
@@ -156,48 +157,92 @@ class Conductor {
   constructor() {
     this.graphics = new PIXI.Graphics();
     app.stage.addChild(this.graphics);
+    this.noteMgrOrange = new NoteManager(window.screen.width/4, "Assets/Images/Outer_Orange.png", this.graphics);
+    this.noteMgrGreen = new NoteManager(window.screen.width/2, "Assets/Images/Outer_Green.png", this.graphics);
+    this.noteMgrPink = new NoteManager(3*window.screen.width/4, "Assets/Images/Outer_Pink.png", this.graphics);
 
-    this.started = false;
+    this.managers = [this.noteMgrOrange, this.noteMgrGreen, this.noteMgrPink];
+  }
+
+  tutorialStart() {
+
   }
 
   start() {
-    if(!this.started) {
-		this.noteMgrOrange = new NoteManager(300, "Assets/Images/Outer_Orange.png", this.graphics);
-    this.noteMgrGreen = new NoteManager(700, "Assets/Images/Outer_Green.png", this.graphics);
-    this.noteMgrPink = new NoteManager(1100, "Assets/Images/Outer_Pink.png", this.graphics);
-      this.started = true;
-      this.noteMgrOrange.start();
-      this.noteMgrGreen.start();
-      this.noteMgrPink.start();
-    }
+    this.started = true;
+    this.noteMgrOrange.start();
+    this.noteMgrGreen.start();
+    this.noteMgrPink.start();
   }
 
   draw() {
-    if(this.started) {
-      this.graphics.clear();
-      this.noteMgrOrange.draw();
-      this.noteMgrGreen.draw();
-      this.noteMgrPink.draw();
-    }
+    this.graphics.clear();
+    this.noteMgrOrange.draw();
+    this.noteMgrGreen.draw();
+    this.noteMgrPink.draw();
   }
 }
 
-// fades video and updates game state
+// for changing and transitioning between states
 a.press = () => {
+  console.log(gameState);
   if(gameState === GAME_STATE.MENU) {
     let setOpacity = 1;
     let timer = setInterval(() => {
       if(setOpacity <= 0) {
         clearInterval(timer);
+        video.volume = 0;
         video.style.display = 'none';
+        video.currentTime = 0;
+        menu.style.display = 'none';
+        video.pause();
+        beginTutorial();
+      } else {
+        video.style.opacity = setOpacity;
+        video.volume = setOpacity;
+        menu.style.opacity = setOpacity;
+        setOpacity -= 0.008;
       }
-      video.style.opacity = setOpacity;
-      menu.style.opacity = setOpacity;
-      setOpacity -= 0.01;
     }, 15);
-    gameState = GAME_STATE.TUTORIAL;
+  } else if(gameState === GAME_STATE.TUTORIAL) {
+    video.style.display = 'initial';
+    let setOpacity = 0;
+    let timer = setInterval(() => {
+      if(setOpacity >= 1) {
+        clearInterval(timer);
+        video.volume = 1;
+        video.style.opacity = 1;
+        beginGame();
+      } else if(setOpacity < 1) {
+        video.style.opacity = setOpacity;
+        video.volume = setOpacity;
+        setOpacity += 0.008;
+      }
+    }, 15);
   }
+};
 
+const beginTutorial = () => {
+  gameState = GAME_STATE.TUTORIAL;
+
+  let timer = setInterval(() => {
+    conductor.managers.forEach((m) => {
+      if(m.playLine.opacity > 0.75) {
+        clearInterval(timer);
+        m.playLine.opacity = 0.75;
+      } else {
+        m.playLine.opacity += 0.008;
+      }
+
+    });
+  }, 15);
+};
+
+const beginGame = () => {
+  gameState = GAME_STATE.GAME;
+  video.play();
+
+  conductor.start();
 };
 
 spaceButton.press = () => {
@@ -261,7 +306,7 @@ f.press = () => {
 
 class NoteManager {
   constructor(x, imgStr, gfx) {
-    this.staff = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+    this.staff = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
     this.notes = [];
     this.x = x;
 
@@ -285,14 +330,38 @@ class NoteManager {
   }
 
   keepTime = (e) => {
-    const t0 = e.playbackTime + this.offset;
+    const t0 = e.playbackTime;
 
     let measure = 0.000;
  
     sched.insert(t0 + 0.000, this.createNote);
-    sched.insert(t0 + 0.500, this.createNote);
-    sched.insert(t0 + 1.000, this.createNote);
-    sched.insert(t0 + 2.000, this.keepTime);
+
+    sched.insert(t0 + 2.000, this.createNote);
+
+    sched.insert(t0 + 4.000, this.createNote);
+
+    sched.insert(t0 + 6.000, this.createNote);
+    sched.insert(t0 + 6.250, this.createNote);
+    sched.insert(t0 + 6.500, this.createNote);
+    sched.insert(t0 + 6.750, this.createNote);
+
+    sched.insert(t0 + 8.000, this.createNote);
+    sched.insert(t0 + 8.500, this.createNote);
+    sched.insert(t0 + 9.000, this.createNote);
+    sched.insert(t0 + 9.500, this.createNote);
+
+    sched.insert(t0 + 10.000, this.createNote);
+    sched.insert(t0 + 10.250, this.createNote);
+    sched.insert(t0 + 10.500, this.createNote);
+    sched.insert(t0 + 10.750, this.createNote);
+
+    sched.insert(t0 + 12.000, this.createNote);
+    sched.insert(t0 + 12.500, this.createNote);
+    sched.insert(t0 + 13.000, this.createNote);
+    sched.insert(t0 + 13.500, this.createNote);
+
+
+  //  sched.insert(t0 + 2.000, this.keepTime);
 
     this.offset = 0;
   }
@@ -310,7 +379,7 @@ class NoteManager {
 class PlayLine {
   constructor(imgStr, x, notes) {
     this.glowing = false;
-    this.opacity = 0.9;
+    this.opacity = 0;
 
     this.playLineImg = new PIXI.Sprite(PIXI.loader.resources[imgStr].texture);
   
@@ -328,7 +397,7 @@ class PlayLine {
   }
 
   draw() {
-    if(this.glowing || this.opacity > 0.9) {
+    if(this.glowing || this.opacity > 0.75) {
       this.opacity -= 0.02  ;
     }
 
@@ -386,11 +455,6 @@ class Note {
 
     this.animation = new PIXI.extras.AnimatedSprite(noteFrames);
   
-    /*
-     * A MovieClip inherits all the properties of a PIXI sprite
-     * so you can change its position, its anchor, mask it, etc
-     */
-  
     this.animation.position.set(this.x, this.y);
 
     this.animation.anchor.set(0.5);
@@ -401,41 +465,49 @@ class Note {
     app.stage.addChild(this.animation);
 
     this.animation.play();
-
-    this.animation.onComplete = () => {
-      PIXI.sound.play('drum');
-      if(!going) {
-        sched.start(metronome);
-      }
-    };
   }
 
   draw(){
     if(this.active) {
       // Clear and redraw circle
 
-      this.radius += this.rate;
-      if(this.radius > 180) {
-        this.fade();
-        this.opacity -= 0.05;
-      }
+      if(this.animation.currentFrame === 70) {
+        PIXI.sound.play('drum');
 
-      if(this.radius > 205) {
-        this.active = false;
-      }
-
-      if(this.radius > 160 && this.radius < 187) {
-        if(!this.played) {
-          this.play();
-          this.played = true;
+        if(!going) {
+ //         PIXI.sound.play('song');
+          going = true;
         }
+      }
+
+      if(this.animation.currentFrame >= 60 && this.animation.currentFrame <= 80) {
         this.chance = true;
       } else {
         this.chance = false;
       }
-      if(this.radius > 300) {
-        this.fade();
-      }
+
+      // this.radius += this.rate;
+      // if(this.radius > 180) {
+      //   this.fade();
+      //   this.opacity -= 0.05;
+      // }
+
+      // if(this.radius > 205) {
+      //   this.active = false;
+      // }
+
+      // if(this.radius > 160 && this.radius < 187) {
+      //   if(!this.played) {
+      //     this.play();
+      //     this.played = true;
+      //   }
+      //   this.chance = true;
+      // } else {
+      //   this.chance = false;
+      // }
+      // if(this.radius > 300) {
+      //   this.fade();
+      // }
     }
   }
 
@@ -449,7 +521,8 @@ class Note {
   }
 
   hit() {
-    this.circle.clear();
+    console.log('hitto');
+    this.animation.visible = false;
     this.active = false;
     this.chance = false;
   }
