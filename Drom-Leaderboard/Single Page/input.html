@@ -34,13 +34,22 @@
 
             //make a get request to the server with form data
             var xhr = new XMLHttpRequest();
+          
+            //variables to hold incoming data
+            let team = e.target.querySelector("#team").value;
+            let score = e.target.querySelector("#score").value;
+            let streak = e.target.querySelector("#streak").value;
+            
+            //Turns incoming data into something POST request can use
+            const formData=`team=${team}&score=${score}&streak=${streak}`;
 
             //grab the form's action and method
             const nameAction = e.target.getAttribute('action');
             const nameMethod = e.target.getAttribute('method');
 
+          
             //start the request
-            xhr.open(nameMethod, nameAction);
+            xhr.open(nameMethod, nameAction );
 
             //informing the server of the type of incoming data
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -49,14 +58,6 @@
 
             //What do to with the info that comes back from server
             xhr.onload = () => handleResponse(xhr);
-
-            //variables to hold incoming data
-            let team = e.target.querySelector("#team").value;
-            let score = e.target.querySelector("#score").value;
-            let streak = e.target.querySelector("#streak").value;
-            
-            //Turns incoming data into something POST request can use
-            const formData=`team=${team}&score=${score}&streak=${streak}`;
             
             xhr.send(formData);
             
@@ -70,6 +71,8 @@
             
             form.addEventListener("submit", callSendData);
         }
+        
+        window.onload = init;
     </script>
     <meta charset="UTF-8" />
 </head>
