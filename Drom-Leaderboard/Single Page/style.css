@@ -1,0 +1,65 @@
+*{
+    font-family: 'Futura';
+    font-weight: bold;
+    background-image: url("Assets/Background.png");
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+h2,h3{
+    
+    text-align: center;
+    display: inline-block
+}
+
+h2{
+    
+}
+
+#teamLabel{
+    text-align: center;
+    margin-right: 20%;
+    margin-left: 40%;
+}
+
+h3{
+    margin-left: 5%;
+}
+
+.data{
+    margin-bottom: 5%;
+}
+
+.number{
+    display: inline-block;
+    margin-left: 15%;
+    width: 20px;
+}
+
+.teamName{
+    display: inline;
+    margin-left: 25%;
+    width: 50%;
+}
+
+.teamScore{
+    display: inline;
+    text-align: center;
+    margin-left: 23%;
+}
+
+.teamStreak{
+    display: inline;
+    margin-left: 9%;
+    text-align: center;
+}
+
+form{
+    text-align: center;
+    margin-left: auto;
+    display: inline-block;
+    font-size: 40px;
+}

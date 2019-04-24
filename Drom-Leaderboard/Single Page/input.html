@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <title>Highscore Input</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        //function to handle our response
+        const handleResponse = (xhr) => {
+            const content = document.querySelector('#content');
+
+            //check the status code
+            switch (xhr.status) {
+                case 200: //success
+                    content.innerHTML = `<b>Success</b>`;
+                    break;
+                case 201: //created
+                    content.innerHTML = '<b>Create</b>';
+                    break;
+                case 204: //updated (no response back from server)
+                    content.innerHTML = '<b>Updated (No Content)</b>';
+                    return;
+                case 400: //bad request
+                    content.innerHTML = `<b>Bad Request</b>`;
+                    break;
+                default: //any other status code
+                    content.innerHTML = `Error code not implemented by client.`;
+                    break;
+            }
+        };
+
+        const sendData = function(e) {
+            //stops the form from refreshing
+            e.preventDefault();
+
+            //make a get request to the server with form data
+            var xhr = new XMLHttpRequest();
+
+            //grab the form's action and method
+            const nameAction = e.target.getAttribute('action');
+            const nameMethod = e.target.getAttribute('method');
+
+            //start the request
+            xhr.open(nameMethod, nameAction);
+
+            //informing the server of the type of incoming data
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            //Makes it so that json is the only thing accepted back from the server
+            xhr.setRequestHeader('Accept', 'application/json');
+
+            //What do to with the info that comes back from server
+            xhr.onload = () => handleResponse(xhr);
+
+            //variables to hold incoming data
+            let team = e.target.querySelector("#team").value;
+            let score = e.target.querySelector("#score").value;
+            let streak = e.target.querySelector("#streak").value;
+            
+            //Turns incoming data into something POST request can use
+            const formData=`team=${team}&score=${score}&streak=${streak}`;
+            
+            xhr.send(formData);
+            
+            return false;
+        }
+        
+        const init = function(){
+            var form = document.querySelector("form");
+            
+            var callSendData = (e) => sendData(e);
+            
+            form.addEventListener("submit", callSendData);
+        }
+    </script>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <h1>Record Team</h1>
+    <form action="/setScores" method="post">
+        Team Name: <input type="text" id="team" placeholder="Team Name" />
+        Score: <input type="number" id="score" placeholder="Team Score" />
+        Streak: <input type="number" id="streak" placeholder="Streak" />
+        <input id="btn" type="submit" value="Rank" />
+    </form>
+
+    <p id="content">Did it work?</p>
+
+</body></html>
