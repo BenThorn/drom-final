@@ -7,25 +7,24 @@ let scoreModel = {};
 // mongoose.Types.ObjectID is a function that
 // converts string ID to real mongo ID
 const convertId = mongoose.Types.ObjectId;
-const setName = (name) => _.escape(name).trim();
+const setTeam = (team) => _.escape(team).trim();
 
 const scoreSchema = new mongoose.Schema({
-  name: {
+  team: {
     type: String,
     required: true,
-    trime: true,
-    set: setName,
+    trim: true,
+    set: setTeam,
   },
-  age: {
+  score: {
     type: Number,
     min: 0,
     required: true,
   },
-  level: {
+  streak: {
     type: Number,
-    min: 1,
+    min: 0,
     required: true,
-    default: 1,
   },
   owner: {
     type: mongoose.Schema.ObjectId,
