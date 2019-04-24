@@ -1,0 +1,72 @@
+{"frames": {
+
+"Purple_Ring_Explosion_Comp 1_00002.png":
+{
+	"frame": {"x":1597,"y":451,"w":408,"h":407},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":754,"y":296,"w":408,"h":407},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Purple_Ring_Explosion_Comp 1_00003.png":
+{
+	"frame": {"x":1597,"y":1,"w":448,"h":447},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":734,"y":276,"w":448,"h":447},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Purple_Ring_Explosion_Comp 1_00004.png":
+{
+	"frame": {"x":1556,"y":860,"w":470,"h":470},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":723,"y":264,"w":470,"h":470},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Purple_Ring_Explosion_Comp 1_00028.png":
+{
+	"frame": {"x":780,"y":801,"w":774,"h":775},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":571,"y":111,"w":774,"h":775},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Purple_Ring_Explosion_Comp 1_00029.png":
+{
+	"frame": {"x":801,"y":1,"w":794,"h":795},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":561,"y":101,"w":794,"h":795},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Purple_Ring_Explosion_Comp 1_00046.png":
+{
+	"frame": {"x":1,"y":1,"w":798,"h":798},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":559,"y":99,"w":798,"h":798},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Purple_Ring_Explosion_Comp 1_00047.png":
+{
+	"frame": {"x":1,"y":801,"w":777,"h":777},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":569,"y":110,"w":777,"h":777},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"animations": {
+	"Purple_Ring_Explosion_Comp 1": ["Purple_Ring_Explosion_Comp 1_00002.png","Purple_Ring_Explosion_Comp 1_00003.png","Purple_Ring_Explosion_Comp 1_00004.png","Purple_Ring_Explosion_Comp 1_00028.png","Purple_Ring_Explosion_Comp 1_00029.png","Purple_Ring_Explosion_Comp 1_00046.png","Purple_Ring_Explosion_Comp 1_00047.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "purple-exp-4.png",
+	"format": "RGBA8888",
+	"size": {"w":2045,"h":1579},
+	"scale": "1",
+	"related_multi_packs": [ "purple-exp-0.json", "purple-exp-1.json", "purple-exp-2.json", "purple-exp-3.json", "purple-exp-5.json", "purple-exp-6.json", "purple-exp-7.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:7afb118953482c1e547282f58e4ddd0d:a76a85662395e86d558ea1a8efa51d39:5282df2b7867b33b59664c9a765334ed$"
+}
+}

@@ -5,6 +5,7 @@
   "main": "arduino.js",
   "dependencies": {
     "johnny-five": "^1.0.0",
+    "pixi-particles": "^4.1.0",
     "pixi-smoothie": "^4.5.3",
     "pixi-sound": "^2.1.0",
     "web-audio-scheduler": "^1.4.0"

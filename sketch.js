@@ -33,6 +33,8 @@ let app = new PIXI.Application({
   }
 );
 
+PIXI.Sprite.prototype.bringToFront = function() {	if (this.parent) {var parent = this.parent;		parent.removeChild(this);		parent.addChild(this);	}}
+
 var width =  window.screen.width;
 var height =  window.screen.height;
 video.width = window.screen.width;
@@ -50,6 +52,7 @@ PIXI.loader
   .add("Assets/Images/Outer_Green.png")
   .add("Assets/Images/Outer_Pink.png")
   .add("Assets/Images/field_static.png")
+  .add("Assets/Images/test.png")
   .add("Assets/Video/Comp_1.mp4")
   .add("Assets/Sprites/notering-0.json")
   .add("Assets/Sprites/notering-1.json")
@@ -57,6 +60,30 @@ PIXI.loader
   .add("Assets/Sprites/notering-3.json")
   .add("Assets/Sprites/notering-4.json")
   .add("Assets/Sprites/notering-5.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-0.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-1.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-2.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-3.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-4.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-5.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-6.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-7.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/orange-exp-0.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/orange-exp-1.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/orange-exp-2.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/orange-exp-3.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/orange-exp-4.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/orange-exp-5.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/orange-exp-6.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/orange-exp-7.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-0.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-1.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-2.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-3.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-4.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-5.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-6.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-7.json")
   .load(setup);
 
 PIXI.sound.Sound.from({
@@ -82,11 +109,15 @@ let noteMgrOrange;
 let noteMgrGreen;
 let noteMgrPink;
 let started = false;
+let actionable = false;
 
 let conductor;
 let videoOpacity = 0;
 
 let noteFrames = []; //for note ring animation
+let greenExpFrames = [];
+let pinkExpFrames = []; 
+let orangeExpFrames = [];
 
 
 //animation for the button to move after press
@@ -117,27 +148,41 @@ function setup() {
       val = '00' + i;
     }
       
-    // magically works since the spritesheet was loaded with the pixi loader
     noteFrames.push(PIXI.Texture.fromFrame('Gameplay ring (miss) Comp 1_00' + val + '.png'));
   }
 
-  var movie = new PIXI.extras.AnimatedSprite(noteFrames);
-  
-  /*
-   * A MovieClip inherits all the properties of a PIXI sprite
-   * so you can change its position, its anchor, mask it, etc
-   */
+  for (var i = 0; i < 54; i++) {
+    let val;
+    if(i >= 100) {
+      val = i;
+    } else if (i < 100 && i >= 10) {
+      val = '0' + i;
+    } else if (i < 10) {
+      val = '00' + i;
+    }
+      
+    greenExpFrames.push(PIXI.Texture.fromFrame('Green_Ring_Explosion_Comp 1_00' + val + '.png'));
+    orangeExpFrames.push(PIXI.Texture.fromFrame('Orange_Ring_Explosion_Comp 1_00' + val + '.png'));
+    pinkExpFrames.push(PIXI.Texture.fromFrame('Purple_Ring_Explosion_Comp 1_00' + val + '.png'));
+  }
 
-  movie.position.set(-1000, -500);
+  // This movie is here because FPS would always tank when the first
+  // animation of the scene is played, for some reason. Getting it out of the way here.
+  var testOne = new PIXI.extras.AnimatedSprite(noteFrames);
+  testOne.position.set(-1000, -500);
+  testOne.animationSpeed = 1;
+  testOne.loop = false;
+  app.stage.addChild(testOne);
+  testOne.play();
 
-  movie.anchor.set(0.5);
-  movie.animationSpeed = 1;
-
-  movie.loop = false;
-
-  app.stage.addChild(movie);
-
-  movie.play();
+  var testTwo = new PIXI.extras.AnimatedSprite(orangeExpFrames);
+  testTwo.position.set(-1000, -500);
+  testTwo.animationSpeed = 1;
+  testTwo.width = .1;
+  testTwo.height = .1;
+  testTwo.loop = false;
+  app.stage.addChild(testTwo);
+  testTwo.play();
 
   conductor = new Conductor();
 
@@ -157,9 +202,9 @@ class Conductor {
   constructor() {
     this.graphics = new PIXI.Graphics();
     app.stage.addChild(this.graphics);
-    this.noteMgrOrange = new NoteManager(window.screen.width/4, "Assets/Images/Outer_Orange.png", this.graphics);
+    this.noteMgrOrange = new NoteManager(window.screen.width/4 - 50, "Assets/Images/Outer_Orange.png", this.graphics);
     this.noteMgrGreen = new NoteManager(window.screen.width/2, "Assets/Images/Outer_Green.png", this.graphics);
-    this.noteMgrPink = new NoteManager(3*window.screen.width/4, "Assets/Images/Outer_Pink.png", this.graphics);
+    this.noteMgrPink = new NoteManager(3*window.screen.width/4 + 50, "Assets/Images/Outer_Pink.png", this.graphics);
 
     this.managers = [this.noteMgrOrange, this.noteMgrGreen, this.noteMgrPink];
   }
@@ -187,12 +232,14 @@ class Conductor {
 a.press = () => {
   console.log(gameState);
   if(gameState === GAME_STATE.MENU) {
+    actionable = false;
     let setOpacity = 1;
     let timer = setInterval(() => {
       if(setOpacity <= 0) {
         clearInterval(timer);
         video.volume = 0;
         video.style.display = 'none';
+        video.src = 'Assets/Video/Full_Particle_Video.mp4'
         video.currentTime = 0;
         menu.style.display = 'none';
         video.pause();
@@ -205,6 +252,7 @@ a.press = () => {
       }
     }, 15);
   } else if(gameState === GAME_STATE.TUTORIAL) {
+    actionable = false;
     video.style.display = 'initial';
     let setOpacity = 0;
     let timer = setInterval(() => {
@@ -230,6 +278,7 @@ const beginTutorial = () => {
       if(m.playLine.opacity > 0.75) {
         clearInterval(timer);
         m.playLine.opacity = 0.75;
+        actionable = true;
       } else {
         m.playLine.opacity += 0.008;
       }
@@ -240,21 +289,27 @@ const beginTutorial = () => {
 
 const beginGame = () => {
   gameState = GAME_STATE.GAME;
-  video.play();
+  actionable = true;
 
   conductor.start();
 };
 
 spaceButton.press = () => {
-  conductor.noteMgrOrange.playLine.play();
+  if(actionable) {
+    conductor.noteMgrOrange.playLine.play();
+  }
 };
 
 v.press = () => {
-  conductor.noteMgrPink.playLine.play();
+  if(actionable) {
+    conductor.noteMgrPink.playLine.play();
+  }
 };
 
 b.press = () => {
-  conductor.noteMgrGreen.playLine.play();
+  if(actionable){
+    conductor.noteMgrGreen.playLine.play();
+  }
 };
 
 s.press = () => {	
@@ -316,6 +371,8 @@ class NoteManager {
 
     this.offset = 0.250;
 
+    this.imgStr = imgStr;
+
   }
 
   start() {
@@ -334,31 +391,71 @@ class NoteManager {
 
     let measure = 0.000;
  
-    sched.insert(t0 + 0.000, this.createNote);
+    // 1
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    measure++;
 
-    sched.insert(t0 + 2.000, this.createNote);
+    // 2
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    measure++;
 
-    sched.insert(t0 + 4.000, this.createNote);
+    // 3
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+    measure++;
 
-    sched.insert(t0 + 6.000, this.createNote);
-    sched.insert(t0 + 6.250, this.createNote);
-    sched.insert(t0 + 6.500, this.createNote);
-    sched.insert(t0 + 6.750, this.createNote);
+    // 4
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+    measure++;
 
-    sched.insert(t0 + 8.000, this.createNote);
-    sched.insert(t0 + 8.500, this.createNote);
-    sched.insert(t0 + 9.000, this.createNote);
-    sched.insert(t0 + 9.500, this.createNote);
+    // 5
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+    measure++;
 
-    sched.insert(t0 + 10.000, this.createNote);
-    sched.insert(t0 + 10.250, this.createNote);
-    sched.insert(t0 + 10.500, this.createNote);
-    sched.insert(t0 + 10.750, this.createNote);
+    // 6
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+    measure++;
 
-    sched.insert(t0 + 12.000, this.createNote);
-    sched.insert(t0 + 12.500, this.createNote);
-    sched.insert(t0 + 13.000, this.createNote);
-    sched.insert(t0 + 13.500, this.createNote);
+    // 7
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+    measure++;
+    
+    // 8
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+    measure++;
+
+    // 9
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+    measure++;
+
+    // 10
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+    measure++;
+
+    // 11
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+    measure++;
+
+    // 12
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+    measure++;
 
 
   //  sched.insert(t0 + 2.000, this.keepTime);
@@ -370,7 +467,7 @@ class NoteManager {
 
     if(this.staff.length > 0) {
       const timeSig = this.staff.shift();
-      const note = new Note(timeSig, this.graphics, this.x);
+      const note = new Note(timeSig, this.graphics, this.x, this.imgStr);
       this.notes.push(note);
     }
   }
@@ -385,10 +482,10 @@ class PlayLine {
   
     app.stage.addChild(this.playLineImg);
 
-    this.playLineImg.width = 400;
-    this.playLineImg.height = 400;
-    this.playLineImg.x = x - 200;
-    this.playLineImg.y = 100;
+    this.playLineImg.width = 300;
+    this.playLineImg.height = 300;
+    this.playLineImg.x = x - 175;
+    this.playLineImg.y = 250;
     this.playLineImg.alpha = this.opacity;
 
     this.x = x;
@@ -397,6 +494,7 @@ class PlayLine {
   }
 
   draw() {
+    this.playLineImg.bringToFront();
     if(this.glowing || this.opacity > 0.75) {
       this.opacity -= 0.02  ;
     }
@@ -443,11 +541,11 @@ class PlayLine {
 let going = false;
 
 class Note {
-  constructor(timeSig, gfx, x) {
+  constructor(timeSig, gfx, x, imgStr) {
     this.radius = 1;
     this.stroke = 5;
-    this.x = x;
-    this.y = 300;
+    this.x = x - 25;
+    this.y = 400;
     this.active = true;
     this.chance = false;
     this.timeSig = timeSig;
@@ -457,6 +555,9 @@ class Note {
   
     this.animation.position.set(this.x, this.y);
 
+    this.animation.width = 2;
+    this.animation.height = 2;
+
     this.animation.anchor.set(0.5);
     this.animation.animationSpeed = 1;
 
@@ -465,49 +566,124 @@ class Note {
     app.stage.addChild(this.animation);
 
     this.animation.play();
+
+    console.log(imgStr);
+    if(imgStr.includes('Orange')){
+      this.explosion = new PIXI.extras.AnimatedSprite(orangeExpFrames);
+    } else if(imgStr.includes('Green')){
+      this.explosion = new PIXI.extras.AnimatedSprite(greenExpFrames);
+    } else if(imgStr.includes('Pink')){
+      this.explosion = new PIXI.extras.AnimatedSprite(pinkExpFrames);      
+    }
+    this.explosion.anchor.set(0.5);
+
+    this.explosion.position.set(this.x, this.y + 35);
+    this.explosion.scale.set(.8, .8);
+
+    this.explosion.animationSpeed = 1;
+
+    this.explosion.loop = false;
+  
+    app.stage.addChild(this.explosion);
+
+    this.testImg = new PIXI.Sprite(PIXI.loader.resources['Assets/Images/test.png'].texture);
+
+    this.testImg.x = 300;
+    this.testImg.y = 200;
+    this.testImg.width = 25;
+    this.testImg.height = 20;
+  
+    this.testImg.alpha = 0;
+  
+    app.stage.addChild(this.testImg);
+
+    this.emitter = new PIXI.particles.Emitter(app.stage, 
+      [PIXI.Texture.fromImage('Assets/Images/particle.png')],
+      {
+        "alpha": {
+            "start": 1,
+            "end": 0
+        },
+        "scale": {
+            "start": 0.18,
+            "end": 0.001,
+            "minimumScaleMultiplier": 1
+        },
+        "color": {
+            "start": "#9fe6fc",
+            "end": "#9fe6fc"
+        },
+        "speed": {
+            "start": 100,
+            "end": 0,
+            "minimumSpeedMultiplier": 0.96
+        },
+        "acceleration": {
+            "x": -3,
+            "y": -3
+        },
+        "maxSpeed": 0,
+        "startRotation": {
+            "min": 0,
+            "max": 360
+        },
+        "noRotation": false,
+        "rotationSpeed": {
+            "min": 0,
+            "max": 0
+        },
+        "lifetime": {
+            "min": 1,
+            "max": 1
+        },
+        "blendMode": "normal",
+        "frequency": 0.009,
+        "emitterLifetime": 0.8,
+        "maxParticles": 25,
+        "pos": {
+            "x": this.x,
+            "y": this.y
+        },
+        "addAtBack": false,
+        "spawnType": "ring",
+        "spawnCircle": {
+            "x": 0,
+            "y": 0,
+            "r": 100,
+            "minR": 100
+        }
+    });
   }
 
   draw(){
     if(this.active) {
-      // Clear and redraw circle
-
       if(this.animation.currentFrame === 70) {
         PIXI.sound.play('drum');
 
         if(!going) {
- //         PIXI.sound.play('song');
+          video.play();
+          video.currentTime = 0;          
+
           going = true;
         }
       }
 
-      if(this.animation.currentFrame >= 60 && this.animation.currentFrame <= 80) {
+      if(this.animation.currentFrame >= 70 && this.animation.currentFrame <= 80) {
+        this.testImg.alpha = 1;
         this.chance = true;
       } else {
+        this.testImg.alpha = 0;
         this.chance = false;
       }
+    }
 
-      // this.radius += this.rate;
-      // if(this.radius > 180) {
-      //   this.fade();
-      //   this.opacity -= 0.05;
-      // }
-
-      // if(this.radius > 205) {
-      //   this.active = false;
-      // }
-
-      // if(this.radius > 160 && this.radius < 187) {
-      //   if(!this.played) {
-      //     this.play();
-      //     this.played = true;
-      //   }
-      //   this.chance = true;
-      // } else {
-      //   this.chance = false;
-      // }
-      // if(this.radius > 300) {
-      //   this.fade();
-      // }
+    if(this.emit) {
+      var now = Date.now();
+	
+      // The emitter requires the elapsed
+      // number of seconds since the last update
+      this.emitter.update((now - this.elapsed) * 0.001);
+      this.elapsed = now;
     }
   }
 
@@ -521,7 +697,12 @@ class Note {
   }
 
   hit() {
+    this.explosion.play();
     console.log('hitto');
+    this.testImg.alpha = 0;
+    this.emit = true;
+    this.elapsed = Date.now();
+    this.emitter.playOnce();
     this.animation.visible = false;
     this.active = false;
     this.chance = false;

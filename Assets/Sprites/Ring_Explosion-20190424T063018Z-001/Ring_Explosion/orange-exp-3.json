@@ -1,0 +1,56 @@
+{"frames": {
+
+"Orange_Ring_Explosion_Comp 1_00001.png":
+{
+	"frame": {"x":816,"y":836,"w":358,"h":357},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":779,"y":321,"w":358,"h":357},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00030.png":
+{
+	"frame": {"x":1,"y":836,"w":813,"h":813},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":551,"y":92,"w":813,"h":813},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00031.png":
+{
+	"frame": {"x":1,"y":1,"w":832,"h":833},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":542,"y":82,"w":832,"h":833},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00044.png":
+{
+	"frame": {"x":835,"y":1,"w":824,"h":824},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":546,"y":86,"w":824,"h":824},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00045.png":
+{
+	"frame": {"x":1175,"y":827,"w":824,"h":824},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":546,"y":86,"w":824,"h":824},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"animations": {
+	"Orange_Ring_Explosion_Comp 1": ["Orange_Ring_Explosion_Comp 1_00001.png","Orange_Ring_Explosion_Comp 1_00030.png","Orange_Ring_Explosion_Comp 1_00031.png","Orange_Ring_Explosion_Comp 1_00044.png","Orange_Ring_Explosion_Comp 1_00045.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "orange-exp-3.png",
+	"format": "RGBA8888",
+	"size": {"w":2000,"h":1652},
+	"scale": "1",
+	"related_multi_packs": [ "orange-exp-0.json", "orange-exp-1.json", "orange-exp-2.json", "orange-exp-4.json", "orange-exp-5.json", "orange-exp-6.json", "orange-exp-7.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:a9791136ae91a1552503888785903c44:ed9277200c8710c6e87c11ccd97e6c14:b2f381ac87506c7e179b06263f20c96b$"
+}
+}

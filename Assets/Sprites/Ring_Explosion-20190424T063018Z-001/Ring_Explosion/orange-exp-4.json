@@ -1,0 +1,72 @@
+{"frames": {
+
+"Orange_Ring_Explosion_Comp 1_00002.png":
+{
+	"frame": {"x":1597,"y":451,"w":408,"h":407},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":754,"y":296,"w":408,"h":407},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00003.png":
+{
+	"frame": {"x":1597,"y":1,"w":448,"h":447},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":734,"y":276,"w":448,"h":447},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00004.png":
+{
+	"frame": {"x":1556,"y":860,"w":470,"h":470},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":723,"y":264,"w":470,"h":470},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00028.png":
+{
+	"frame": {"x":780,"y":801,"w":774,"h":775},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":571,"y":111,"w":774,"h":775},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00029.png":
+{
+	"frame": {"x":801,"y":1,"w":794,"h":795},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":561,"y":101,"w":794,"h":795},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00046.png":
+{
+	"frame": {"x":1,"y":1,"w":798,"h":798},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":559,"y":99,"w":798,"h":798},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00047.png":
+{
+	"frame": {"x":1,"y":801,"w":777,"h":777},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":569,"y":110,"w":777,"h":777},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"animations": {
+	"Orange_Ring_Explosion_Comp 1": ["Orange_Ring_Explosion_Comp 1_00002.png","Orange_Ring_Explosion_Comp 1_00003.png","Orange_Ring_Explosion_Comp 1_00004.png","Orange_Ring_Explosion_Comp 1_00028.png","Orange_Ring_Explosion_Comp 1_00029.png","Orange_Ring_Explosion_Comp 1_00046.png","Orange_Ring_Explosion_Comp 1_00047.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "orange-exp-4.png",
+	"format": "RGBA8888",
+	"size": {"w":2045,"h":1579},
+	"scale": "1",
+	"related_multi_packs": [ "orange-exp-0.json", "orange-exp-1.json", "orange-exp-2.json", "orange-exp-3.json", "orange-exp-5.json", "orange-exp-6.json", "orange-exp-7.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:a9791136ae91a1552503888785903c44:ed9277200c8710c6e87c11ccd97e6c14:b2f381ac87506c7e179b06263f20c96b$"
+}
+}

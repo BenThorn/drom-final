@@ -1,0 +1,80 @@
+{"frames": {
+
+"Orange_Ring_Explosion_Comp 1_00005.png":
+{
+	"frame": {"x":1049,"y":521,"w":484,"h":483},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":716,"y":258,"w":484,"h":483},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00006.png":
+{
+	"frame": {"x":1045,"y":1105,"w":492,"h":491},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":712,"y":254,"w":492,"h":491},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00007.png":
+{
+	"frame": {"x":1,"y":1107,"w":502,"h":503},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":707,"y":248,"w":502,"h":503},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00008.png":
+{
+	"frame": {"x":526,"y":1105,"w":516,"h":517},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":700,"y":241,"w":516,"h":517},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00009.png":
+{
+	"frame": {"x":583,"y":1,"w":518,"h":519},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":699,"y":240,"w":518,"h":519},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00010.png":
+{
+	"frame": {"x":526,"y":583,"w":520,"h":521},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":698,"y":239,"w":520,"h":521},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00011.png":
+{
+	"frame": {"x":1,"y":583,"w":522,"h":523},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":697,"y":238,"w":522,"h":523},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Ring_Explosion_Comp 1_00017.png":
+{
+	"frame": {"x":1,"y":1,"w":580,"h":580},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":668,"y":209,"w":580,"h":580},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"animations": {
+	"Orange_Ring_Explosion_Comp 1": ["Orange_Ring_Explosion_Comp 1_00005.png","Orange_Ring_Explosion_Comp 1_00006.png","Orange_Ring_Explosion_Comp 1_00007.png","Orange_Ring_Explosion_Comp 1_00008.png","Orange_Ring_Explosion_Comp 1_00009.png","Orange_Ring_Explosion_Comp 1_00010.png","Orange_Ring_Explosion_Comp 1_00011.png","Orange_Ring_Explosion_Comp 1_00017.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "orange-exp-7.png",
+	"format": "RGBA8888",
+	"size": {"w":1538,"h":1622},
+	"scale": "1",
+	"related_multi_packs": [ "orange-exp-0.json", "orange-exp-1.json", "orange-exp-2.json", "orange-exp-3.json", "orange-exp-4.json", "orange-exp-5.json", "orange-exp-6.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:a9791136ae91a1552503888785903c44:ed9277200c8710c6e87c11ccd97e6c14:b2f381ac87506c7e179b06263f20c96b$"
+}
+}

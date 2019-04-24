@@ -1,0 +1,88 @@
+{"frames": {
+
+"Green_Ring_Explosion_Comp 1_00012.png":
+{
+	"frame": {"x":1493,"y":1,"w":543,"h":543},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":686,"y":228,"w":543,"h":543},
+	"sourceSize": {"w":543,"h":543}
+},
+"Green_Ring_Explosion_Comp 1_00013.png":
+{
+	"frame": {"x":1,"y":1499,"w":548,"h":548},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":684,"y":225,"w":548,"h":548},
+	"sourceSize": {"w":548,"h":548}
+},
+"Green_Ring_Explosion_Comp 1_00014.png":
+{
+	"frame": {"x":1473,"y":737,"w":554,"h":554},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":681,"y":222,"w":554,"h":554},
+	"sourceSize": {"w":554,"h":554}
+},
+"Green_Ring_Explosion_Comp 1_00015.png":
+{
+	"frame": {"x":1315,"y":1453,"w":560,"h":560},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":678,"y":219,"w":560,"h":560},
+	"sourceSize": {"w":560,"h":560}
+},
+"Green_Ring_Explosion_Comp 1_00016.png":
+{
+	"frame": {"x":743,"y":1453,"w":570,"h":570},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":673,"y":214,"w":570,"h":570},
+	"sourceSize": {"w":570,"h":570}
+},
+"Green_Ring_Explosion_Comp 1_00025.png":
+{
+	"frame": {"x":757,"y":737,"w":714,"h":714},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":601,"y":142,"w":714,"h":714},
+	"sourceSize": {"w":714,"h":714}
+},
+"Green_Ring_Explosion_Comp 1_00026.png":
+{
+	"frame": {"x":757,"y":1,"w":734,"h":734},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":591,"y":132,"w":734,"h":734},
+	"sourceSize": {"w":734,"h":734}
+},
+"Green_Ring_Explosion_Comp 1_00027.png":
+{
+	"frame": {"x":1,"y":1,"w":754,"h":754},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":581,"y":122,"w":754,"h":754},
+	"sourceSize": {"w":754,"h":754}
+},
+"Green_Ring_Explosion_Comp 1_00048.png":
+{
+	"frame": {"x":1,"y":757,"w":740,"h":740},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":588,"y":128,"w":740,"h":740},
+	"sourceSize": {"w":740,"h":740}
+}},
+"animations": {
+	"Green_Ring_Explosion_Comp 1": ["Green_Ring_Explosion_Comp 1_00012.png","Green_Ring_Explosion_Comp 1_00013.png","Green_Ring_Explosion_Comp 1_00014.png","Green_Ring_Explosion_Comp 1_00015.png","Green_Ring_Explosion_Comp 1_00016.png","Green_Ring_Explosion_Comp 1_00025.png","Green_Ring_Explosion_Comp 1_00026.png","Green_Ring_Explosion_Comp 1_00027.png","Green_Ring_Explosion_Comp 1_00048.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "green-exp-5.png",
+	"format": "RGBA8888",
+	"size": {"w":2037,"h":2048},
+	"scale": "1",
+	"related_multi_packs": [ "green-exp-0.json", "green-exp-1.json", "green-exp-2.json", "green-exp-3.json", "green-exp-4.json", "green-exp-6.json", "green-exp-7.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:90b0cc9b3ba652142475ebb7d1e6c5aa:29fd118595e366824b59f0d91bc7c42f:5d1c2ce4a77ca86973851b21b2ab6866$"
+}
+}

@@ -1,0 +1,48 @@
+{"frames": {
+
+"Purple_Ring_Explosion_Comp 1_00032.png":
+{
+	"frame": {"x":861,"y":1,"w":849,"h":849},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":533,"y":74,"w":849,"h":849},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Purple_Ring_Explosion_Comp 1_00041.png":
+{
+	"frame": {"x":1,"y":1,"w":857,"h":858},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":529,"y":69,"w":857,"h":858},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Purple_Ring_Explosion_Comp 1_00042.png":
+{
+	"frame": {"x":1,"y":860,"w":857,"h":858},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":529,"y":69,"w":857,"h":858},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Purple_Ring_Explosion_Comp 1_00043.png":
+{
+	"frame": {"x":860,"y":860,"w":857,"h":858},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":529,"y":69,"w":857,"h":858},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"animations": {
+	"Purple_Ring_Explosion_Comp 1": ["Purple_Ring_Explosion_Comp 1_00032.png","Purple_Ring_Explosion_Comp 1_00041.png","Purple_Ring_Explosion_Comp 1_00042.png","Purple_Ring_Explosion_Comp 1_00043.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "purple-exp-2.png",
+	"format": "RGBA8888",
+	"size": {"w":1718,"h":1719},
+	"scale": "1",
+	"related_multi_packs": [ "purple-exp-0.json", "purple-exp-1.json", "purple-exp-3.json", "purple-exp-4.json", "purple-exp-5.json", "purple-exp-6.json", "purple-exp-7.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:7afb118953482c1e547282f58e4ddd0d:a76a85662395e86d558ea1a8efa51d39:5282df2b7867b33b59664c9a765334ed$"
+}
+}
