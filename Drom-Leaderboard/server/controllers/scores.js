@@ -3,6 +3,7 @@ const models = require('../models');
 const Scores = models.scores;
 
 const setScore = (req, res) => {
+    console.log(req.body);
   if (!req.body.team || !req.body.score || !req.body.streak) {
     return res.status(400).json({ error: 'Not all fields are filled.' });
   }
@@ -11,15 +12,13 @@ const setScore = (req, res) => {
     team: req.body.team,
     score: req.body.score,
     streak: req.body.streak,
-    //don't think I need owner
-    owner: req.session.account._id,
   };
 
   const newScore = new scores.scoreModel(teamData);
 
   const scorePromise = newScore.save();
-  
-  scorePromise.then(() => res.status(200);//res.json({ redirect: '/maker' }));
+    
+  scorePromise.then(() => res.status(200));
 
   scorePromise.catch((err) => {
     console.log(err);

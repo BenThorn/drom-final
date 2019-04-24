@@ -26,21 +26,16 @@ const scoreSchema = new mongoose.Schema({
     min: 0,
     required: true,
   },
-  owner: {
-    type: mongoose.Schema.ObjectId,
-    required: true,
-    ref: 'Account',
-  },
-  createdData: {
+    createdData: {
     type: Date,
     default: Date.now,
   },
 });
 
-DomoSchema.statics.toAPI = (doc) => ({
-  name: doc.name,
-  age: doc.age,
-  level: doc.level,
+scoreSchema.statics.toAPI = (doc) => ({
+  team: doc.team,
+  score: doc.score,
+  streak: doc.streak,
 });
 
 scoreSchema.statics.findAll = (callback) => {

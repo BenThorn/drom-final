@@ -3,7 +3,7 @@
 
 <head>
 	<title>Drom Highscores</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/style.css">
 	<meta charset="UTF-8" />
 </head>
 
@@ -79,15 +79,8 @@
 		<input type="number" id="score" placeholder="Team Score" />
 		<button onclick="rank()"></button>
 	</div>
-	<script src="script.js"></script>
+	<script src="/assets/script.js"></script>
 	<script>
-		/*reference info
-		const tweeds = $('#domos');
-		if (tweeds) {
-			//poll for updates every 5 seconds
-			setInterval(getUpdates, 5000);
-		}*/
-
 		const getUpdate = () => {
 			$.ajax({
 				cache: false,
@@ -135,7 +128,11 @@
 				}
 			});
 		};
-
+        
+        //every 5 seconds call getUpdate
+        window.onload = function () {
+            setInterval(getUpdate, 5000);
+        }
 	</script>
 </body>
 

@@ -1,9 +1,8 @@
 const controllers = require('./controllers');
-const mid = require('./middleware');
 
 const router = (app) => {
     app.post('/setScores', controllers.scores.setScore);
-    app.get('/getScore', controllers.scores.getScore);
+    app.get('/getScores', controllers.scores.getScores);
 };
 
 module.exports = router;
