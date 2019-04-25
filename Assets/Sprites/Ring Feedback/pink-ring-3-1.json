@@ -1,0 +1,184 @@
+{"frames": {
+
+"Pink Ring 3_00191.png":
+{
+	"frame": {"x":1690,"y":356,"w":347,"h":340},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1392,"y":334,"w":347,"h":340},
+	"sourceSize": {"w":347,"h":340}
+},
+"Pink Ring 3_00192.png":
+{
+	"frame": {"x":1680,"y":1159,"w":347,"h":339},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1393,"y":334,"w":347,"h":339},
+	"sourceSize": {"w":347,"h":339}
+},
+"Pink Ring 3_00193.png":
+{
+	"frame": {"x":1692,"y":1500,"w":347,"h":339},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1393,"y":332,"w":347,"h":339},
+	"sourceSize": {"w":347,"h":339}
+},
+"Pink Ring 3_00194.png":
+{
+	"frame": {"x":1685,"y":1,"w":353,"h":340},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1389,"y":328,"w":353,"h":340},
+	"sourceSize": {"w":353,"h":340}
+},
+"Pink Ring 3_00195.png":
+{
+	"frame": {"x":1680,"y":796,"w":361,"h":349},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1384,"y":324,"w":361,"h":349},
+	"sourceSize": {"w":361,"h":349}
+},
+"Pink Ring 3_00196.png":
+{
+	"frame": {"x":1320,"y":1500,"w":370,"h":361},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1378,"y":320,"w":370,"h":361},
+	"sourceSize": {"w":370,"h":361}
+},
+"Pink Ring 3_00197.png":
+{
+	"frame": {"x":1309,"y":796,"w":378,"h":369},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1372,"y":315,"w":378,"h":369},
+	"sourceSize": {"w":378,"h":369}
+},
+"Pink Ring 3_00198.png":
+{
+	"frame": {"x":1306,"y":1,"w":383,"h":377},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1369,"y":310,"w":383,"h":377},
+	"sourceSize": {"w":383,"h":377}
+},
+"Pink Ring 3_00200.png":
+{
+	"frame": {"x":1300,"y":402,"w":392,"h":388},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1365,"y":303,"w":392,"h":388},
+	"sourceSize": {"w":392,"h":388}
+},
+"Pink Ring 3_00201.png":
+{
+	"frame": {"x":912,"y":1,"w":399,"h":392},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1363,"y":302,"w":399,"h":392},
+	"sourceSize": {"w":399,"h":392}
+},
+"Pink Ring 3_00202.png":
+{
+	"frame": {"x":901,"y":414,"w":406,"h":397},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1361,"y":300,"w":406,"h":397},
+	"sourceSize": {"w":406,"h":397}
+},
+"Pink Ring 3_00203.png":
+{
+	"frame": {"x":503,"y":1,"w":411,"h":407},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1360,"y":296,"w":411,"h":407},
+	"sourceSize": {"w":411,"h":407}
+},
+"Pink Ring 3_00204.png":
+{
+	"frame": {"x":892,"y":933,"w":415,"h":418},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1360,"y":292,"w":415,"h":418},
+	"sourceSize": {"w":415,"h":418}
+},
+"Pink Ring 3_00205.png":
+{
+	"frame": {"x":480,"y":503,"w":419,"h":428},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1359,"y":291,"w":419,"h":428},
+	"sourceSize": {"w":419,"h":428}
+},
+"Pink Ring 3_00206.png":
+{
+	"frame": {"x":441,"y":1438,"w":423,"h":435},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1357,"y":291,"w":423,"h":435},
+	"sourceSize": {"w":423,"h":435}
+},
+"Pink Ring 3_00207.png":
+{
+	"frame": {"x":1,"y":1438,"w":429,"h":438},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1352,"y":291,"w":429,"h":438},
+	"sourceSize": {"w":429,"h":438}
+},
+"Pink Ring 3_00208.png":
+{
+	"frame": {"x":878,"y":1431,"w":438,"h":440},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1346,"y":288,"w":438,"h":440},
+	"sourceSize": {"w":438,"h":440}
+},
+"Pink Ring 3_00209.png":
+{
+	"frame": {"x":448,"y":983,"w":446,"h":442},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1341,"y":283,"w":446,"h":442},
+	"sourceSize": {"w":446,"h":442}
+},
+"Pink Ring 3_00210.png":
+{
+	"frame": {"x":1,"y":983,"w":453,"h":445},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1337,"y":279,"w":453,"h":445},
+	"sourceSize": {"w":453,"h":445}
+},
+"Pink Ring 3_00214.png":
+{
+	"frame": {"x":1,"y":503,"w":477,"h":478},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1324,"y":262,"w":477,"h":478},
+	"sourceSize": {"w":477,"h":478}
+},
+"Pink Ring 3_00219.png":
+{
+	"frame": {"x":1,"y":1,"w":500,"h":500},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1315,"y":250,"w":500,"h":500},
+	"sourceSize": {"w":500,"h":500}
+}},
+"animations": {
+	"Pink Ring 3": ["Pink Ring 3_00191.png","Pink Ring 3_00192.png","Pink Ring 3_00193.png","Pink Ring 3_00194.png","Pink Ring 3_00195.png","Pink Ring 3_00196.png","Pink Ring 3_00197.png","Pink Ring 3_00198.png","Pink Ring 3_00200.png","Pink Ring 3_00201.png","Pink Ring 3_00202.png","Pink Ring 3_00203.png","Pink Ring 3_00204.png","Pink Ring 3_00205.png","Pink Ring 3_00206.png","Pink Ring 3_00207.png","Pink Ring 3_00208.png","Pink Ring 3_00209.png","Pink Ring 3_00210.png","Pink Ring 3_00214.png","Pink Ring 3_00219.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pink-ring-3-1.png",
+	"format": "RGBA8888",
+	"size": {"w":2032,"h":1870},
+	"scale": "1",
+	"related_multi_packs": [ "pink-ring-3-0.json", "pink-ring-3-2.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:507e122f9d9d154b17d68755d01afe9a:5f1737de1917ca7c0f731141a272cbcb:22f19120d7ade6d01c5912d86c713330$"
+}
+}

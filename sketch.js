@@ -53,14 +53,13 @@ PIXI.loader
   .add("Assets/Images/Outer_Pink.png")
   .add("Assets/Images/field_static.png")
   .add("Assets/Images/test.png")
-  .add("Assets/Video/Comp_1.mp4")
   .add("Assets/Sprites/notering-0.json")
   .add("Assets/Sprites/notering-1.json")
   .add("Assets/Sprites/notering-2.json")
   .add("Assets/Sprites/notering-3.json")
   .add("Assets/Sprites/notering-4.json")
   .add("Assets/Sprites/notering-5.json")
-  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-0.json")
+  .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-0.json") // Ring explosions
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-1.json")
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-2.json")
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/green-exp-3.json")
@@ -84,9 +83,43 @@ PIXI.loader
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-5.json")
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-6.json")
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-7.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-0.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-0.json") // Dotted notes
   .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-1.json")
   .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-2.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-dot-0.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-dot-1.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-dot-2.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-dot-0.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-dot-1.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-dot-2.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-dot-0.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-dot-1.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-dot-2.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-0.json") // Solid notes
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-1.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-2.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-3.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-4.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-0.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-1.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-2.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-3.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-4.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-0.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-1.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-2.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-3.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-4.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-0.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-1.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-2.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-3.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-4.json")
+  .add("Assets/Sprites/Success_Feedback_Text/awesome-0.json")
+  .add("Assets/Sprites/Success_Feedback_Text/awesome-1.json")
+  .add("Assets/Sprites/Success_Feedback_Text/nice-0.json")
+  .add("Assets/Sprites/Success_Feedback_Text/good-0.json")
+  .add("Assets/Sprites/Success_Feedback_Text/good-1.json")
   .load(setup);
 
 PIXI.sound.Sound.from({
@@ -118,29 +151,24 @@ let conductor;
 let videoOpacity = 0;
 
 let noteFrames = []; //for note ring animation
+
+let blueDotFrames = [];
+let greenDotFrames = [];
+let purpleDotFrames = [];
+let orangeDotFrames = [];
+let whiteDotFrames = [];
+
+let blueRingFrames = [];
+let greenRingFrames = [];
+let purpleRingFrames = [];
+let orangeRingFrames = [];
+let whiteRingFrames = [];
+
 let greenExpFrames = [];
 let pinkExpFrames = []; 
 let orangeExpFrames = [];
 
-
-//animation for the button to move after press
-function btnJump() {
-	var fadeEffect = setInterval(function(){
-		console.log("Btn go");
-		if(!btn.style.opacity){
-			btn.style.opacity = 1;
-		}
-		if(btnStyle.getPropertyValue('opacity') < 0.1){
-			clearInterval(fadeEffect);
-		} else {
-			btn.style.opacity -= 0.06;
-		}
-	}, 100);
-};
-
 function setup() {
-  gameState = GAME_STATE.MENU;
-
   for (var i = 0; i < 138; i++) {
     let val;
     if(i >= 100) {
@@ -152,6 +180,15 @@ function setup() {
     }
       
     noteFrames.push(PIXI.Texture.fromFrame('Gameplay ring (miss) Comp 1_00' + val + '.png'));
+    blueDotFrames.push(PIXI.Texture.fromFrame('Blue_Dotted_Gameplay_Ring_00' + val + '.png'));
+    greenDotFrames.push(PIXI.Texture.fromFrame('Green_Dotted_Gameplay_Ring00' + val + '.png'));
+    purpleDotFrames.push(PIXI.Texture.fromFrame('Purple_Dotted_Gameplay_Ring_00' + val + '.png'));
+    whiteDotFrames.push(PIXI.Texture.fromFrame('White_Dotted_Gameplay_Ring_00' + val + '.png'));
+
+    blueRingFrames.push(PIXI.Texture.fromFrame('Blue_Gameplay_Ring00' + val + '.png'));
+    greenRingFrames.push(PIXI.Texture.fromFrame('Blue_Gameplay_Ring00' + val + '.png'));
+    purpleRingFrames.push(PIXI.Texture.fromFrame('Blue_Gameplay_Ring00' + val + '.png'));
+    whiteRingFrames.push(PIXI.Texture.fromFrame('Blue_Gameplay_Ring00' + val + '.png'));
   }
 
   for (var i = 0; i < 54; i++) {
@@ -163,34 +200,73 @@ function setup() {
     } else if (i < 10) {
       val = '00' + i;
     }
-      
+    
     greenExpFrames.push(PIXI.Texture.fromFrame('Green_Ring_Explosion_Comp 1_00' + val + '.png'));
     orangeExpFrames.push(PIXI.Texture.fromFrame('Orange_Ring_Explosion_Comp 1_00' + val + '.png'));
     pinkExpFrames.push(PIXI.Texture.fromFrame('Purple_Ring_Explosion_Comp 1_00' + val + '.png'));
   }
 
-  // This movie is here because FPS would always tank when the first
-  // animation of the scene is played, for some reason. Getting it out of the way here.
-  var testOne = new PIXI.extras.AnimatedSprite(noteFrames);
-  testOne.position.set(-1000, -500);
-  testOne.animationSpeed = 1;
-  testOne.loop = false;
-  app.stage.addChild(testOne);
-  testOne.play();
+  // Load object into GPU
+  app.renderer.plugins.prepare.
+  add(new PIXI.extras.AnimatedSprite(noteFrames))
+  .add(new PIXI.extras.AnimatedSprite(orangeExpFrames))
+  .add(new PIXI.extras.AnimatedSprite(greenExpFrames))
+  .add(new PIXI.extras.AnimatedSprite(pinkExpFrames))
+  .add(new PIXI.extras.AnimatedSprite(blueDotFrames))
+  .add(new PIXI.extras.AnimatedSprite(greenDotFrames))
+  .add(new PIXI.extras.AnimatedSprite(whiteDotFrames))
+  .add(new PIXI.extras.AnimatedSprite(purpleDotFrames))
+  .add(new PIXI.extras.AnimatedSprite(blueRingFrames))
+  .add(new PIXI.extras.AnimatedSprite(greenRingFrames))
+  .add(new PIXI.extras.AnimatedSprite(purpleRingFrames))
+  .add(new PIXI.extras.AnimatedSprite(whiteRingFrames))
+  .upload(() => {
+    let testAnims = [];
+    testAnims.push(new PIXI.extras.AnimatedSprite(noteFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(orangeExpFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(greenExpFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(pinkExpFrames));
 
-  var testTwo = new PIXI.extras.AnimatedSprite(orangeExpFrames);
-  testTwo.position.set(-1000, -500);
-  testTwo.animationSpeed = 1;
-  testTwo.width = .1;
-  testTwo.height = .1;
-  testTwo.loop = false;
-  app.stage.addChild(testTwo);
-  testTwo.play();
+    start();
+
+    for(let i = 0; i < testAnims.length; i++) {
+      testAnims[i].position.set(-500, -100);
+      testAnims[i].scale.set(.5);
+      testAnims[i].animationSpeed = 1;
+      testAnims[i].anchor.set(.5);
+      testAnims[i].loop = true;
+
+      testAnims[i].onComplete = function (){
+        console.log('hey');
+        video.play();
+      }
+
+      if(i === testAnims.length-1){
+        console.log('yo');
+
+      }
+      app.stage.addChild(testAnims[i]);
+    }
+
+    testAnims.forEach((test) => {
+      test.onComplete = function (){
+        console.log('hey');
+      }
+      test.play();
+    });
+
+  });
+
+
+};
+
+function start() {
+  gameState = GAME_STATE.MENU;
+  video.play();
 
   conductor = new Conductor();
-
   app.ticker.add(delta => update(delta));
-};
+}
 
 function update(delta){
   renderer.render(app.stage);
@@ -574,17 +650,18 @@ class Note {
 
     this.animation.play();
 
-    console.log(imgStr);
     if(imgStr.includes('Orange')){
       this.explosion = new PIXI.extras.AnimatedSprite(orangeExpFrames);
+      this.explosion.position.set(this.x, this.y + 35);
     } else if(imgStr.includes('Green')){
       this.explosion = new PIXI.extras.AnimatedSprite(greenExpFrames);
+      this.explosion.position.set(this.x, this.y);
     } else if(imgStr.includes('Pink')){
       this.explosion = new PIXI.extras.AnimatedSprite(pinkExpFrames);      
+      this.explosion.position.set(this.x, this.y + 35);
     }
     this.explosion.anchor.set(0.5);
 
-    this.explosion.position.set(this.x, this.y + 35);
     this.explosion.scale.set(.8, .8);
 
     this.explosion.animationSpeed = 1;
@@ -721,6 +798,8 @@ class Note {
     }
   }
 }
+
+//----------- Testing Material ------------
 
 let masterGain = null;
 let offset = 1.417;

@@ -1,0 +1,23 @@
+{"frames": {
+
+"Orange Ring 3_00125.png":
+{
+	"frame": {"x":1,"y":1,"w":346,"h":339},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":188,"y":331,"w":346,"h":339},
+	"sourceSize": {"w":346,"h":339}
+}},
+"animations": {
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "orange-ring-3-2.png",
+	"format": "RGBA8888",
+	"size": {"w":348,"h":341},
+	"scale": "1",
+	"related_multi_packs": [ "orange-ring-3-0.json", "orange-ring-3-1.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:2fda2d7810df397b4f16fd97c8844d87:de274bc18ad7dcb873d0433a928095a4:7ce519fb87f18ee416f443edaa5ba661$"
+}
+}

@@ -1,0 +1,168 @@
+{"frames": {
+
+"Orange Ring 2_00170.png":
+{
+	"frame": {"x":1654,"y":733,"w":359,"h":357},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":178,"y":321,"w":359,"h":357},
+	"sourceSize": {"w":359,"h":357}
+},
+"Orange Ring 2_00171.png":
+{
+	"frame": {"x":800,"y":1329,"w":358,"h":358},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":179,"y":320,"w":358,"h":358},
+	"sourceSize": {"w":358,"h":358}
+},
+"Orange Ring 2_00172.png":
+{
+	"frame": {"x":439,"y":1329,"w":358,"h":359},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":179,"y":320,"w":358,"h":359},
+	"sourceSize": {"w":358,"h":359}
+},
+"Orange Ring 2_00173.png":
+{
+	"frame": {"x":1644,"y":371,"w":360,"h":361},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":178,"y":319,"w":360,"h":361},
+	"sourceSize": {"w":360,"h":361}
+},
+"Orange Ring 2_00174.png":
+{
+	"frame": {"x":1277,"y":1,"w":362,"h":364},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":177,"y":318,"w":362,"h":364},
+	"sourceSize": {"w":362,"h":364}
+},
+"Orange Ring 2_00175.png":
+{
+	"frame": {"x":1644,"y":1,"w":365,"h":368},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":175,"y":316,"w":365,"h":368},
+	"sourceSize": {"w":365,"h":368}
+},
+"Orange Ring 2_00176.png":
+{
+	"frame": {"x":1273,"y":417,"w":369,"h":372},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":173,"y":314,"w":369,"h":372},
+	"sourceSize": {"w":369,"h":372}
+},
+"Orange Ring 2_00177.png":
+{
+	"frame": {"x":1552,"y":1212,"w":375,"h":378},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":170,"y":311,"w":375,"h":378},
+	"sourceSize": {"w":375,"h":378}
+},
+"Orange Ring 2_00178.png":
+{
+	"frame": {"x":1269,"y":826,"w":383,"h":384},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":166,"y":308,"w":383,"h":384},
+	"sourceSize": {"w":383,"h":384}
+},
+"Orange Ring 2_00179.png":
+{
+	"frame": {"x":1160,"y":1227,"w":391,"h":390},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":162,"y":305,"w":391,"h":390},
+	"sourceSize": {"w":391,"h":390}
+},
+"Orange Ring 2_00180.png":
+{
+	"frame": {"x":870,"y":826,"w":399,"h":397},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":158,"y":301,"w":399,"h":397},
+	"sourceSize": {"w":399,"h":397}
+},
+"Orange Ring 2_00181.png":
+{
+	"frame": {"x":868,"y":417,"w":407,"h":403},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":154,"y":298,"w":407,"h":403},
+	"sourceSize": {"w":407,"h":403}
+},
+"Orange Ring 2_00182.png":
+{
+	"frame": {"x":865,"y":1,"w":414,"h":410},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":150,"y":294,"w":414,"h":410},
+	"sourceSize": {"w":414,"h":410}
+},
+"Orange Ring 2_00183.png":
+{
+	"frame": {"x":448,"y":1,"w":422,"h":415},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":146,"y":291,"w":422,"h":415},
+	"sourceSize": {"w":422,"h":415}
+},
+"Orange Ring 2_00184.png":
+{
+	"frame": {"x":444,"y":450,"w":427,"h":422},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":143,"y":288,"w":427,"h":422},
+	"sourceSize": {"w":427,"h":422}
+},
+"Orange Ring 2_00185.png":
+{
+	"frame": {"x":439,"y":894,"w":433,"h":429},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":140,"y":285,"w":433,"h":429},
+	"sourceSize": {"w":433,"h":429}
+},
+"Orange Ring 2_00186.png":
+{
+	"frame": {"x":1,"y":894,"w":438,"h":436},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":137,"y":281,"w":438,"h":436},
+	"sourceSize": {"w":438,"h":436}
+},
+"Orange Ring 2_00187.png":
+{
+	"frame": {"x":1,"y":450,"w":442,"h":441},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":135,"y":278,"w":442,"h":441},
+	"sourceSize": {"w":442,"h":441}
+},
+"Orange Ring 2_00188.png":
+{
+	"frame": {"x":1,"y":1,"w":445,"h":447},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":134,"y":275,"w":445,"h":447},
+	"sourceSize": {"w":445,"h":447}
+}},
+"animations": {
+	"Orange Ring 2": ["Orange Ring 2_00170.png","Orange Ring 2_00171.png","Orange Ring 2_00172.png","Orange Ring 2_00173.png","Orange Ring 2_00174.png","Orange Ring 2_00175.png","Orange Ring 2_00176.png","Orange Ring 2_00177.png","Orange Ring 2_00178.png","Orange Ring 2_00179.png","Orange Ring 2_00180.png","Orange Ring 2_00181.png","Orange Ring 2_00182.png","Orange Ring 2_00183.png","Orange Ring 2_00184.png","Orange Ring 2_00185.png","Orange Ring 2_00186.png","Orange Ring 2_00187.png","Orange Ring 2_00188.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "orange-ring-2-1.png",
+	"format": "RGBA8888",
+	"size": {"w":2012,"h":1688},
+	"scale": "1",
+	"related_multi_packs": [ "orange-ring-2-0.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:d4244423966e8d2b2b7d95c57bd611d1:3d28bee2c5ea1397ee9f419ff50ac34a:be40654d87123d5e3570005fb54064fc$"
+}
+}

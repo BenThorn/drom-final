@@ -1,0 +1,23 @@
+{"frames": {
+
+"Pink Ring 3_00199.png":
+{
+	"frame": {"x":1,"y":1,"w":386,"h":383},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":1368,"y":306,"w":386,"h":383},
+	"sourceSize": {"w":386,"h":383}
+}},
+"animations": {
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pink-ring-3-2.png",
+	"format": "RGBA8888",
+	"size": {"w":388,"h":385},
+	"scale": "1",
+	"related_multi_packs": [ "pink-ring-3-0.json", "pink-ring-3-1.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:507e122f9d9d154b17d68755d01afe9a:5f1737de1917ca7c0f731141a272cbcb:22f19120d7ade6d01c5912d86c713330$"
+}
+}
