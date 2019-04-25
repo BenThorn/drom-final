@@ -5,6 +5,21 @@ let s = keyboard("s");
 let f = keyboard("f");
 let a = keyboard("a");
 
+//variables for start menu check
+let playerRdyOne = false;
+let playerRdyTwo = false;
+let playerRdyThree = false;
+let orgCircle;
+let grnCircle;
+let pnkCircle;
+const orgCirclex = 0;
+const orgCircley = 0;
+const grnCirclex = 0;
+const grnCircley = 0;
+const pnkCirclex = 0;
+const pnkCircley = 0;
+const circleSize = 20; 
+
 let gameState;
 
 const GAME_STATE = Object.freeze({ 
@@ -140,7 +155,27 @@ function btnJump() {
 
 function setup() {
   gameState = GAME_STATE.MENU;
-
+	
+	//player check circles
+	//orange
+	orgCircle = new Graphics();
+	org.beginFill(000000);
+	orgCircle.drawCircle(orgCirclex,orgCircley,circleSize);
+	orgCircle.endFill();
+	app.stage.addChild(orgCircle);
+	//green
+	grnCircle = new Graphics();
+	grnCircle.beginFill(000000);
+	grnCircle.drawCircle(grnCirclex,grnCircley,circleSize);
+	grnCircle.endFill();
+	app.stage.addChild(grnCircle);
+	//pink
+	pnkCircle = new Graphics();
+	pnkCircle.beginFill(000000);
+	pnkCircle.drawCircle(pnkCirclex,pnkCircley,circleSize);
+	pnkCircle.endFill();
+	app.stage.addChild(pnkCircle);
+	
   for (var i = 0; i < 138; i++) {
     let val;
     if(i >= 100) {
@@ -302,18 +337,32 @@ const beginGame = () => {
 };
 
 spaceButton.press = () => {
+	//check game ready
+	if(GAME_STATE === GAME_STATE.MENU){
+		playerRdyOne = true;
+	}
+	
   if(actionable) {
     conductor.noteMgrOrange.playLine.play();
   }
 };
 
 v.press = () => {
+	//check game ready
+	if(GAME_STATE === GAME_STATE.MENU){
+		playerRdyTwo = true;
+	}
   if(actionable) {
     conductor.noteMgrPink.playLine.play();
   }
 };
 
 b.press = () => {
+	
+	//check game ready
+	if(GAME_STATE === GAME_STATE.MENU){
+		playerRdyThree = true;
+	}
   if(actionable){
     conductor.noteMgrGreen.playLine.play();
   }
@@ -543,6 +592,59 @@ class PlayLine {
       this.glowing = false;
     }, 500);
   }
+	
+	//See if players are ready to move past the menu
+	const menuOption = () => {
+		if(GAME_STATE === GAME_STATE.MENU){
+			//if player ready one, fill that
+			if(playerRdyOne){
+				org.beginFill(FFA500);
+				orgCircle.drawCircle(orgCirclex,orgCircley,circleSize);
+				orgCircle.endFill();
+				app.stage.addChild(orgCircle);
+			}
+			//if player ready two, fill that
+			if(playerRdyTwo){
+				grnCircle.beginFill(0080000);
+				grnCircle.drawCircle(grnCirclex,grnCircley,circleSize);
+				grnCircle.endFill();
+				app.stage.addChild(grnCircle);
+			}
+			//if player ready three, fill that
+			if(playerRdyThree){
+				pnkCircle.beginFill(000000);
+				pnkCircle.drawCircle(pnkCirclex,pnkCircley,circleSize);
+				pnkCircle.endFill();
+				app.stage.addChild(pnkCircle);
+			}
+			//set interval, every x seconds check if all are ready, else set all to false
+			setInterval(function(){
+				if(playerRdyOne&&playerRdyTwo&&playerRdyThree){
+					//start the game
+					changeState();
+				} else {
+					playerRdyOne = false;
+					playerRdyTwo = false;
+					playerRdyThree = false;
+					
+					org.beginFill(000000);
+					orgCircle.drawCircle(orgCirclex,orgCircley,circleSize);
+					orgCircle.endFill();
+					app.stage.addChild(orgCircle);
+					
+					grnCircle.beginFill(000000);
+					grnCircle.drawCircle(grnCirclex,grnCircley,circleSize);
+					grnCircle.endFill();
+					app.stage.addChild(grnCircle);
+					
+					pnkCircle.beginFill(000000);
+					pnkCircle.drawCircle(pnkCirclex,pnkCircley,circleSize);
+					pnkCircle.endFill();
+					app.stage.addChild(pnkCircle);
+				}
+			},5000);
+		}
+	}
 };
 
 let going = false;
