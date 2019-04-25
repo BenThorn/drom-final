@@ -158,20 +158,20 @@ function setup() {
 	
 	//player check circles
 	//orange
-	orgCircle = new Graphics();
-	org.beginFill(000000);
+	orgCircle = new PIXI.Graphics();
+	orgCircle.beginFill(0xffffff);
 	orgCircle.drawCircle(orgCirclex,orgCircley,circleSize);
 	orgCircle.endFill();
 	app.stage.addChild(orgCircle);
 	//green
-	grnCircle = new Graphics();
-	grnCircle.beginFill(000000);
+	grnCircle = new PIXI.Graphics();
+	grnCircle.beginFill(0xffffff);
 	grnCircle.drawCircle(grnCirclex,grnCircley,circleSize);
 	grnCircle.endFill();
 	app.stage.addChild(grnCircle);
 	//pink
-	pnkCircle = new Graphics();
-	pnkCircle.beginFill(000000);
+	pnkCircle = new PIXI.Graphics();
+	pnkCircle.beginFill(0xffffff);
 	pnkCircle.drawCircle(pnkCirclex,pnkCircley,circleSize);
 	pnkCircle.endFill();
 	app.stage.addChild(pnkCircle);
@@ -594,25 +594,25 @@ class PlayLine {
   }
 	
 	//See if players are ready to move past the menu
-	const menuOption = () => {
+	menuOption() {
 		if(GAME_STATE === GAME_STATE.MENU){
 			//if player ready one, fill that
 			if(playerRdyOne){
-				org.beginFill(FFA500);
+				orgCircle.beginFill(0xFFA500);
 				orgCircle.drawCircle(orgCirclex,orgCircley,circleSize);
 				orgCircle.endFill();
 				app.stage.addChild(orgCircle);
 			}
 			//if player ready two, fill that
 			if(playerRdyTwo){
-				grnCircle.beginFill(0080000);
+				grnCircle.beginFill(0x0080000);
 				grnCircle.drawCircle(grnCirclex,grnCircley,circleSize);
 				grnCircle.endFill();
 				app.stage.addChild(grnCircle);
 			}
 			//if player ready three, fill that
 			if(playerRdyThree){
-				pnkCircle.beginFill(000000);
+				pnkCircle.beginFill(0xFF007F);
 				pnkCircle.drawCircle(pnkCirclex,pnkCircley,circleSize);
 				pnkCircle.endFill();
 				app.stage.addChild(pnkCircle);
@@ -627,17 +627,17 @@ class PlayLine {
 					playerRdyTwo = false;
 					playerRdyThree = false;
 					
-					org.beginFill(000000);
+					orgCircle.beginFill(0xffffff);
 					orgCircle.drawCircle(orgCirclex,orgCircley,circleSize);
 					orgCircle.endFill();
 					app.stage.addChild(orgCircle);
 					
-					grnCircle.beginFill(000000);
+					grnCircle.beginFill(0xffffff);
 					grnCircle.drawCircle(grnCirclex,grnCircley,circleSize);
 					grnCircle.endFill();
 					app.stage.addChild(grnCircle);
 					
-					pnkCircle.beginFill(000000);
+					pnkCircle.beginFill(0xffffff);
 					pnkCircle.drawCircle(pnkCirclex,pnkCircley,circleSize);
 					pnkCircle.endFill();
 					app.stage.addChild(pnkCircle);
