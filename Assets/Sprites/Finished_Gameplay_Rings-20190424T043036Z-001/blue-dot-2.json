@@ -1,0 +1,192 @@
+{"frames": {
+
+"Blue_Dotted_Gameplay_Ring_00018.png":
+{
+	"frame": {"x":1283,"y":586,"w":111,"h":111},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":904,"y":447,"w":111,"h":111},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00021.png":
+{
+	"frame": {"x":1155,"y":586,"w":126,"h":126},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":896,"y":439,"w":126,"h":126},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00024.png":
+{
+	"frame": {"x":1207,"y":714,"w":141,"h":142},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":889,"y":431,"w":141,"h":142},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00025.png":
+{
+	"frame": {"x":899,"y":781,"w":147,"h":147},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":886,"y":429,"w":147,"h":147},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00026.png":
+{
+	"frame": {"x":745,"y":781,"w":152,"h":152},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":883,"y":426,"w":152,"h":152},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00027.png":
+{
+	"frame": {"x":1048,"y":724,"w":157,"h":158},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":881,"y":423,"w":157,"h":158},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00031.png":
+{
+	"frame": {"x":745,"y":602,"w":177,"h":178},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":871,"y":413,"w":177,"h":178},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00033.png":
+{
+	"frame": {"x":1199,"y":196,"w":188,"h":188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":865,"y":408,"w":188,"h":188},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00034.png":
+{
+	"frame": {"x":1199,"y":1,"w":193,"h":193},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":863,"y":405,"w":193,"h":193},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00035.png":
+{
+	"frame": {"x":1196,"y":386,"w":198,"h":198},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":860,"y":403,"w":198,"h":198},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00037.png":
+{
+	"frame": {"x":944,"y":514,"w":209,"h":208},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":855,"y":398,"w":209,"h":208},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00043.png":
+{
+	"frame": {"x":247,"y":690,"w":239,"h":239},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":840,"y":383,"w":239,"h":239},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00044.png":
+{
+	"frame": {"x":1,"y":690,"w":244,"h":244},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":837,"y":380,"w":244,"h":244},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00045.png":
+{
+	"frame": {"x":944,"y":263,"w":250,"h":249},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":834,"y":377,"w":250,"h":249},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00046.png":
+{
+	"frame": {"x":488,"y":680,"w":255,"h":254},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":832,"y":375,"w":255,"h":254},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00047.png":
+{
+	"frame": {"x":938,"y":1,"w":259,"h":260},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":830,"y":372,"w":259,"h":260},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00048.png":
+{
+	"frame": {"x":671,"y":1,"w":265,"h":265},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":827,"y":370,"w":265,"h":265},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00050.png":
+{
+	"frame": {"x":667,"y":325,"w":275,"h":275},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":822,"y":364,"w":275,"h":275},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00059.png":
+{
+	"frame": {"x":349,"y":1,"w":320,"h":322},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":799,"y":341,"w":320,"h":322},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00060.png":
+{
+	"frame": {"x":339,"y":351,"w":327,"h":326},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":796,"y":339,"w":327,"h":326},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00062.png":
+{
+	"frame": {"x":1,"y":351,"w":337,"h":336},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":791,"y":334,"w":337,"h":336},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Blue_Dotted_Gameplay_Ring_00064.png":
+{
+	"frame": {"x":1,"y":1,"w":346,"h":348},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":786,"y":328,"w":346,"h":348},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"animations": {
+	"Blue_Dotted_Gameplay_Ring": ["Blue_Dotted_Gameplay_Ring_00018.png","Blue_Dotted_Gameplay_Ring_00021.png","Blue_Dotted_Gameplay_Ring_00024.png","Blue_Dotted_Gameplay_Ring_00025.png","Blue_Dotted_Gameplay_Ring_00026.png","Blue_Dotted_Gameplay_Ring_00027.png","Blue_Dotted_Gameplay_Ring_00031.png","Blue_Dotted_Gameplay_Ring_00033.png","Blue_Dotted_Gameplay_Ring_00034.png","Blue_Dotted_Gameplay_Ring_00035.png","Blue_Dotted_Gameplay_Ring_00037.png","Blue_Dotted_Gameplay_Ring_00043.png","Blue_Dotted_Gameplay_Ring_00044.png","Blue_Dotted_Gameplay_Ring_00045.png","Blue_Dotted_Gameplay_Ring_00046.png","Blue_Dotted_Gameplay_Ring_00047.png","Blue_Dotted_Gameplay_Ring_00048.png","Blue_Dotted_Gameplay_Ring_00050.png","Blue_Dotted_Gameplay_Ring_00059.png","Blue_Dotted_Gameplay_Ring_00060.png","Blue_Dotted_Gameplay_Ring_00062.png","Blue_Dotted_Gameplay_Ring_00064.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "blue-dot-2.png",
+	"format": "RGBA8888",
+	"size": {"w":1395,"h":935},
+	"scale": "1",
+	"related_multi_packs": [ "blue-dot-0.json", "blue-dot-1.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:2ceccbf7e3ddbce7ce4951d6f7069fdd:2079169f024bfbbdbc7411110e6e4d6c:f83032644dd1f176bce67e0f3a53812c$"
+}
+}

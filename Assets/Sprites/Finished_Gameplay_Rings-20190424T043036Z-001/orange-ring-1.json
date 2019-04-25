@@ -1,0 +1,184 @@
+{"frames": {
+
+"Orange_Dotted_Gameplay_Ring_00005.png":
+{
+	"frame": {"x":998,"y":1904,"w":85,"h":85},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":917,"y":462,"w":85,"h":85},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00013.png":
+{
+	"frame": {"x":1678,"y":1466,"w":171,"h":170},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":874,"y":419,"w":171,"h":170},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00016.png":
+{
+	"frame": {"x":998,"y":1708,"w":193,"h":194},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":863,"y":407,"w":193,"h":194},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00035.png":
+{
+	"frame": {"x":333,"y":1709,"w":324,"h":324},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":797,"y":340,"w":324,"h":324},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00036.png":
+{
+	"frame": {"x":1,"y":1709,"w":330,"h":330},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":794,"y":337,"w":330,"h":330},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00037.png":
+{
+	"frame": {"x":659,"y":1708,"w":337,"h":337},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":790,"y":333,"w":337,"h":337},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00039.png":
+{
+	"frame": {"x":1679,"y":721,"w":349,"h":349},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":784,"y":327,"w":349,"h":349},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00040.png":
+{
+	"frame": {"x":1679,"y":364,"w":355,"h":355},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":781,"y":324,"w":355,"h":355},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00041.png":
+{
+	"frame": {"x":1679,"y":1,"w":361,"h":361},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":778,"y":321,"w":361,"h":361},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00042.png":
+{
+	"frame": {"x":1678,"y":1097,"w":367,"h":367},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":775,"y":318,"w":367,"h":367},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00047.png":
+{
+	"frame": {"x":1597,"y":1642,"w":397,"h":396},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":760,"y":303,"w":397,"h":396},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00048.png":
+{
+	"frame": {"x":1193,"y":1642,"w":403,"h":402},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":757,"y":300,"w":403,"h":402},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00078.png":
+{
+	"frame": {"x":1133,"y":1097,"w":543,"h":543},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":686,"y":227,"w":543,"h":543},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00079.png":
+{
+	"frame": {"x":1128,"y":1,"w":549,"h":549},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":683,"y":224,"w":549,"h":549},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00083.png":
+{
+	"frame": {"x":572,"y":1,"w":554,"h":554},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":680,"y":221,"w":554,"h":554},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00084.png":
+{
+	"frame": {"x":570,"y":572,"w":559,"h":560},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":678,"y":218,"w":559,"h":560},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00085.png":
+{
+	"frame": {"x":1,"y":1142,"w":565,"h":565},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":675,"y":215,"w":565,"h":565},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00087.png":
+{
+	"frame": {"x":568,"y":1142,"w":564,"h":563},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":675,"y":216,"w":564,"h":563},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00088.png":
+{
+	"frame": {"x":1,"y":1,"w":569,"h":569},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":673,"y":213,"w":569,"h":569},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00097.png":
+{
+	"frame": {"x":1,"y":572,"w":568,"h":567},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":673,"y":213,"w":568,"h":567},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Orange_Dotted_Gameplay_Ring_00100.png":
+{
+	"frame": {"x":1133,"y":552,"w":544,"h":543},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":685,"y":225,"w":544,"h":543},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"animations": {
+	"Orange_Dotted_Gameplay_Ring": ["Orange_Dotted_Gameplay_Ring_00005.png","Orange_Dotted_Gameplay_Ring_00013.png","Orange_Dotted_Gameplay_Ring_00016.png","Orange_Dotted_Gameplay_Ring_00035.png","Orange_Dotted_Gameplay_Ring_00036.png","Orange_Dotted_Gameplay_Ring_00037.png","Orange_Dotted_Gameplay_Ring_00039.png","Orange_Dotted_Gameplay_Ring_00040.png","Orange_Dotted_Gameplay_Ring_00041.png","Orange_Dotted_Gameplay_Ring_00042.png","Orange_Dotted_Gameplay_Ring_00047.png","Orange_Dotted_Gameplay_Ring_00048.png","Orange_Dotted_Gameplay_Ring_00078.png","Orange_Dotted_Gameplay_Ring_00079.png","Orange_Dotted_Gameplay_Ring_00083.png","Orange_Dotted_Gameplay_Ring_00084.png","Orange_Dotted_Gameplay_Ring_00085.png","Orange_Dotted_Gameplay_Ring_00087.png","Orange_Dotted_Gameplay_Ring_00088.png","Orange_Dotted_Gameplay_Ring_00097.png","Orange_Dotted_Gameplay_Ring_00100.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "orange-ring-1.png",
+	"format": "RGBA8888",
+	"size": {"w":2046,"h":2046},
+	"scale": "1",
+	"related_multi_packs": [ "orange-ring-0.json", "orange-ring-2.json", "orange-ring-3.json", "orange-ring-4.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:6ebf940eb40e89742509ebdee81dca4c:1581470d4fd4a7a0aee506238986244c:dcfb80d65f1226253165563237a7e0d0$"
+}
+}

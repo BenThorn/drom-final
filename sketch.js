@@ -84,6 +84,9 @@ PIXI.loader
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-5.json")
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-6.json")
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-7.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-0.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-1.json")
+  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-2.json")
   .load(setup);
 
 PIXI.sound.Sound.from({
@@ -228,8 +231,7 @@ class Conductor {
   }
 }
 
-// for changing and transitioning between states
-a.press = () => {
+const changeState = () => {
   console.log(gameState);
   if(gameState === GAME_STATE.MENU) {
     actionable = false;
@@ -268,6 +270,11 @@ a.press = () => {
       }
     }, 15);
   }
+};
+
+// for changing and transitioning between states
+a.press = () => {
+  changeState();
 };
 
 const beginTutorial = () => {

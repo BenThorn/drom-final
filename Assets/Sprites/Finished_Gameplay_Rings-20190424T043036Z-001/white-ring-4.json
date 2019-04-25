@@ -1,0 +1,72 @@
+{"frames": {
+
+"White_Gameplay_Ring_00043.png":
+{
+	"frame": {"x":429,"y":411,"w":373,"h":373},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":772,"y":315,"w":373,"h":373},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"White_Gameplay_Ring_00049.png":
+{
+	"frame": {"x":429,"y":1,"w":409,"h":408},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":754,"y":297,"w":409,"h":408},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"White_Gameplay_Ring_00050.png":
+{
+	"frame": {"x":425,"y":786,"w":415,"h":414},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":751,"y":294,"w":415,"h":414},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"White_Gameplay_Ring_00051.png":
+{
+	"frame": {"x":1,"y":852,"w":420,"h":420},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":748,"y":291,"w":420,"h":420},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"White_Gameplay_Ring_00052.png":
+{
+	"frame": {"x":1,"y":1,"w":426,"h":425},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":745,"y":288,"w":426,"h":425},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"White_Gameplay_Ring_00056.png":
+{
+	"frame": {"x":423,"y":1203,"w":416,"h":416},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":750,"y":292,"w":416,"h":416},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"White_Gameplay_Ring_00057.png":
+{
+	"frame": {"x":1,"y":428,"w":422,"h":422},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":747,"y":289,"w":422,"h":422},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"animations": {
+	"White_Gameplay_Ring": ["White_Gameplay_Ring_00043.png","White_Gameplay_Ring_00049.png","White_Gameplay_Ring_00050.png","White_Gameplay_Ring_00051.png","White_Gameplay_Ring_00052.png","White_Gameplay_Ring_00056.png","White_Gameplay_Ring_00057.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "white-ring-4.png",
+	"format": "RGBA8888",
+	"size": {"w":840,"h":1620},
+	"scale": "1",
+	"related_multi_packs": [ "white-ring-0.json", "white-ring-1.json", "white-ring-2.json", "white-ring-3.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:e34263dbb57936474e1662974c80c334:dc07d65e339ed0dc500b039979d74987:2994291007960c4743108c08ba6c9602$"
+}
+}

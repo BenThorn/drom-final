@@ -1,0 +1,184 @@
+{"frames": {
+
+"Green_Gameplay_Ring00015.png":
+{
+	"frame": {"x":1854,"y":1793,"w":187,"h":186},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":866,"y":411,"w":187,"h":186},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00017.png":
+{
+	"frame": {"x":1651,"y":1793,"w":201,"h":201},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":859,"y":403,"w":201,"h":201},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00018.png":
+{
+	"frame": {"x":1440,"y":1793,"w":209,"h":209},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":855,"y":399,"w":209,"h":209},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00019.png":
+{
+	"frame": {"x":1221,"y":1802,"w":217,"h":217},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":851,"y":395,"w":217,"h":217},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00020.png":
+{
+	"frame": {"x":995,"y":1802,"w":224,"h":225},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":847,"y":391,"w":224,"h":225},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00053.png":
+{
+	"frame": {"x":1442,"y":1360,"w":431,"h":431},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":743,"y":285,"w":431,"h":431},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00058.png":
+{
+	"frame": {"x":995,"y":1372,"w":428,"h":428},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":744,"y":286,"w":428,"h":428},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00059.png":
+{
+	"frame": {"x":1442,"y":924,"w":434,"h":434},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":741,"y":283,"w":434,"h":434},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00061.png":
+{
+	"frame": {"x":994,"y":924,"w":446,"h":446},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":735,"y":277,"w":446,"h":446},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00062.png":
+{
+	"frame": {"x":995,"y":471,"w":452,"h":451},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":732,"y":274,"w":452,"h":451},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00063.png":
+{
+	"frame": {"x":1466,"y":465,"w":458,"h":457},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":729,"y":271,"w":458,"h":457},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00064.png":
+{
+	"frame": {"x":1466,"y":1,"w":462,"h":463},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":727,"y":268,"w":462,"h":463},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00065.png":
+{
+	"frame": {"x":995,"y":1,"w":468,"h":469},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":724,"y":265,"w":468,"h":469},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00066.png":
+{
+	"frame": {"x":518,"y":1,"w":474,"h":475},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":721,"y":262,"w":474,"h":475},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00067.png":
+{
+	"frame": {"x":512,"y":518,"w":480,"h":480},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":718,"y":259,"w":480,"h":480},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00068.png":
+{
+	"frame": {"x":506,"y":1029,"w":486,"h":486},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":715,"y":256,"w":486,"h":486},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00069.png":
+{
+	"frame": {"x":501,"y":1535,"w":492,"h":492},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":712,"y":253,"w":492,"h":492},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00070.png":
+{
+	"frame": {"x":1,"y":1535,"w":498,"h":498},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":709,"y":250,"w":498,"h":498},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00071.png":
+{
+	"frame": {"x":1,"y":1029,"w":503,"h":504},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":706,"y":247,"w":503,"h":504},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00072.png":
+{
+	"frame": {"x":1,"y":518,"w":509,"h":509},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":703,"y":244,"w":509,"h":509},
+	"sourceSize": {"w":1920,"h":1080}
+},
+"Green_Gameplay_Ring00073.png":
+{
+	"frame": {"x":1,"y":1,"w":515,"h":515},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":700,"y":241,"w":515,"h":515},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"animations": {
+	"Green_Gameplay_Ring": ["Green_Gameplay_Ring00015.png","Green_Gameplay_Ring00017.png","Green_Gameplay_Ring00018.png","Green_Gameplay_Ring00019.png","Green_Gameplay_Ring00020.png","Green_Gameplay_Ring00053.png","Green_Gameplay_Ring00058.png","Green_Gameplay_Ring00059.png","Green_Gameplay_Ring00061.png","Green_Gameplay_Ring00062.png","Green_Gameplay_Ring00063.png","Green_Gameplay_Ring00064.png","Green_Gameplay_Ring00065.png","Green_Gameplay_Ring00066.png","Green_Gameplay_Ring00067.png","Green_Gameplay_Ring00068.png","Green_Gameplay_Ring00069.png","Green_Gameplay_Ring00070.png","Green_Gameplay_Ring00071.png","Green_Gameplay_Ring00072.png","Green_Gameplay_Ring00073.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "green-ring-3.png",
+	"format": "RGBA8888",
+	"size": {"w":2042,"h":2034},
+	"scale": "1",
+	"related_multi_packs": [ "green-ring-0.json", "green-ring-1.json", "green-ring-2.json", "green-ring-4.json" ],
+	"smartupdate": "$TexturePacker:SmartUpdate:113273c6454f4be9c42a140980347450:f002609d5743b7cbeab08edb3f76c481:62a93e7c016de70c38840b7b11a64170$"
+}
+}
