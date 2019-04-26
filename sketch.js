@@ -98,38 +98,14 @@ PIXI.loader
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-5.json")
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-6.json")
   .add("Assets/Sprites/Ring_Explosion-20190424T063018Z-001/Ring_Explosion/purple-exp-7.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-0.json") // Dotted notes
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-1.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-dot-2.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-dot-0.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-dot-1.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-dot-2.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-dot-0.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-dot-1.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-dot-2.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-dot-0.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-dot-1.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-dot-2.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-0.json") // Solid notes
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-1.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-2.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-3.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/green-ring-4.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-0.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-1.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-2.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-3.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/blue-ring-4.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-0.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-1.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-2.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-3.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/purple-ring-4.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-0.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-1.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-2.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-3.json")
-  .add("Assets/Sprites/Finished_Gameplay_Rings-20190424T043036Z-001/white-ring-4.json")
+  .add("Assets/Sprites/New Rings/ring sprite exports/blue-dot.json")
+  .add("Assets/Sprites/New Rings/ring sprite exports/green-dot.json")
+  .add("Assets/Sprites/New Rings/ring sprite exports/orange-dot.json")
+  .add("Assets/Sprites/New Rings/ring sprite exports/pink-dot.json")
+  .add("Assets/Sprites/New Rings/ring sprite exports/blue-solid.json")
+  .add("Assets/Sprites/New Rings/ring sprite exports/green-solid.json")
+  .add("Assets/Sprites/New Rings/ring sprite exports/orange-solid.json")
+  .add("Assets/Sprites/New Rings/ring sprite exports/pink-solid.json")
   .add("Assets/Sprites/Success_Feedback_Text/awesome-0.json")
   .add("Assets/Sprites/Success_Feedback_Text/awesome-1.json")
   .add("Assets/Sprites/Success_Feedback_Text/nice-0.json")
@@ -165,19 +141,15 @@ let actionable = false;
 let conductor;
 let videoOpacity = 0;
 
-let noteFrames = []; //for note ring animation
-
 let blueDotFrames = [];
 let greenDotFrames = [];
 let purpleDotFrames = [];
 let orangeDotFrames = [];
-let whiteDotFrames = [];
 
 let blueRingFrames = [];
 let greenRingFrames = [];
 let purpleRingFrames = [];
 let orangeRingFrames = [];
-let whiteRingFrames = [];
 
 let greenExpFrames = [];
 let pinkExpFrames = []; 
@@ -191,6 +163,10 @@ let awesomeFrames = [];
 let niceFrames = [];
 let goodFrames = [];
 
+let orangeTutorialHit = false;
+let pinkTutorialHit = false;
+let greenTutorialHit = false;
+
 function setup() {
   for (var i = 0; i < 138; i++) {
     let val;
@@ -202,16 +178,15 @@ function setup() {
       val = '00' + i;
     }
       
-    noteFrames.push(PIXI.Texture.fromFrame('Gameplay ring (miss) Comp 1_00' + val + '.png'));
-    blueDotFrames.push(PIXI.Texture.fromFrame('Blue_Dotted_Gameplay_Ring_00' + val + '.png'));
-    greenDotFrames.push(PIXI.Texture.fromFrame('Green_Dotted_Gameplay_Ring00' + val + '.png'));
-    purpleDotFrames.push(PIXI.Texture.fromFrame('Purple_Dotted_Gameplay_Ring_00' + val + '.png'));
-    whiteDotFrames.push(PIXI.Texture.fromFrame('White_Dotted_Gameplay_Ring_00' + val + '.png'));
+    blueDotFrames.push(PIXI.Texture.fromFrame('bluedotring_00' + val + '.png'));
+    greenDotFrames.push(PIXI.Texture.fromFrame('greendotring_00' + val + '.png'));
+    purpleDotFrames.push(PIXI.Texture.fromFrame('pinkdotring_00' + val + '.png'));
+    orangeDotFrames.push(PIXI.Texture.fromFrame('orangedotring_00' + val + '.png'));
 
-    blueRingFrames.push(PIXI.Texture.fromFrame('Blue_Gameplay_Ring00' + val + '.png'));
-    greenRingFrames.push(PIXI.Texture.fromFrame('Green_Gameplay_Ring00' + val + '.png'));
-    purpleRingFrames.push(PIXI.Texture.fromFrame('Purple_Gameplay_Ring00' + val + '.png'));
-    whiteRingFrames.push(PIXI.Texture.fromFrame('White_Gameplay_Ring_00' + val + '.png'));
+    blueRingFrames.push(PIXI.Texture.fromFrame('bluesolidring_00' + val + '.png'));
+    greenRingFrames.push(PIXI.Texture.fromFrame('greensolidring_00' + val + '.png'));
+    purpleRingFrames.push(PIXI.Texture.fromFrame('pinksolidring_00' + val + '.png'));
+    orangeRingFrames.push(PIXI.Texture.fromFrame('orangesolidring_00' + val + '.png'));
   }
 
   for (var i = 0; i < 54; i++) {
@@ -284,19 +259,17 @@ function setup() {
   }
 
   // Load object into GPU
-  app.renderer.plugins.prepare.
-  add(new PIXI.extras.AnimatedSprite(noteFrames))
+  app.renderer.plugins.prepare
   .add(new PIXI.extras.AnimatedSprite(orangeExpFrames))
   .add(new PIXI.extras.AnimatedSprite(greenExpFrames))
   .add(new PIXI.extras.AnimatedSprite(pinkExpFrames))
   .add(new PIXI.extras.AnimatedSprite(blueDotFrames))
   .add(new PIXI.extras.AnimatedSprite(greenDotFrames))
-  .add(new PIXI.extras.AnimatedSprite(whiteDotFrames))
   .add(new PIXI.extras.AnimatedSprite(purpleDotFrames))
+  .add(new PIXI.extras.AnimatedSprite(orangeDotFrames))
   .add(new PIXI.extras.AnimatedSprite(blueRingFrames))
   .add(new PIXI.extras.AnimatedSprite(greenRingFrames))
-  .add(new PIXI.extras.AnimatedSprite(purpleRingFrames))
-  .add(new PIXI.extras.AnimatedSprite(whiteRingFrames))
+  .add(new PIXI.extras.AnimatedSprite(orangeRingFrames))
   .add(new PIXI.extras.AnimatedSprite(orangeFeedbackFrames))
   .add(new PIXI.extras.AnimatedSprite(greenFeedbackFrames))
   .add(new PIXI.extras.AnimatedSprite(pinkFeedbackFrames))
@@ -307,12 +280,12 @@ function setup() {
     let testAnims = [];
     testAnims.push(new PIXI.extras.AnimatedSprite(blueDotFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(blueRingFrames));
-    testAnims.push(new PIXI.extras.AnimatedSprite(whiteDotFrames));
-    testAnims.push(new PIXI.extras.AnimatedSprite(whiteRingFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(greenDotFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(greenRingFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(purpleDotFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(purpleRingFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(orangeDotFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(orangeRingFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(orangeExpFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(greenExpFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(pinkExpFrames));
@@ -340,7 +313,7 @@ function setup() {
     testAnims.forEach((test) => {
       test.onComplete = function (){
         numPlayed++;
-        console.log('hey');
+        console.log('anim complete');
         app.stage.removeChild(test);
 
         if(numPlayed === 17) {
@@ -380,14 +353,23 @@ class Conductor {
     this.noteMgrPink = new NoteManager(3*window.screen.width/4 + 50, "Assets/Images/Outer_Pink.png", this.graphics);
 
     this.managers = [this.noteMgrOrange, this.noteMgrGreen, this.noteMgrPink];
+
+    this.tutorialEnded = false;
   }
 
   tutorialStart() {
+    this.noteMgrOrange.tutorialStart();
+    this.noteMgrGreen.tutorialStart();
+    this.noteMgrPink.tutorialStart();
+  }
 
+  tutorialEnd() {
+    this.noteMgrOrange.tutorialEnd();
+    this.noteMgrGreen.tutorialEnd();
+    this.noteMgrPink.tutorialEnd();
   }
 
   start() {
-    this.started = true;
     this.noteMgrOrange.start();
     this.noteMgrGreen.start();
     this.noteMgrPink.start();
@@ -399,6 +381,17 @@ class Conductor {
       this.noteMgrOrange.draw();
       this.noteMgrGreen.draw();
       this.noteMgrPink.draw();
+    }
+
+    if(gameState === GAME_STATE.TUTORIAL) {
+      this.managers.forEach((m) =>  {
+        console.log(m.tutorialHit);
+      });
+
+      if(this.managers[0].tutorialHit === true && this.managers[1].tutorialHit === true && this.managers[2].tutorialHit === true && this.tutorialEnded === false) {
+        this.tutorialEnded = true;
+        changeState();
+      }
     }
   }
 
@@ -433,6 +426,8 @@ const changeState = () => {
     }, 15);
   } else if(gameState === GAME_STATE.TUTORIAL) {
     actionable = false;
+    sched.removeAll();
+    conductor.tutorialEnd();
     video.style.display = 'initial';
     let setOpacity = 0;
     let timer = setInterval(() => {
@@ -500,6 +495,7 @@ const beginTutorial = () => {
       if(m.playLine.opacity > 0.75) {
         clearInterval(timer);
         m.playLine.opacity = 0.75;
+        m.tutorialStart();
         actionable = true;
       } else {
         m.playLine.opacity += 0.008;
@@ -519,6 +515,7 @@ const beginGame = () => {
 const endGame = () => {
   gameState = GAME_STATE.END;
   sched.stop();
+  sched.removeAll();
 
   while(app.stage.children.length > 0) {
     app.stage.removeChild(app.stage.children[0]);
@@ -570,8 +567,8 @@ b.press = () => {
 class NoteManager {
   constructor(x, imgStr, gfx) {
     this.notes = [];
-    this.qtrFrames = [blueRingFrames, greenRingFrames, whiteRingFrames, purpleRingFrames];
-    this.eightFrames = [blueDotFrames, greenDotFrames, whiteDotFrames, purpleDotFrames];
+    this.qtrFrames = [blueRingFrames, greenRingFrames, orangeRingFrames, purpleRingFrames];
+    this.eightFrames = [blueDotFrames, greenDotFrames, orangeDotFrames, purpleDotFrames];
 
     this.noteSwitcher = 0;
 
@@ -585,10 +582,19 @@ class NoteManager {
 
     this.imgStr = imgStr;
 
+    this.tutorialHit = false;
   }
 
   start() {
     sched.start(this.keepTime);
+  }
+
+  tutorialStart() {
+    sched.start(this.keepTimeTutorial);
+  }
+
+  tutorialEnd() {
+    sched.stop(this.keepTimeTutorial);
   }
 
   draw(){
@@ -1286,8 +1292,12 @@ class NoteManager {
   }
 
   keepTimeTutorial = (e) => {
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + 2.000, keepTimeTutorial);
+    const t0 = e.playbackTime;
+    if(this.tutorialHit === false) {
+      sched.insert(t0 + 0.000, this.createNote);
+      sched.insert(t0 + 2.000, this.createEightNote);
+      sched.insert(t0 + 4.000, this.keepTimeTutorial);
+    }
   }
 
   createNote = () => {
@@ -1351,7 +1361,7 @@ class PlayLine {
       fill: "white",
       fontFamily: "Tahoma"
     });
-    this.text = new PIXI.Text('Streak: ' + this.streak + ' Total Hit: ' + this.totalHit, style);
+    this.text = new PIXI.Text('Streak: ' + this.streak);
 
     this.text.position.set(this.playLineImg.x, this.playLineImg.y + 300);
 
@@ -1393,24 +1403,29 @@ class PlayLine {
 
   draw() {
     this.playLineImg.bringToFront();
-    if(this.glowing || this.opacity > 0.75) {
-      this.opacity -= 0.02  ;
-    }
 
     this.playLineImg.alpha = this.opacity;
-    this.circle.alpha = this.opacity / 5;
+    this.circle.alpha = this.opacity / 3;
   }
 
   play() {
     this.glowing = true;
     this.opacity = 1.2;
 
+    var timer = setInterval(() => {
+      this.opacity -= 0.02;
+      if(this.opacity <= 0.75) {
+        clearInterval(timer);
+        this.opacity = 0.75;
+      }
+    }, 15);
+
     for(let i=0; i<this.notes.length; i++){
       if(this.notes[i].chance){
         this.notes[i].hit();
         this.totalHit++;
         this.streak++;
-        this.text.text ='Streak: ' + this.streak + ' Total Hit: ' + this.totalHit + 'Highest: ' + this.highestStreak;
+        this.text.text ='Streak: ' + this.streak;
         if(this.streak >= 3) {
           this.streakAppear();
         }
@@ -1444,12 +1459,11 @@ class PlayLine {
   }
 
   fail() {
-    console.log('failed');
     if(this.streak > this.highestStreak) {
       this.highestStreak = this.streak;
     }
     this.streak = 0;
-    this.text.text ='Streak: ' + this.streak + ' Total Hit: ' + this.totalHit + 'Highest: ' + this.highestStreak;
+    this.text.text ='Streak: ' + this.streak;
     this.text.alpha = 0;
   }
 	
@@ -1521,16 +1535,24 @@ class Note {
     this.missed = false;
     this.playerFail = missCallback;
 
+    this.imgStr = imgStr;
+
     this.animation = new PIXI.extras.AnimatedSprite(animationFrames);
 
-    this.animation.position.set(this.x, this.y + 23);
-    this.animation.scale.set(.6);
-    this.animation.animationSpeed = 1;
+    this.animation.position.set(this.x + 1, this.y + 35);
+    this.animation.scale.set(.92);
+    this.animation.animationSpeed = 1.5;
     this.animation.anchor.set(.5);
 
     this.animation.loop = false;
+
+    this.animation.onComplete = () => {
+      app.stage.removeChild(this.animation);
+    };
   
     app.stage.addChild(this.animation);
+
+    this.animation.bringToFront();
 
     this.animation.play();
 
@@ -1648,8 +1670,8 @@ class Note {
 
   draw(){
     if(this.active) {
-      if(this.animation.currentFrame === 70) {
-        if(!going) {
+      if(this.animation.currentFrame === 125) {
+        if(!going && gameState === GAME_STATE.GAME) {
           video.play();
           sched.start(metronome);
           video.currentTime = 0;          
@@ -1658,7 +1680,7 @@ class Note {
         }
       }
 
-      if(this.animation.currentFrame >= 75 && this.animation.currentFrame <= 85) {
+      if(this.animation.currentFrame >= 125 && this.animation.currentFrame <= 136) {
         this.testImg.alpha = 1;
         this.chance = true;
       } else {
@@ -1666,7 +1688,8 @@ class Note {
         this.chance = false;
       }
 
-      if(this.animation.currentFrame > 86) {
+      if(this.animation.currentFrame === 137) {
+        this.animation.visisble = false;
         this.miss();
       }
     }
@@ -1681,9 +1704,6 @@ class Note {
     }
   }
 
-  play () {
-  }
-
   fade() {
     if(!this.fading){
       this.fading = true;
@@ -1694,12 +1714,25 @@ class Note {
     this.explosion.play();
     this.feedback.play();
     this.testImg.alpha = 0;
-    this.emit = true;
-    this.elapsed = Date.now();
-    this.emitter.playOnce();
+    // this.emit = true;
+    // this.elapsed = Date.now();
+    // this.emitter.playOnce();
     this.animation.visible = false;
     this.active = false;
     this.chance = false;
+
+    if(gameState === GAME_STATE.TUTORIAL) {
+      if(this.imgStr.includes('Orange')){
+        console.log('HEY THIS IS ORANGE');
+        conductor.noteMgrOrange.tutorialHit = true;
+      } else if(this.imgStr.includes('Green')){
+        console.log('HEY THIS IS Green');
+        conductor.noteMgrGreen.tutorialHit = true;
+      } else if(this.imgStr.includes('Pink')){
+        console.log('HEY THIS IS PINK');
+        conductor.noteMgrPink.tutorialHit = true;
+      }
+    }
   }
 
   miss() {
