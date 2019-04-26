@@ -8,6 +8,7 @@
     "pixi-particles": "^4.1.0",
     "pixi-smoothie": "^4.5.3",
     "pixi-sound": "^2.1.0",
+    "type-for-pixi": "^1.8.1",
     "web-audio-scheduler": "^1.4.0"
   },
   "devDependencies": {},

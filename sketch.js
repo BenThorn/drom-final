@@ -135,30 +135,30 @@ PIXI.loader
   .add("Assets/Sprites/Success_Feedback_Text/nice-0.json")
   .add("Assets/Sprites/Success_Feedback_Text/good-0.json")
   .add("Assets/Sprites/Success_Feedback_Text/good-1.json")
+  .add("Assets/Sprites/Ring Feedback/green-ring-3-0.json")
+  .add("Assets/Sprites/Ring Feedback/green-ring-3-1.json")
+  .add("Assets/Sprites/Ring Feedback/green-ring-3-2.json")
+  .add("Assets/Sprites/Ring Feedback/orange-ring-3-0.json")
+  .add("Assets/Sprites/Ring Feedback/orange-ring-3-1.json")
+  .add("Assets/Sprites/Ring Feedback/orange-ring-3-2.json")
+  .add("Assets/Sprites/Ring Feedback/pink-ring-3-0.json")
+  .add("Assets/Sprites/Ring Feedback/pink-ring-3-1.json")
+  .add("Assets/Sprites/Ring Feedback/pink-ring-3-2.json")
+  .add("futura", "Assets/Fonts/futur.ttf")
   .load(setup);
 
-PIXI.sound.Sound.from({
-  url: 'Assets/Sound/drom_loop.mp3',
-  autoPlay: false,
-  complete: function() {
-      console.log('Sound finished');
-  }
-});
-
-PIXI.sound.add('drum', 'Assets/Sound/drum_1.wav');
-PIXI.sound.add('fail', 'Assets/Sound/fail.wav');
-PIXI.sound.add('test', 'Assets/Sound/drom_loop.mp3');
-PIXI.sound.add('song', 'Assets/Sound/Main_Theme_Var_1.mp3');
+// PIXI.sound.Sound.from({
+//   url: 'Assets/Sound/drom_loop.mp3',
+//   autoPlay: false,
+//   complete: function() {
+//       console.log('Sound finished');
+//   }
+// });
 
 //------------------------------------------------------------
 //----------------------------End Setup-----------------------
 //------------------------------------------------------------
-let playLine;
-let playLine2;
-let playLine3;
-let noteMgrOrange;
-let noteMgrGreen;
-let noteMgrPink;
+
 let started = false;
 let actionable = false;
 
@@ -182,6 +182,14 @@ let whiteRingFrames = [];
 let greenExpFrames = [];
 let pinkExpFrames = []; 
 let orangeExpFrames = [];
+
+let orangeFeedbackFrames = [];
+let greenFeedbackFrames = [];
+let pinkFeedbackFrames = [];
+
+let awesomeFrames = [];
+let niceFrames = [];
+let goodFrames = [];
 
 function setup() {
   for (var i = 0; i < 138; i++) {
@@ -221,6 +229,60 @@ function setup() {
     pinkExpFrames.push(PIXI.Texture.fromFrame('Purple_Ring_Explosion_Comp 1_00' + val + '.png'));
   }
 
+  for (var i = 123; i < 165; i++) {
+    let val;
+    if(i >= 100) {
+      val = i;
+    } else if (i < 100 && i >= 10) {
+      val = '0' + i;
+    } else if (i < 10) {
+      val = '00' + i;
+    }
+
+    orangeFeedbackFrames.push(PIXI.Texture.fromFrame('Orange Ring 3_00' + val + '.png'));
+  }
+
+  for (var i = 143; i < 185; i++) {
+    let val;
+    if(i >= 100) {
+      val = i;
+    } else if (i < 100 && i >= 10) {
+      val = '0' + i;
+    } else if (i < 10) {
+      val = '00' + i;
+    }
+
+    greenFeedbackFrames.push(PIXI.Texture.fromFrame('Green Ring 3_00' + val + '.png'));
+  }
+
+  for (var i = 190; i < 229; i++) {
+    let val;
+    if(i >= 100) {
+      val = i;
+    } else if (i < 100 && i >= 10) {
+      val = '0' + i;
+    } else if (i < 10) {
+      val = '00' + i;
+    }
+
+    pinkFeedbackFrames.push(PIXI.Texture.fromFrame('Pink Ring 3_00' + val + '.png'));
+  }
+
+  for (let i = 421; i < 517; i++) {
+    let val;
+    if(i >= 100) {
+      val = i;
+    } else if (i < 100 && i >= 10) {
+      val = '0' + i;
+    } else if (i < 10) {
+      val = '00' + i;
+    }
+
+    goodFrames.push(PIXI.Texture.fromFrame('Purple_Success_Feedback Text_00' + val + '.png'));
+    niceFrames.push(PIXI.Texture.fromFrame('Green_Success_Feedback Text_00' + val + '.png'));
+    awesomeFrames.push(PIXI.Texture.fromFrame('Orange_Success_Feedback_Text_00' + val + '.png'));
+  }
+
   // Load object into GPU
   app.renderer.plugins.prepare.
   add(new PIXI.extras.AnimatedSprite(noteFrames))
@@ -235,40 +297,55 @@ function setup() {
   .add(new PIXI.extras.AnimatedSprite(greenRingFrames))
   .add(new PIXI.extras.AnimatedSprite(purpleRingFrames))
   .add(new PIXI.extras.AnimatedSprite(whiteRingFrames))
+  .add(new PIXI.extras.AnimatedSprite(orangeFeedbackFrames))
+  .add(new PIXI.extras.AnimatedSprite(greenFeedbackFrames))
+  .add(new PIXI.extras.AnimatedSprite(pinkFeedbackFrames))
+  .add(new PIXI.extras.AnimatedSprite(goodFrames))
+  .add(new PIXI.extras.AnimatedSprite(niceFrames))
+  .add(new PIXI.extras.AnimatedSprite(awesomeFrames))
   .upload(() => {
     let testAnims = [];
     testAnims.push(new PIXI.extras.AnimatedSprite(blueDotFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(blueRingFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(whiteDotFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(whiteRingFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(greenDotFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(greenRingFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(purpleDotFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(purpleRingFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(orangeExpFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(greenExpFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(pinkExpFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(orangeFeedbackFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(greenFeedbackFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(pinkFeedbackFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(awesomeFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(niceFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(goodFrames));
 
     start();
 
+    let numPlayed = 0;
+
     for(let i = 0; i < testAnims.length; i++) {
-      testAnims[i].position.set(-1000, -500);
+      testAnims[i].position.set(0, 0);
       testAnims[i].scale.set(.5);
       testAnims[i].animationSpeed = 1;
       testAnims[i].anchor.set(.5);
       testAnims[i].loop = false;
 
-      testAnims[i].onComplete = function (){
-        console.log('hey');
-        video.play();
-      }
-
-      if(i === testAnims.length-1){
-        console.log('yo');
-
-      }
       app.stage.addChild(testAnims[i]);
     }
 
     testAnims.forEach((test) => {
       test.onComplete = function (){
+        numPlayed++;
         console.log('hey');
+        app.stage.removeChild(test);
+
+        if(numPlayed === 17) {
+          video.play();
+        }
       }
       test.play();
     });
@@ -280,7 +357,6 @@ function setup() {
 
 function start() {
   gameState = GAME_STATE.MENU;
-  video.play();
 
   conductor = new Conductor();
   app.ticker.add(delta => update(delta));
@@ -318,10 +394,18 @@ class Conductor {
   }
 
   draw() {
-    this.graphics.clear();
-    this.noteMgrOrange.draw();
-    this.noteMgrGreen.draw();
-    this.noteMgrPink.draw();
+    if(gameState === GAME_STATE.TUTORIAL || gameState === GAME_STATE.GAME){
+      this.graphics.clear();
+      this.noteMgrOrange.draw();
+      this.noteMgrGreen.draw();
+      this.noteMgrPink.draw();
+    }
+  }
+
+  end() {
+    this.managers.forEach((manager) => {
+      app.stage.removeChild(manager.playLine.playLineImg);
+    });
   }
 }
 
@@ -363,6 +447,43 @@ const changeState = () => {
         setOpacity += 0.008;
       }
     }, 15);
+  } else if(gameState === GAME_STATE.GAME) {
+    actionable = false;
+    let setOpacity = 1;
+    let timer = setInterval(() => {
+      if(setOpacity <= 0) {
+        clearInterval(timer);
+        video.volume = 0;
+        video.style.display = 'none';
+        video.currentTime = 0;
+        menu.style.display = 'none';
+        video.src = "Assets/Video/MenuParticles.mp4";
+        video.pause();
+        endGame(); // Haha, like the movie. I wish I was watching that.
+      } else {
+        video.style.opacity = setOpacity;
+        video.volume = setOpacity;
+        setOpacity -= 0.008;
+      }
+    }, 15);
+  } else if(gameState === GAME_STATE.END) {
+    video.style.display = 'initial';
+    menu.style.display = 'initial';
+    let setOpacity = 0;
+    let timer = setInterval(() => {
+      if(setOpacity >= 1) {
+        clearInterval(timer);
+        video.volume = 1;
+        video.style.opacity = 1;
+        menu.style.opacity = 1;
+        restartDrom();
+      } else if(setOpacity < 1) {
+        video.style.opacity = setOpacity;
+        video.volume = setOpacity;
+        menu.style.opacity = setOpacity;
+        setOpacity += 0.008;
+      }
+    }, 15);
   }
 };
 
@@ -393,6 +514,25 @@ const beginGame = () => {
   actionable = true;
 
   conductor.start();
+};
+
+const endGame = () => {
+  gameState = GAME_STATE.END;
+  sched.stop();
+
+  while(app.stage.children.length > 0) {
+    app.stage.removeChild(app.stage.children[0]);
+  }
+  conductor.end();
+  conductor = null;
+};
+
+const restartDrom = () => {
+  gameState = GAME_STATE.MENU;
+  video.play();
+  going = false;
+
+  conductor = new Conductor();
 };
 
 spaceButton.press = () => {
@@ -427,57 +567,14 @@ b.press = () => {
   }
 };
 
-s.press = () => {	
-	//time in ms
-	var delayForFade = 2000;
-	
-  //Starting menu screen fade out
-	var fadeOutEffect = setInterval(function(){
-		//delete this once fade is working
-		//turn off menu
-		menu.style.display = "none";
-		
-		//make sure there are numbers for video and menu
-		if(!video.style.opacity||!menu.style.opacity){
-			video.style.opacity = 1;
-			menu.style.opacity = 1;
-		}
-		if(videoOpacity < 0.1||started){
-			console.log("if hit");
-			clearInterval(fadeOutEffect);
-		} else {
-			video.style.opacity += 0.1;
-			console.log("Opacity going down");
-		}
-	}, 2);
-	
-	setTimeout(function() {	
-	//sticking this in here for a second
-	//video fade back in
-	var fadeUpEffect = setInterval(function(){
-		if(video.style.opacity < 1&&started){
-			 video.style.opacity += 0.1;
-		} else {
-			clearInterval(fadeUpEffect);
-		}
-	}, delayForFade);
-		
-  	console.log('s');
-  	started = true;
-  	conductor.start();
-  	video.src = "Assets/Video/Comp_1.mp4";
-  	video.play();
-	}, delayForFade);
-};
-
-f.press = () => {
-	btnJump();
-};
-
 class NoteManager {
   constructor(x, imgStr, gfx) {
-    this.staff = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
     this.notes = [];
+    this.qtrFrames = [blueRingFrames, greenRingFrames, whiteRingFrames, purpleRingFrames];
+    this.eightFrames = [blueDotFrames, greenDotFrames, whiteDotFrames, purpleDotFrames];
+
+    this.noteSwitcher = 0;
+
     this.x = x;
 
     this.playLine = new PlayLine(imgStr, this.x, this.notes);
@@ -505,73 +602,252 @@ class NoteManager {
     const t0 = e.playbackTime;
 
     let measure = 0.000;
- 
-    // 1
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    measure++;
 
-    // 2
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    measure++;
+    if(this.imgStr.includes("Orange")){
+      // 1
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
 
-    // 3
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-    measure++;
+      // 2
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
 
-    // 4
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-    measure++;
+      // 3
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
 
-    // 5
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 1.500, this.createNote);
-    measure++;
+      // 4
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
 
-    // 6
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-    measure++;
+      // 5
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
 
-    // 7
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 1.500, this.createNote);
-    measure++;
-    
-    // 8
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-    measure++;
+      // 6
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
 
-    // 9
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 1.500, this.createNote);
-    measure++;
+      // 7
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+      
+      // 8
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
 
-    // 10
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-    measure++;
+      // 9
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
 
-    // 11
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-    sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 1.500, this.createNote);
-    measure++;
+      // 10
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      measure++;
 
-    // 12
-    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-    sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-    measure++;
+      // 11
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
 
+      // 12
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      measure++;
+      
+      // 13
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 14
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 15
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 16
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 17
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 18
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 19
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 20
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 21
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 22
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 23
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 24
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 25
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 26
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 27
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 28
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 29
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 30
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 31
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 32
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 33
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 34
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 35
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 36
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 37
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+    }
 
   //  sched.insert(t0 + 2.000, this.keepTime);
 
@@ -579,24 +855,30 @@ class NoteManager {
   }
 
   createNote = () => {
+    const note = new Note(this.graphics, this.x, this.imgStr, this.qtrFrames[this.noteSwitcher], () => {
+      this.playLine.fail();
+    });
+    this.notes.push(note);
 
-    if(this.staff.length > 0) {
-      const timeSig = this.staff.shift();
-      const note = new Note(timeSig, this.graphics, this.x, this.imgStr, whiteRingFrames);
-      this.notes.push(note);
+    if(this.noteSwitcher === 3) {
+      this.noteSwitcher = 0;
+    } else {
+      this.noteSwitcher++;
     }
   }
 }
 
 class PlayLine {
   constructor(imgStr, x, notes) {
+    this.streak = 0;
+    this.totalHit = 0;
+    this.highestStreak = 0;
     this.glowing = false;
     this.opacity = 0;
 
+    // For the line itself
     this.playLineImg = new PIXI.Sprite(PIXI.loader.resources[imgStr].texture);
   
-    app.stage.addChild(this.playLineImg);
-
     this.playLineImg.width = 300;
     this.playLineImg.height = 300;
     this.playLineImg.x = x - 175;
@@ -604,6 +886,59 @@ class PlayLine {
     this.playLineImg.alpha = this.opacity;
 
     this.x = x;
+
+    // For the shaded circle around the center
+    this.circle = new PIXI.Graphics();
+    this.circle.beginFill(0x000000);
+    this.circle.drawCircle(166, 166, 150);
+    this.circle.endFill();
+    this.circle.width = 270;
+    this.circle.height = 270;
+    this.circle.x = this.playLineImg.x;
+    this.circle.y = this.playLineImg.y;
+    this.circle.alpha = this.opacity;
+
+    // For the streak text
+    const style = new PIXI.TextStyle({
+      fill: "white",
+      fontFamily: "Tahoma"
+    });
+    this.text = new PIXI.Text('Streak: ' + this.streak + ' Total Hit: ' + this.totalHit, style);
+
+    this.text.position.set(this.playLineImg.x, this.playLineImg.y + 300);
+
+    this.text.alpha = 0;
+
+    // For the feedback text
+    this.goodAnim = new PIXI.extras.AnimatedSprite(goodFrames);
+    this.niceAnim = new PIXI.extras.AnimatedSprite(niceFrames);
+    this.awesomeAnim = new PIXI.extras.AnimatedSprite(awesomeFrames);
+    this.textAnims = [this.goodAnim, this.niceAnim, this.awesomeAnim];
+
+    this.textAnims.forEach((anim) => {
+      anim.position.set(this.playLineImg.x + 150, this.playLineImg.y);
+      anim.anchor.set(.5);
+      anim.scale.set(.5);
+      anim.loop = false;
+
+      app.stage.addChild(anim);
+    });
+
+    this.goodAnim.onComplete = () => {
+      this.goodAnim.gotoAndStop(0);
+    }
+
+    this.niceAnim.onComplete = () => {
+      this.niceAnim.gotoAndStop(0);
+    }
+
+    this.awesomeAnim.onComplete = () => {
+      this.awesomeAnim.gotoAndStop(0);
+    }
+  
+    app.stage.addChild(this.text);
+    app.stage.addChild(this.circle);
+    app.stage.addChild(this.playLineImg);
 
     this.notes = notes;
   }
@@ -615,31 +950,59 @@ class PlayLine {
     }
 
     this.playLineImg.alpha = this.opacity;
+    this.circle.alpha = this.opacity / 5;
   }
 
   play() {
     this.glowing = true;
     this.opacity = 1.2;
-    let success;
-    PIXI.sound.play('fail');
 
     for(let i=0; i<this.notes.length; i++){
       if(this.notes[i].chance){
         this.notes[i].hit();
-        PIXI.sound.play('drum');
-        success = true;
-        break;
-      } else {
-        success = false;
-      }
-    }
+        this.totalHit++;
+        this.streak++;
+        this.text.text ='Streak: ' + this.streak + ' Total Hit: ' + this.totalHit + 'Highest: ' + this.highestStreak;
+        if(this.streak >= 3) {
+          this.streakAppear();
+        }
 
-    if(!success) {
+        if(this.streak === 7) {
+          this.goodAnim.play();
+        } else if(this.streak === 15) {
+          this.niceAnim.play();
+        } else if(this.streak === 25) {
+          this.awesomeAnim.play();
+        }
+        break;
+      }
     }
 
     setTimeout(() => {
       this.glowing = false;
     }, 500);
+  }
+
+  streakAppear() {
+    if(this.streak >= 3) {
+      let timer = setInterval(() => {
+        if(this.text.alpha >= 1) {
+          clearInterval(timer);
+        } else {
+          this.text.alpha += 0.01;
+        }
+      }, 15);
+    }
+  }
+
+  fail() {
+    console.log('failed');
+    if(this.streak > this.highestStreak) {
+      this.highestStreak = this.streak;
+    }
+    this.streak = 0;
+    this.text.text ='Streak: ' + this.streak + ' Total Hit: ' + this.totalHit + 'Highest: ' + this.highestStreak;
+    this.text.alpha = 0;
   }
 	
 	//See if players are ready to move past the menu
@@ -699,21 +1062,22 @@ class PlayLine {
 let going = false;
 
 class Note {
-  constructor(timeSig, gfx, x, imgStr, animationFrames) {
+  constructor(gfx, x, imgStr, animationFrames, missCallback) {
     this.radius = 1;
     this.stroke = 5;
     this.x = x - 25;
     this.y = 400;
     this.active = true;
     this.chance = false;
-    this.timeSig = timeSig;
     this.played = false;
+    this.missed = false;
+    this.playerFail = missCallback;
 
     this.animation = new PIXI.extras.AnimatedSprite(animationFrames);
 
     this.animation.position.set(this.x, this.y + 25);
     this.animation.scale.set(.666);
-    this.animation.animationSpeed = 1;
+    this.animation.animationSpeed = .8;
     this.animation.anchor.set(.5);
 
     this.animation.loop = false;
@@ -724,13 +1088,19 @@ class Note {
 
     if(imgStr.includes('Orange')){
       this.explosion = new PIXI.extras.AnimatedSprite(orangeExpFrames);
+      this.feedback = new PIXI.extras.AnimatedSprite(orangeFeedbackFrames);
       this.explosion.position.set(this.x, this.y + 35);
+      this.feedback.position.set(this.x, this.y);
     } else if(imgStr.includes('Green')){
       this.explosion = new PIXI.extras.AnimatedSprite(greenExpFrames);
+      this.feedback = new PIXI.extras.AnimatedSprite(greenFeedbackFrames);
       this.explosion.position.set(this.x, this.y);
+      this.feedback.position.set(this.x, this.y);
     } else if(imgStr.includes('Pink')){
-      this.explosion = new PIXI.extras.AnimatedSprite(pinkExpFrames);      
+      this.explosion = new PIXI.extras.AnimatedSprite(pinkExpFrames);
+      this.feedback = new PIXI.extras.AnimatedSprite(pinkFeedbackFrames);
       this.explosion.position.set(this.x, this.y + 35);
+      this.feedback.position.set(this.x, this.y);
     }
     this.explosion.anchor.set(0.5);
 
@@ -739,8 +1109,25 @@ class Note {
     this.explosion.animationSpeed = 1;
 
     this.explosion.loop = false;
+
+    this.feedback.anchor.set(0.5);
+
+    this.feedback.scale.set(.8, .8);
+
+    this.feedback.animationSpeed = 1;
+
+    this.feedback.loop = false;
+
+    this.explosion.onComplete = function() {
+      app.stage.removeChild(this.explosion);
+    };
+
+    this.feedback.onComplete = () => {
+      app.stage.removeChild(this.feedback);
+    };
   
     app.stage.addChild(this.explosion);
+    app.stage.addChild(this.feedback);
 
     this.testImg = new PIXI.Sprite(PIXI.loader.resources['Assets/Images/test.png'].texture);
 
@@ -814,22 +1201,25 @@ class Note {
   draw(){
     if(this.active) {
       if(this.animation.currentFrame === 70) {
-        PIXI.sound.play('drum');
-
         if(!going) {
           video.play();
+          sched.start(metronome);
           video.currentTime = 0;          
 
           going = true;
         }
       }
 
-      if(this.animation.currentFrame >= 70 && this.animation.currentFrame <= 76) {
+      if(this.animation.currentFrame >= 70 && this.animation.currentFrame <= 80) {
         this.testImg.alpha = 1;
         this.chance = true;
       } else {
         this.testImg.alpha = 0;
         this.chance = false;
+      }
+
+      if(this.animation.currentFrame > 80) {
+        this.miss();
       }
     }
 
@@ -854,7 +1244,7 @@ class Note {
 
   hit() {
     this.explosion.play();
-    console.log('hitto');
+    this.feedback.play();
     this.testImg.alpha = 0;
     this.emit = true;
     this.elapsed = Date.now();
@@ -867,6 +1257,7 @@ class Note {
   miss() {
     if(!this.missed){
       this.missed = true;
+      this.playerFail();
     }
   }
 }
