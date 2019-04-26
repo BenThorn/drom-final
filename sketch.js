@@ -1361,7 +1361,7 @@ class PlayLine {
       fill: "white",
       fontFamily: "Tahoma"
     });
-    this.text = new PIXI.Text('Streak: ' + this.streak);
+    this.text = new PIXI.Text('Streak: ' + this.streak, style);
 
     this.text.position.set(this.playLineImg.x, this.playLineImg.y + 300);
 
