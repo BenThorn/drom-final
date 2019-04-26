@@ -646,7 +646,8 @@ class NoteManager {
       // 8
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
       sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
       measure++;
 
       // 9
@@ -659,6 +660,8 @@ class NoteManager {
       // 10
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
       sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
       measure++;
 
       // 11
@@ -674,80 +677,284 @@ class NoteManager {
       measure++;
       
       // 13
-      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 14
-      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 15
-      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 16
-      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 17
-      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 18
-      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 19
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 20
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 21
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 22
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 23
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 24
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
       sched.insert(t0 + measure * 2 + 0.500, this.createNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
       sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
-      // 23
+      // 25
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createNote);
+      measure++;
+
+      // 26
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createNote);
+      measure++;
+
+      // 27
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createNote);
+      measure++;
+
+      // 28
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createNote);
+      measure++;
+
+      // 29
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createNote);
+      measure++;
+
+      // 30
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createNote);
+      measure++;
+
+      // 31
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createNote);
+      measure++;
+
+      // 32
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createNote);
+      measure++;
+
+      // 33
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createNote);
+      measure++;
+
+      // 34
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 35
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 36
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 37
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      //Last note
+      sched.insert(t0 + measure * 2 + 0.00, this.createNote);
+    }  else if(this.imgStr.includes("Green")){
+      // 1
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 2
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 3
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 4
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
       sched.insert(t0 + measure * 2 + 0.500, this.createNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
       sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 5
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 6
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 7
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+      
+      // 8
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 9
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+
+      // 10
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 11
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 12
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+      
+      // 13
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 14
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 15
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+
+      // 16
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 17
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      measure++;
+
+      // 18
+      sched.insert(t0 + measure * 2 + 0.000, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+
+      // 19
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 20
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 21
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 22
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 23
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
       measure++;
 
       // 24
@@ -780,73 +987,297 @@ class NoteManager {
 
       // 28
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+
+      // 29
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+
+      // 30
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+
+      // 31
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+
+      // 32
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+
+      // 33
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.250, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createEightNote);
+      measure++;
+
+      // 34
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 35
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 36
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 37
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      //Last note
+      sched.insert(t0 + measure * 2 + 0.00, this.createNote);
+    }   else if(this.imgStr.includes("Pink")){
+      // 1
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 2
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 3
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 4
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
       sched.insert(t0 + measure * 2 + 0.500, this.createNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 5
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 6
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 7
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+      
+      // 8
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 9
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 10
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 11
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 12
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+      
+      // 13
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 14
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 15
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 16
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 17
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 18
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 19
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 20
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 21
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      measure++;
+
+      // 22
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 23
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 24
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 25
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 26
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
+      measure++;
+
+      // 27
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      measure++;
+
+      // 28
+      sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
       sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 29
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
       sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
       sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 30
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 31
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
       sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
       sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 32
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
       sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
       sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 33
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 34
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createEightNote);
       sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 35
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createEightNote);
       sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 36
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.000, this.createNote);
+      sched.insert(t0 + measure * 2 + 0.500, this.createEightNote);
+      sched.insert(t0 + measure * 2 + 0.750, this.createEightNote);
       sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
 
       // 37
       sched.insert(t0 + measure * 2 + 0.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 0.500, this.createNote);
       sched.insert(t0 + measure * 2 + 1.000, this.createNote);
-      sched.insert(t0 + measure * 2 + 1.500, this.createNote);
       measure++;
+
+      //Last note
+      sched.insert(t0 + measure * 2 + 0.00, this.createNote);
     }
 
   //  sched.insert(t0 + 2.000, this.keepTime);
@@ -854,8 +1285,25 @@ class NoteManager {
     this.offset = 0;
   }
 
+  keepTimeTutorial = (e) => {
+    sched.insert(t0 + measure * 2 + 0.000, this.createNote);
+    sched.insert(t0 + 2.000, keepTimeTutorial);
+  }
+
   createNote = () => {
-    const note = new Note(this.graphics, this.x, this.imgStr, this.qtrFrames[this.noteSwitcher], () => {
+    const note = new Note('qtr', this.graphics, this.x, this.imgStr, this.qtrFrames[this.noteSwitcher], () => {
+      this.playLine.fail();
+    });
+    this.notes.push(note);
+
+    if(this.noteSwitcher === 3) {
+      this.noteSwitcher = 0;
+    } else {
+      this.noteSwitcher++;
+    }
+  }
+  createEightNote = () => {
+    const note = new Note('eighth', this.graphics, this.x, this.imgStr, this.eightFrames[this.noteSwitcher], () => {
       this.playLine.fail();
     });
     this.notes.push(note);
@@ -1062,7 +1510,7 @@ class PlayLine {
 let going = false;
 
 class Note {
-  constructor(gfx, x, imgStr, animationFrames, missCallback) {
+  constructor(type, gfx, x, imgStr, animationFrames, missCallback) {
     this.radius = 1;
     this.stroke = 5;
     this.x = x - 25;
@@ -1075,9 +1523,9 @@ class Note {
 
     this.animation = new PIXI.extras.AnimatedSprite(animationFrames);
 
-    this.animation.position.set(this.x, this.y + 25);
-    this.animation.scale.set(.666);
-    this.animation.animationSpeed = .8;
+    this.animation.position.set(this.x, this.y + 23);
+    this.animation.scale.set(.6);
+    this.animation.animationSpeed = 1;
     this.animation.anchor.set(.5);
 
     this.animation.loop = false;
@@ -1210,7 +1658,7 @@ class Note {
         }
       }
 
-      if(this.animation.currentFrame >= 70 && this.animation.currentFrame <= 80) {
+      if(this.animation.currentFrame >= 75 && this.animation.currentFrame <= 85) {
         this.testImg.alpha = 1;
         this.chance = true;
       } else {
@@ -1218,7 +1666,7 @@ class Note {
         this.chance = false;
       }
 
-      if(this.animation.currentFrame > 80) {
+      if(this.animation.currentFrame > 86) {
         this.miss();
       }
     }
