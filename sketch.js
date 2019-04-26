@@ -201,9 +201,9 @@ function setup() {
     whiteDotFrames.push(PIXI.Texture.fromFrame('White_Dotted_Gameplay_Ring_00' + val + '.png'));
 
     blueRingFrames.push(PIXI.Texture.fromFrame('Blue_Gameplay_Ring00' + val + '.png'));
-    greenRingFrames.push(PIXI.Texture.fromFrame('Blue_Gameplay_Ring00' + val + '.png'));
-    purpleRingFrames.push(PIXI.Texture.fromFrame('Blue_Gameplay_Ring00' + val + '.png'));
-    whiteRingFrames.push(PIXI.Texture.fromFrame('Blue_Gameplay_Ring00' + val + '.png'));
+    greenRingFrames.push(PIXI.Texture.fromFrame('Green_Gameplay_Ring00' + val + '.png'));
+    purpleRingFrames.push(PIXI.Texture.fromFrame('Purple_Gameplay_Ring00' + val + '.png'));
+    whiteRingFrames.push(PIXI.Texture.fromFrame('White_Gameplay_Ring_00' + val + '.png'));
   }
 
   for (var i = 0; i < 54; i++) {
@@ -237,7 +237,10 @@ function setup() {
   .add(new PIXI.extras.AnimatedSprite(whiteRingFrames))
   .upload(() => {
     let testAnims = [];
-    testAnims.push(new PIXI.extras.AnimatedSprite(noteFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(blueDotFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(blueRingFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(whiteDotFrames));
+    testAnims.push(new PIXI.extras.AnimatedSprite(whiteRingFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(orangeExpFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(greenExpFrames));
     testAnims.push(new PIXI.extras.AnimatedSprite(pinkExpFrames));
@@ -245,11 +248,11 @@ function setup() {
     start();
 
     for(let i = 0; i < testAnims.length; i++) {
-      testAnims[i].position.set(-500, -100);
+      testAnims[i].position.set(-1000, -500);
       testAnims[i].scale.set(.5);
       testAnims[i].animationSpeed = 1;
       testAnims[i].anchor.set(.5);
-      testAnims[i].loop = true;
+      testAnims[i].loop = false;
 
       testAnims[i].onComplete = function (){
         console.log('hey');
@@ -579,7 +582,7 @@ class NoteManager {
 
     if(this.staff.length > 0) {
       const timeSig = this.staff.shift();
-      const note = new Note(timeSig, this.graphics, this.x, this.imgStr);
+      const note = new Note(timeSig, this.graphics, this.x, this.imgStr, whiteRingFrames);
       this.notes.push(note);
     }
   }
@@ -630,16 +633,6 @@ class PlayLine {
         success = false;
       }
     }
-
-    // noteMgr.notes.forEach((note) => {
-    //   if(note.chance) {
-    //     note.hit();
-    //     success = true;
-    //     break;
-    //   } else {
-    //     success = false;
-    //   }
-    // });
 
     if(!success) {
     }
@@ -706,7 +699,7 @@ class PlayLine {
 let going = false;
 
 class Note {
-  constructor(timeSig, gfx, x, imgStr) {
+  constructor(timeSig, gfx, x, imgStr, animationFrames) {
     this.radius = 1;
     this.stroke = 5;
     this.x = x - 25;
@@ -716,15 +709,12 @@ class Note {
     this.timeSig = timeSig;
     this.played = false;
 
-    this.animation = new PIXI.extras.AnimatedSprite(noteFrames);
-  
-    this.animation.position.set(this.x, this.y);
+    this.animation = new PIXI.extras.AnimatedSprite(animationFrames);
 
-    this.animation.width = 2;
-    this.animation.height = 2;
-
-    this.animation.anchor.set(0.5);
+    this.animation.position.set(this.x, this.y + 25);
+    this.animation.scale.set(.666);
     this.animation.animationSpeed = 1;
+    this.animation.anchor.set(.5);
 
     this.animation.loop = false;
   
@@ -834,7 +824,7 @@ class Note {
         }
       }
 
-      if(this.animation.currentFrame >= 70 && this.animation.currentFrame <= 80) {
+      if(this.animation.currentFrame >= 70 && this.animation.currentFrame <= 76) {
         this.testImg.alpha = 1;
         this.chance = true;
       } else {
