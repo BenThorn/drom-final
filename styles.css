@@ -36,3 +36,32 @@ canvas {
   width: 40%;
 	opacity: 1;
 }
+
+#resultContainer{
+  position: absolute;
+  top: 100;
+  left: 500;
+  font-family: Futura;
+  color: white;
+}
+
+.streak{
+  position: absolute;
+  width: 250px;
+  font-size: 24px;
+  font-family: 'Futura';
+  color: rgb(197, 197, 197);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.score{
+  position: absolute;
+  font-family: 'Futura';
+  font-size: 36px;
+  text-align: center;
+  width: 100px;
+  color: rgb(255, 255, 255);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

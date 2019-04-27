@@ -120,7 +120,7 @@ PIXI.loader
   .add("Assets/Sprites/Ring Feedback/pink-ring-3-0.json")
   .add("Assets/Sprites/Ring Feedback/pink-ring-3-1.json")
   .add("Assets/Sprites/Ring Feedback/pink-ring-3-2.json")
-  .add("futura", "Assets/Fonts/futur.ttf")
+  .add("Assets/Images/final results.png")
   .load(setup);
 
 // PIXI.sound.Sound.from({
@@ -166,6 +166,8 @@ let goodFrames = [];
 let orangeTutorialHit = false;
 let pinkTutorialHit = false;
 let greenTutorialHit = false;
+
+let scores = [];
 
 function setup() {
   for (var i = 0; i < 138; i++) {
@@ -354,6 +356,28 @@ class Conductor {
 
     this.managers = [this.noteMgrOrange, this.noteMgrGreen, this.noteMgrPink];
 
+    this.outerBar = new PIXI.Graphics();
+    this.outerBar.beginFill(0xffffff, .1);
+    // outerBar.lineStyle(0, 0xffffff, .4);
+    // outerBar.alpha = .4;
+    this.outerBar.drawRoundedRect(0, 0, window.screen.width/2, 15, 10)
+    this.outerBar.endFill();
+    this.outerBar.x = window.screen.width/4;
+    this.outerBar.y = 90;
+    app.stage.addChild(this.outerBar);
+
+    this.progressBar = new PIXI.Graphics();
+    this.progressBar.beginFill(0xffffff);
+    this.progressBar.drawRoundedRect(0, 0, window.screen.width/2, 15, 10)
+    this.progressBar.endFill();
+    this.progressBar.scale.set(0, 1);
+    this.progressBar.x = window.screen.width/4;
+    this.progressBar.y = 90;
+    app.stage.addChild(this.progressBar);
+
+    this.progressBar.alpha = 0;
+    this.outerBar.alpha = 0;
+
     this.tutorialEnded = false;
   }
 
@@ -376,6 +400,7 @@ class Conductor {
   }
 
   draw() {
+    
     if(gameState === GAME_STATE.TUTORIAL || gameState === GAME_STATE.GAME){
       this.graphics.clear();
       this.noteMgrOrange.draw();
@@ -384,14 +409,15 @@ class Conductor {
     }
 
     if(gameState === GAME_STATE.TUTORIAL) {
-      this.managers.forEach((m) =>  {
-        console.log(m.tutorialHit);
-      });
 
       if(this.managers[0].tutorialHit === true && this.managers[1].tutorialHit === true && this.managers[2].tutorialHit === true && this.tutorialEnded === false) {
         this.tutorialEnded = true;
         changeState();
       }
+    }
+
+    if(gameState === GAME_STATE.GAME) {
+      this.progressBar.scale.set((video.currentTime/video.duration), 1);
     }
   }
 
@@ -403,7 +429,6 @@ class Conductor {
 }
 
 const changeState = () => {
-  console.log(gameState);
   if(gameState === GAME_STATE.MENU) {
     actionable = false;
     let setOpacity = 1;
@@ -434,36 +459,28 @@ const changeState = () => {
       if(setOpacity >= 1) {
         clearInterval(timer);
         video.volume = 1;
+        video.loop = false;
         video.style.opacity = 1;
         beginGame();
       } else if(setOpacity < 1) {
         video.style.opacity = setOpacity;
+        conductor.progressBar.alpha = setOpacity;
+        conductor.outerBar.alpha = setOpacity * .4;
         video.volume = setOpacity;
         setOpacity += 0.008;
       }
     }, 15);
   } else if(gameState === GAME_STATE.GAME) {
-    actionable = false;
-    let setOpacity = 1;
-    let timer = setInterval(() => {
-      if(setOpacity <= 0) {
-        clearInterval(timer);
-        video.volume = 0;
-        video.style.display = 'none';
-        video.currentTime = 0;
-        menu.style.display = 'none';
-        video.src = "Assets/Video/MenuParticles.mp4";
-        video.pause();
-        endGame(); // Haha, like the movie. I wish I was watching that.
-      } else {
-        video.style.opacity = setOpacity;
-        video.volume = setOpacity;
-        setOpacity -= 0.008;
-      }
-    }, 15);
+      endGame();
   } else if(gameState === GAME_STATE.END) {
     video.style.display = 'initial';
     menu.style.display = 'initial';
+    scores.forEach((s) => {
+      document.querySelector('body').removeChild(s);
+    });
+    while(app.stage.children.length > 0) {
+      app.stage.removeChild(app.stage.children[0]);
+    }
     let setOpacity = 0;
     let timer = setInterval(() => {
       if(setOpacity >= 1) {
@@ -517,17 +534,142 @@ const endGame = () => {
   sched.stop();
   sched.removeAll();
 
-  while(app.stage.children.length > 0) {
-    app.stage.removeChild(app.stage.children[0]);
-  }
-  conductor.end();
-  conductor = null;
+  actionable = false;
+  let setOpacity = 1;
+  conductor.managers.forEach((m) => {
+    m.playLine.text.remove();
+  });
+  let timer = setInterval(() => {
+    if(setOpacity <= 0) {
+      clearInterval(timer);
+      conductor.end();
+      video.volume = 0;
+      video.style.display = 'none';
+      video.currentTime = 0;
+      menu.style.display = 'none';
+      video.src = "Assets/Video/MenuParticles.mp4";
+      video.pause();
+      showResults(
+        conductor.noteMgrOrange.playLine.totalHit,
+        conductor.noteMgrOrange.playLine.highestStreak,
+        conductor.noteMgrGreen.playLine.totalHit,
+        conductor.noteMgrGreen.playLine.highestStreak,
+        conductor.noteMgrPink.playLine.totalHit,
+        conductor.noteMgrPink.playLine.highestStreak,
+        );
+      conductor = null;
+    } else {
+      video.style.opacity = setOpacity;
+      conductor.managers.forEach((m) => {
+        m.playLine.playLineImg.alpha = setOpacity;
+        m.playLine.circle.alpha = setOpacity / 5;
+      }); 
+      video.volume = setOpacity;
+      setOpacity -= 0.008;
+    }
+  }, 15);
+};
+
+const showResults = (orangeNumHit, orangeHighStreak, greenNumHit, greenHighStreak, pinkNumHit, pinkHighStreak) => {
+  let background = new PIXI.Sprite(
+    PIXI.loader.resources["Assets/Images/final results.png"].texture
+  );
+
+  console.log(orangeNumHit);
+
+  let player1Score = Math.trunc(orangeNumHit/115 * 100);
+  let player2Score = Math.trunc(greenNumHit/110 * 100);
+  let player3Score = Math.trunc(pinkNumHit/110 * 100);
+
+  console.log(player1Score, player2Score, player3Score);
+
+  let p1score = document.createElement('p');
+  p1score.className = 'score';
+  p1score.textContent = '' + player1Score + '%';
+  p1score.style.top = 354;
+  p1score.style.left = 165;
+
+  let p1high = document.createElement('p');
+  p1high.className = 'score';
+  p1high.textContent = orangeHighStreak;
+  p1high.style.top = 540;
+  p1high.style.left = 234;
+
+  let p2score = document.createElement('p');
+  p2score.className = 'score';
+  p2score.textContent = '' + player2Score + '%';
+  p2score.style.top = 354;
+  p2score.style.left = 409;
+
+  let p2high = document.createElement('p');
+  p2high.className = 'score';
+  p2high.textContent = greenHighStreak;
+  p2high.style.top = 540;
+  p2high.style.left = 476;
+
+  let p3score = document.createElement('p');
+  p3score.className = 'score';
+  p3score.textContent = '' + player3Score + '%';
+  p3score.style.top = 354;
+  p3score.style.left = 643;
+
+  let p3high = document.createElement('p');
+  p3high.className = 'score';
+  p3high.textContent = pinkHighStreak;
+  p3high.style.top = 540;
+  p3high.style.left = 713;
+
+  let teamFinalScore = (orangeNumHit + greenNumHit + pinkNumHit) * (orangeHighStreak + greenHighStreak + pinkHighStreak) * 10;
+
+  let teamScore = document.createElement('p');
+  teamScore.className = 'score';
+  teamScore.textContent = teamFinalScore;
+  teamScore.style.fontSize = '72px';
+  teamScore.style.top = 350;
+  teamScore.style.left = 982;
+  teamScore.style.width = 400;
+
+  scores = [p1score, p1high, p2score, p2high, p3score, p3high, teamScore];
+
+  background.height = window.screen.height;
+  background.width = window.screen.width;
+
+  scores.forEach((thing) => {
+    document.querySelector('body').appendChild(thing);
+    thing.style.opacity = 0;
+  });
+  background.alpha = 0;
+
+  app.stage.addChild(background);
+
+  let setOpacity = 0;
+
+  let timer = setInterval(() => {
+    if(setOpacity >= 1) {
+      clearInterval(timer);
+      scores.forEach((thing) => {
+        thing.style.opacity = 1;
+      });
+      background.alpha = 1;
+    } else {
+      setOpacity += 0.008;
+      scores.forEach((thing) => {
+        thing.style.opacity = setOpacity;
+      });
+      background.alpha = setOpacity;
+    }
+  }, 15);
 };
 
 const restartDrom = () => {
   gameState = GAME_STATE.MENU;
+  while(app.stage.children.length > 0) {
+    app.stage.removeChild(app.stage.children[0]);
+  }
+  video.loop = true;
   video.play();
   going = false;
+  sched.removeAll();
 
   conductor = new Conductor();
 };
@@ -1295,8 +1437,7 @@ class NoteManager {
     const t0 = e.playbackTime;
     if(this.tutorialHit === false) {
       sched.insert(t0 + 0.000, this.createNote);
-      sched.insert(t0 + 2.000, this.createEightNote);
-      sched.insert(t0 + 4.000, this.keepTimeTutorial);
+      sched.insert(t0 + 2.000, this.keepTimeTutorial);
     }
   }
 
@@ -1361,11 +1502,22 @@ class PlayLine {
       fill: "white",
       fontFamily: "Tahoma"
     });
-    this.text = new PIXI.Text('Streak: ' + this.streak, style);
+    // this.text = new PIXI.Text('Streak: ' + this.streak, style);
 
-    this.text.position.set(this.playLineImg.x, this.playLineImg.y + 300);
+    // this.text.position.set(this.playLineImg.x, this.playLineImg.y + 300);
 
-    this.text.alpha = 0;
+    // this.text.alpha = 0;
+
+    this.text = document.createElement('p');
+    this.text.className = 'streak';
+    this.text.textContent = '5 note streak';
+    this.text.style.top = 560;
+    this.text.style.left = this.playLineImg.x + 66;
+
+    this.text.style.opacity = 0;
+
+
+    document.querySelector('body').appendChild(this.text);
 
     // For the feedback text
     this.goodAnim = new PIXI.extras.AnimatedSprite(goodFrames);
@@ -1374,7 +1526,7 @@ class PlayLine {
     this.textAnims = [this.goodAnim, this.niceAnim, this.awesomeAnim];
 
     this.textAnims.forEach((anim) => {
-      anim.position.set(this.playLineImg.x + 150, this.playLineImg.y);
+      anim.position.set(this.playLineImg.x + 150, 350);
       anim.anchor.set(.5);
       anim.scale.set(.5);
       anim.loop = false;
@@ -1394,7 +1546,6 @@ class PlayLine {
       this.awesomeAnim.gotoAndStop(0);
     }
   
-    app.stage.addChild(this.text);
     app.stage.addChild(this.circle);
     app.stage.addChild(this.playLineImg);
 
@@ -1425,16 +1576,16 @@ class PlayLine {
         this.notes[i].hit();
         this.totalHit++;
         this.streak++;
-        this.text.text ='Streak: ' + this.streak;
+         this.text.textContent = this.streak + ' note streak';
         if(this.streak >= 3) {
-          this.streakAppear();
+          this.text.style.opacity = 1;
         }
 
-        if(this.streak === 7) {
+        if(this.streak === 5) {
           this.goodAnim.play();
-        } else if(this.streak === 15) {
+        } else if(this.streak === 10) {
           this.niceAnim.play();
-        } else if(this.streak === 25) {
+        } else if(this.streak === 15) {
           this.awesomeAnim.play();
         }
         break;
@@ -1446,25 +1597,13 @@ class PlayLine {
     }, 500);
   }
 
-  streakAppear() {
-    if(this.streak >= 3) {
-      let timer = setInterval(() => {
-        if(this.text.alpha >= 1) {
-          clearInterval(timer);
-        } else {
-          this.text.alpha += 0.01;
-        }
-      }, 15);
-    }
-  }
-
   fail() {
     if(this.streak > this.highestStreak) {
       this.highestStreak = this.streak;
     }
     this.streak = 0;
-    this.text.text ='Streak: ' + this.streak;
-    this.text.alpha = 0;
+    this.text.textContent = this.streak + 'note streak';
+    this.text.style.opacity = 0;
   }
 	
 	//See if players are ready to move past the menu
@@ -1539,8 +1678,8 @@ class Note {
 
     this.animation = new PIXI.extras.AnimatedSprite(animationFrames);
 
-    this.animation.position.set(this.x + 1, this.y + 35);
-    this.animation.scale.set(.92);
+    this.animation.position.set(this.x, this.y + 35);
+    this.animation.scale.set(.91);
     this.animation.animationSpeed = 1.5;
     this.animation.anchor.set(.5);
 
@@ -1598,93 +1737,24 @@ class Note {
   
     app.stage.addChild(this.explosion);
     app.stage.addChild(this.feedback);
-
-    this.testImg = new PIXI.Sprite(PIXI.loader.resources['Assets/Images/test.png'].texture);
-
-    this.testImg.x = 300;
-    this.testImg.y = 200;
-    this.testImg.width = 25;
-    this.testImg.height = 20;
-  
-    this.testImg.alpha = 0;
-  
-    app.stage.addChild(this.testImg);
-
-    this.emitter = new PIXI.particles.Emitter(app.stage, 
-      [PIXI.Texture.fromImage('Assets/Images/particle.png')],
-      {
-        "alpha": {
-            "start": 1,
-            "end": 0
-        },
-        "scale": {
-            "start": 0.18,
-            "end": 0.001,
-            "minimumScaleMultiplier": 1
-        },
-        "color": {
-            "start": "#9fe6fc",
-            "end": "#9fe6fc"
-        },
-        "speed": {
-            "start": 100,
-            "end": 0,
-            "minimumSpeedMultiplier": 0.96
-        },
-        "acceleration": {
-            "x": -3,
-            "y": -3
-        },
-        "maxSpeed": 0,
-        "startRotation": {
-            "min": 0,
-            "max": 360
-        },
-        "noRotation": false,
-        "rotationSpeed": {
-            "min": 0,
-            "max": 0
-        },
-        "lifetime": {
-            "min": 1,
-            "max": 1
-        },
-        "blendMode": "normal",
-        "frequency": 0.009,
-        "emitterLifetime": 0.8,
-        "maxParticles": 25,
-        "pos": {
-            "x": this.x,
-            "y": this.y
-        },
-        "addAtBack": false,
-        "spawnType": "ring",
-        "spawnCircle": {
-            "x": 0,
-            "y": 0,
-            "r": 100,
-            "minR": 100
-        }
-    });
   }
 
   draw(){
     if(this.active) {
-      if(this.animation.currentFrame === 125) {
+      if(this.chance === true) {
         if(!going && gameState === GAME_STATE.GAME) {
           video.play();
-          sched.start(metronome);
-          video.currentTime = 0;          
-
+          video.onended = () => {
+            endGame();
+          }
+          video.currentTime = 0;
           going = true;
         }
       }
 
       if(this.animation.currentFrame >= 125 && this.animation.currentFrame <= 136) {
-        this.testImg.alpha = 1;
         this.chance = true;
       } else {
-        this.testImg.alpha = 0;
         this.chance = false;
       }
 
@@ -1692,15 +1762,6 @@ class Note {
         this.animation.visisble = false;
         this.miss();
       }
-    }
-
-    if(this.emit) {
-      var now = Date.now();
-	
-      // The emitter requires the elapsed
-      // number of seconds since the last update
-      this.emitter.update((now - this.elapsed) * 0.001);
-      this.elapsed = now;
     }
   }
 
@@ -1713,23 +1774,16 @@ class Note {
   hit() {
     this.explosion.play();
     this.feedback.play();
-    this.testImg.alpha = 0;
-    // this.emit = true;
-    // this.elapsed = Date.now();
-    // this.emitter.playOnce();
     this.animation.visible = false;
     this.active = false;
     this.chance = false;
 
     if(gameState === GAME_STATE.TUTORIAL) {
       if(this.imgStr.includes('Orange')){
-        console.log('HEY THIS IS ORANGE');
         conductor.noteMgrOrange.tutorialHit = true;
       } else if(this.imgStr.includes('Green')){
-        console.log('HEY THIS IS Green');
         conductor.noteMgrGreen.tutorialHit = true;
       } else if(this.imgStr.includes('Pink')){
-        console.log('HEY THIS IS PINK');
         conductor.noteMgrPink.tutorialHit = true;
       }
     }
@@ -1745,61 +1799,61 @@ class Note {
 
 //----------- Testing Material ------------
 
-let masterGain = null;
-let offset = 1.417;
+// let masterGain = null;
+// let offset = 1.417;
 
-function log() {
-  console.log('works');
-}
+// function log() {
+//   console.log('works');
+// }
  
-function metronome(e) {
-    going = true;
-    const t0 = e.playbackTime;
+// function metronome(e) {
+//     going = true;
+//     const t0 = e.playbackTime;
  
-    sched.insert(t0 + 0.000, ticktack, { frequency: 880, duration: 0.1 });
-    sched.insert(t0 + 0.500, ticktack, { frequency: 440, duration: 0.1 });
-    sched.insert(t0 + 1.000, ticktack, { frequency: 440, duration: 0.1 });
-    sched.insert(t0 + 1.500, ticktack, { frequency: 440, duration: 0.1 });
-    sched.insert(t0 + 2.000, metronome);
-}
+//     sched.insert(t0 + 0.000, ticktack, { frequency: 880, duration: 0.1 });
+//     sched.insert(t0 + 0.500, ticktack, { frequency: 440, duration: 0.1 });
+//     sched.insert(t0 + 1.000, ticktack, { frequency: 440, duration: 0.1 });
+//     sched.insert(t0 + 1.500, ticktack, { frequency: 440, duration: 0.1 });
+//     sched.insert(t0 + 2.000, metronome);
+// }
  
-function ticktack(e) {
-  const t0 = e.playbackTime;
-  const t1 = t0 + e.args.duration;
-  const osc = audioContext.createOscillator();
-  const amp = audioContext.createGain();
+// function ticktack(e) {
+//   const t0 = e.playbackTime;
+//   const t1 = t0 + e.args.duration;
+//   const osc = audioContext.createOscillator();
+//   const amp = audioContext.createGain();
  
-  osc.frequency.value = e.args.frequency;
-  osc.start(t0);
-  osc.stop(t1);
-  osc.connect(amp);
+//   osc.frequency.value = e.args.frequency;
+//   osc.start(t0);
+//   osc.stop(t1);
+//   osc.connect(amp);
  
-  amp.gain.setValueAtTime(0.5, t0);
-  amp.gain.exponentialRampToValueAtTime(1e-6, t1);
-  amp.connect(masterGain);
+//   amp.gain.setValueAtTime(0.5, t0);
+//   amp.gain.exponentialRampToValueAtTime(1e-6, t1);
+//   amp.connect(masterGain);
  
-  sched.nextTick(t1, () => {
-    osc.disconnect();
-    amp.disconnect();
-  });
-}
+//   sched.nextTick(t1, () => {
+//     osc.disconnect();
+//     amp.disconnect();
+//   });
+// }
  
-sched.on("start", () => {
-  masterGain = audioContext.createGain();
-  masterGain.connect(audioContext.destination);
-});
+// sched.on("start", () => {
+//   masterGain = audioContext.createGain();
+//   masterGain.connect(audioContext.destination);
+// });
  
-sched.on("stop", () => {
-  masterGain.disconnect();
-  masterGain = null;
-});
+// sched.on("stop", () => {
+//   masterGain.disconnect();
+//   masterGain = null;
+// });
  
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") {
-    sched.aheadTime = 0.1;
-  } else {
-    sched.aheadTime = 1.0;
-    sched.process();
-  }
-});
+// document.addEventListener("visibilitychange", () => {
+//   if (document.visibilityState === "visible") {
+//     sched.aheadTime = 0.1;
+//   } else {
+//     sched.aheadTime = 1.0;
+//     sched.process();
+//   }
+// });
  
