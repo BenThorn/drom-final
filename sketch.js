@@ -121,6 +121,7 @@ PIXI.loader
   .add("Assets/Sprites/Ring Feedback/pink-ring-3-1.json")
   .add("Assets/Sprites/Ring Feedback/pink-ring-3-2.json")
   .add("Assets/Images/final results.png")
+  .add("Assets/Images/guide.png")
   .load(setup);
 
 // PIXI.sound.Sound.from({
@@ -379,6 +380,16 @@ class Conductor {
     this.outerBar.alpha = 0;
 
     this.tutorialEnded = false;
+
+    this.guideImage = new PIXI.Sprite(
+      PIXI.loader.resources["Assets/Images/guide.png"].texture
+    );
+
+    this.guideImage.position.set(-200, -10);
+
+    this.guideImage.alpha = 0;
+
+    app.stage.addChild(this.guideImage);
   }
 
   tutorialStart() {
@@ -466,6 +477,7 @@ const changeState = () => {
         video.style.opacity = setOpacity;
         conductor.progressBar.alpha = setOpacity;
         conductor.outerBar.alpha = setOpacity * .4;
+        conductor.guideImage.alpha -= 0.008;
         video.volume = setOpacity;
         setOpacity += 0.008;
       }
@@ -516,6 +528,7 @@ const beginTutorial = () => {
         actionable = true;
       } else {
         m.playLine.opacity += 0.008;
+        conductor.guideImage.alpha = m.playLine.opacity * 1.3333;
       }
 
     });
@@ -564,6 +577,8 @@ const endGame = () => {
         m.playLine.playLineImg.alpha = setOpacity;
         m.playLine.circle.alpha = setOpacity / 5;
       }); 
+      conductor.progressBar.alpha = setOpacity;
+      conductor.outerBar.alpha = setOpacity * .4;
       video.volume = setOpacity;
       setOpacity -= 0.008;
     }
@@ -619,7 +634,7 @@ const showResults = (orangeNumHit, orangeHighStreak, greenNumHit, greenHighStrea
   p3high.style.top = 540;
   p3high.style.left = 713;
 
-  let teamFinalScore = (orangeNumHit + greenNumHit + pinkNumHit) * (orangeHighStreak + greenHighStreak + pinkHighStreak) * 10;
+  let teamFinalScore = (orangeNumHit + greenNumHit + pinkNumHit) * (orangeHighStreak + greenHighStreak + pinkHighStreak);
 
   let teamScore = document.createElement('p');
   teamScore.className = 'score';
@@ -1510,9 +1525,9 @@ class PlayLine {
 
     this.text = document.createElement('p');
     this.text.className = 'streak';
-    this.text.textContent = '5 note streak';
-    this.text.style.top = 560;
-    this.text.style.left = this.playLineImg.x + 66;
+    this.text.innerHTML = '<span>' + this.streak + '</span>' + '<br> note streak';
+    this.text.style.top = 620;
+    this.text.style.left = this.playLineImg.x + 27;
 
     this.text.style.opacity = 0;
 
@@ -1576,7 +1591,8 @@ class PlayLine {
         this.notes[i].hit();
         this.totalHit++;
         this.streak++;
-         this.text.textContent = this.streak + ' note streak';
+         this.text.innerHTML = '<span>' + this.streak + '</span>' + '<br> note streak';
+         this.text.style.textAlign = 'center';
         if(this.streak >= 3) {
           this.text.style.opacity = 1;
         }
@@ -1602,7 +1618,7 @@ class PlayLine {
       this.highestStreak = this.streak;
     }
     this.streak = 0;
-    this.text.textContent = this.streak + 'note streak';
+    this.text.innerHTML = '<span>' + this.streak + '</span>' + '<br> note streak';
     this.text.style.opacity = 0;
   }
 	

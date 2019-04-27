@@ -48,9 +48,10 @@ canvas {
 .streak{
   position: absolute;
   width: 250px;
-  font-size: 24px;
+  font-size: 18px;
   font-family: 'Futura';
   color: rgb(197, 197, 197);
+  text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -64,4 +65,8 @@ canvas {
   color: rgb(255, 255, 255);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+span {
+  font-size: 48px;
 }
