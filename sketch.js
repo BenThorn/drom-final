@@ -349,6 +349,7 @@ function update(delta){
 
 class Conductor {
   constructor() {
+    console.log(window.screen.height, window.screen.width);
     this.graphics = new PIXI.Graphics();
     app.stage.addChild(this.graphics);
     this.noteMgrOrange = new NoteManager(window.screen.width/4 - 50, "Assets/Images/Outer_Orange.png", this.graphics);
@@ -385,7 +386,7 @@ class Conductor {
       PIXI.loader.resources["Assets/Images/guide.png"].texture
     );
 
-    this.guideImage.position.set(-200, -10);
+    this.guideImage.position.set(0, -10);
 
     this.guideImage.alpha = 0;
 
@@ -601,38 +602,38 @@ const showResults = (orangeNumHit, orangeHighStreak, greenNumHit, greenHighStrea
   let p1score = document.createElement('p');
   p1score.className = 'score';
   p1score.textContent = '' + player1Score + '%';
-  p1score.style.top = 354;
-  p1score.style.left = 165;
+  p1score.style.top = window.screen.height * .4197;
+  p1score.style.left = window.screen.width * .1174;
 
   let p1high = document.createElement('p');
   p1high.className = 'score';
   p1high.textContent = orangeHighStreak;
-  p1high.style.top = 540;
-  p1high.style.left = 234;
+  p1high.style.top = window.screen.height * .635;
+  p1high.style.left = window.screen.width * .1623;
 
   let p2score = document.createElement('p');
   p2score.className = 'score';
   p2score.textContent = '' + player2Score + '%';
-  p2score.style.top = 354;
-  p2score.style.left = 409;
+  p2score.style.top = window.screen.height * .4197;
+  p2score.style.left = window.screen.width * .2762;
 
   let p2high = document.createElement('p');
   p2high.className = 'score';
   p2high.textContent = greenHighStreak;
-  p2high.style.top = 540;
-  p2high.style.left = 476;
+  p2high.style.top = window.screen.height * .635;
+  p2high.style.left = window.screen.width * .3199;
 
   let p3score = document.createElement('p');
   p3score.className = 'score';
   p3score.textContent = '' + player3Score + '%';
-  p3score.style.top = 354;
-  p3score.style.left = 643;
+  p3score.style.top = window.screen.height * .4197;
+  p3score.style.left = window.screen.width * .4286;
 
   let p3high = document.createElement('p');
   p3high.className = 'score';
   p3high.textContent = pinkHighStreak;
-  p3high.style.top = 540;
-  p3high.style.left = 713;
+  p3high.style.top = window.screen.height * .635;
+  p3high.style.left = window.screen.width * .4741;
 
   let teamFinalScore = (orangeNumHit + greenNumHit + pinkNumHit) * (orangeHighStreak + greenHighStreak + pinkHighStreak);
 
@@ -640,8 +641,8 @@ const showResults = (orangeNumHit, orangeHighStreak, greenNumHit, greenHighStrea
   teamScore.className = 'score';
   teamScore.textContent = teamFinalScore;
   teamScore.style.fontSize = '72px';
-  teamScore.style.top = 350;
-  teamScore.style.left = 982;
+  teamScore.style.top = window.screen.height * .4155;
+  teamScore.style.left = window.screen.width * .67;
   teamScore.style.width = 400;
 
   scores = [p1score, p1high, p2score, p2high, p3score, p3high, teamScore];
